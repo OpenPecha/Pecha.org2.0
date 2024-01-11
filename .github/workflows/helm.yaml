@@ -51,7 +51,7 @@ jobs:
         id: semantic
         with:
           working_directory: ./helm-chart
-          semantic_version: 18.0.1 
+          semantic_version: 18.0.1
           extra_plugins: |
             conventional-changelog-conventionalcommits@6.1.0
             semantic-release-monorepo@7.0.5
