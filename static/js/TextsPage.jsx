@@ -91,10 +91,10 @@ const TextsPage = ({categories, settings, setCategories, onCompareBack, openSear
     multiPanel ? {type: "AboutSefaria"} : {type: null},
     {type: "Promo"},
     multiPanel ? {type: "RecentlyViewed", props: {toggleSignUpModal}} : {type: null},
-    {type: "Translations"},
-    {type: "LearningSchedules"},
-    {type: "JoinTheCommunity"},
-    {type: "Resources"},
+   // {type: "Translations"},
+   // {type: "LearningSchedules"},
+   // {type: "JoinTheCommunity"},
+   // {type: "Resources"},
   ];
 
   const footer = compare ? null : <Footer />;
