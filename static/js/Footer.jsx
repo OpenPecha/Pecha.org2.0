@@ -85,7 +85,7 @@ class Footer extends Component {
               <div className="header connect">
                   <InterfaceText>Connect</InterfaceText>
               </div>
-              <NewsletterSignUpForm contextName="Footer" />
+              {/*<NewsletterSignUpForm contextName="Footer" />*/}
               <div className="socialLinks">
                   <Link href="https://www.instagram.com/sefariaproject/" en="Instagram" he="אינסטגרם" blank={true} />
                   &bull;
