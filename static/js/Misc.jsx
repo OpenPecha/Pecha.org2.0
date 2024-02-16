@@ -340,31 +340,31 @@ class ProfilePic extends Component {
           onError={this.setShowDefault}
         />
         {this.props.children ? this.props.children : null /*required for slate.js*/}
-        {showButtons ? /* cant style file input directly. see: https://stackoverflow.com/questions/572768/styling-an-input-type-file-button */
-          (<div className={classNames({ "profile-pic-button-visible": showDefault !== null, "profile-pic-hover-button": !showDefault, "profile-pic-button": 1 })}>
-            <input type="file" className="profile-pic-input-file" id="profile-pic-input-file" onChange={this.onSelectFile} onClick={(event) => { event.target.value = null }} />
-            <label htmlFor="profile-pic-input-file" className={classNames({ resourcesLink: 1, blue: showDefault })}>
-              <span className="int-en">{showDefault ? "Add Picture" : "Upload New"}</span>
-              <span className="int-he">{showDefault ? "הוספת תמונה" : "עדכון תמונה"}</span>
-            </label>
-          </div>) : null
-        }
-        {(src || !!error) && (
-          <div id="interruptingMessageBox" className="sefariaModalBox">
-            <div id="interruptingMessageOverlay" onClick={this.closePopup}></div>
-            <div id="interruptingMessage" className="profile-pic-cropper-modal">
-              <div className="sefariaModalContent profile-pic-cropper-modal-inner">
-                {src ?
-                  (<ReactCrop
-                    src={src}
-                    crop={crop}
-                    className="profile-pic-cropper"
-                    keepSelection
-                    onImageLoaded={this.onImageLoaded}
-                    onComplete={this.onCropComplete}
-                    onChange={this.onCropChange}
-                  />) : (<div className="profile-pic-cropper-error">{error}</div>)
-                }
+        { showButtons ? /* cant style file input directly. see: https://stackoverflow.com/questions/572768/styling-an-input-type-file-button */
+            (<div className={classNames({"profile-pic-button-visible": showDefault !== null, "profile-pic-hover-button": !showDefault, "profile-pic-button": 1})}>
+              <input type="file" className="profile-pic-input-file" id="profile-pic-input-file" onChange={this.onSelectFile} onClick={(event)=> { event.target.value = null}}/>
+              <label htmlFor="profile-pic-input-file" className={classNames({resourcesLink: 1, blue: showDefault})}>
+                <span className="int-en">{ showDefault ? "Add Picture" : "Upload New" }</span>
+                <span className="int-he">{ showDefault ? "འདྲ་པར་སྣོན།" : "གསར་པ་ནང་འཇུག་བྱོས།" }</span>
+              </label>
+            </div>) : null
+          }
+          { (src || !!error) && (
+            <div id="interruptingMessageBox" className="sefariaModalBox">
+              <div id="interruptingMessageOverlay" onClick={this.closePopup}></div>
+              <div id="interruptingMessage" className="profile-pic-cropper-modal">
+                <div className="sefariaModalContent profile-pic-cropper-modal-inner">
+                  { src ?
+                    (<ReactCrop
+                      src={src}
+                      crop={crop}
+                      className="profile-pic-cropper"
+                      keepSelection
+                      onImageLoaded={this.onImageLoaded}
+                      onComplete={this.onCropComplete}
+                      onChange={this.onCropChange}
+                    />) : (<div className="profile-pic-cropper-error">{ error }</div>)
+                  }
               </div>
               {(uploading || isFirstCropChange) ? (<div className="profile-pic-loading"><LoadingRing /></div>) : (
                 <div>
@@ -2070,15 +2070,15 @@ class LoginPrompt extends Component {
       <div className="loginPrompt">
         <div className="loginPromptMessage">
           <span className="int-en">Please log in to use this feature.</span>
-          <span className="int-he">עליך להיות מחובר בכדי להשתמש באפשרות זו.</span>
+          <span className="int-he">ཁྱད་ཆོས་འདི་བེད་སྤྱོད་གཏོང་ཆེད་ནང་འཛུལ་བྱེད་རོགས།</span>
         </div>
         <a className="button" href={"/login" + nextParam}>
           <span className="int-en">Log In</span>
-          <span className="int-he">התחברות</span>
+          <span className="int-he">ནང་འཛུལ།</span>
         </a>
         <a className="button" href={"/register" + nextParam}>
           <span className="int-en">Sign Up</span>
-          <span className="int-he">הרשמה</span>
+          <span className="int-he">ཞུགས་ཐོ་གསར་འགོད།</span>
         </a>
       </div>);
   }
@@ -2366,7 +2366,7 @@ Dropdown.propTypes = {
 class LoadingMessage extends Component {
   render() {
     var message = this.props.message || "Loading...";
-    var heMessage = this.props.heMessage || "טוען מידע...";
+    var heMessage = this.props.heMessage || "ཏོག་ཙམ་སྒུག་རོགས།...";
     var classes = "loadingMessage sans-serif " + (this.props.className || "");
     return (<div className={classes}>
       <InterfaceText>
