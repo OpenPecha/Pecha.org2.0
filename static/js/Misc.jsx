@@ -470,7 +470,7 @@ const FilterableList = ({
 
   const oldDesign = typeof showFilterHeader == 'undefined';
   return (
-    <div className="filterable-list">
+    <div className="filterable-list" style={{margin:"-4px 0 -120px -1000px"}}>
       {oldDesign ? <div className="filter-bar">
         <div className="filter-bar-inner">
           <SearchButton />
@@ -489,7 +489,7 @@ const FilterableList = ({
                 isOpen={displaySort}
                 toggle={() => setDisplaySort(prev => !prev)}
                 enText={"Sort"}
-                heText={"מיון"}
+                heText={"ལྟར་ཚགས་སྒྲིག་བྱེད།"}
               />
               <DropdownOptionList
                 isOpen={displaySort}
@@ -650,7 +650,7 @@ class DropdownOptionList extends Component {
                     <td>
                       <img className="dropdown-option-check" src="/static/img/check-mark.svg" alt={`${option.name} sort selected`} />
                     </td>
-                    <td className="dropdown-option-list-label">
+                    <td className="dropdown-option-list-label" style={{padding:"15px 15px 15px 0"}}>
                       <span className="int-en">{option.name}</span>
                       <span className="int-he" dir="ltr">{option.heName}</span>
                     </td>
