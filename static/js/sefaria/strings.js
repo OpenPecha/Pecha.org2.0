@@ -537,6 +537,14 @@ const Strings = {
     'Notifications': 'གསར་བརྡ་རྣམས།',
     'Bookmarks': 'དཔེ་རྟགས།',
     'Toggle Interface Language Menu' : 'བརྡ་སྤྲོད་སྐད་ཀྱི་དྲ་མིག་འབྱེད་སྡོམ།',
+    // Error message
+    "file_error_message": "Error: Please upload an image with the correct file extension (e.g. jpg, png)",
+    "Add Picture": "Add Picture",
+    "Upload New": "Upload New",
+    "Drag corners to crop image": "Drag corners to crop image",
+    "Sort": "Sort",
+    "Please log in to use this feature.": "Please log in to use this feature.",
+    "": ""
   },
 
   _i18nInterfaceStringsWithContext: {
