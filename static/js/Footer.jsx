@@ -1,5 +1,6 @@
 import React  from 'react';
 import Sefaria  from './sefaria/sefaria';
+import { InterfaceText } from './Misc';
 import PropTypes from'prop-types';
 import $  from './sefaria/sefariaJquery';
 import { InterfaceText, DonateLink } from './Misc';
@@ -35,9 +36,6 @@ class Footer extends Component {
   render() {
     if (!Sefaria._siteSettings.TORAH_SPECIFIC) { return null; }
 
-    const fbURL = Sefaria.interfaceLang == "hebrew" ? "https://www.facebook.com/sefaria.org.il" : "https://www.facebook.com/sefaria.org";
-    const blgURL = Sefaria.interfaceLang == "hebrew" ? "https://blog.sefaria.org.il/" : "https://blog.sefaria.org/";
-    let next = this.state.isClient ? (encodeURIComponent(Sefaria.util.currentPath())) : "/" ; //try to make sure that a server render of this does not get some weird data in the url that then gets cached
     return (
       <div id='version_number'>
                 <InterfaceText>Version: 1.0.0</InterfaceText>
