@@ -403,7 +403,7 @@ class TextRange extends Component {
       }
       else {
          enDisplayValue = this.props.inlineReference['data-order'];
-         heDisplayValue = Sefaria.hebrew.encodeHebrewNumeral(enDisplayValue);
+         heDisplayValue = Sefaria.hebrew.tibetanNumeral(enDisplayValue);
       }
       if (heDisplayValue === undefined) {
         heDisplayValue = enDisplayValue;
@@ -416,7 +416,7 @@ class TextRange extends Component {
     } else if (showNumberLabel && this.props.numberLabel) {
       sidebarNum = <div className="numberLabel sans-serif">
         <span className="numberLabelInner">
-          <ContentText text={{en:this.props.numberLabel, he:Sefaria.hebrew.encodeHebrewNumeral(this.props.numberLabel)}} defaultToInterfaceOnBilingual={true}/>
+          <ContentText text={{en:this.props.numberLabel, he:Sefaria.hebrew.tibetanNumeral(this.props.numberLabel)}} defaultToInterfaceOnBilingual={true}/>
         </span>
       </div>;
     } else { sidebarNum = null;}
@@ -561,7 +561,7 @@ class TextSegment extends Component {
         return $(i).attr('data-label');
       } else {
         if (lang === "he") {
-          value = Sefaria.hebrew.encodeHebrewNumeral($(i).attr('data-order'));
+          value = Sefaria.hebrew.tibetanNumeral($(i).attr('data-order'));
         }
         else if (lang === "en") {
           value = $(i).attr('data-order');
@@ -634,7 +634,7 @@ class TextSegment extends Component {
         <div className="segmentNumber sans-serif">
           <span className="segmentNumberInner">
              <ContentText
-                 text={{"en": this.props.segmentNumber, "he": Sefaria.hebrew.encodeHebrewNumeral(this.props.segmentNumber)}}
+                 text={{"en": this.props.segmentNumber, "he": Sefaria.hebrew.tibetanNumeral(this.props.segmentNumber)}}
                  defaultToInterfaceOnBilingual={true}
              />
           </span>

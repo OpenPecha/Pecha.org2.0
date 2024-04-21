@@ -2981,20 +2981,20 @@ const Autocompleter = ({ getSuggestions, showSuggestionsOnSelect, inputPlacehold
           const enOnly = !segment.he;
           const overrideLanguage = (enOnly || heOnly) ? (heOnly ? "hebrew" : "english") : null;
 
-          return (
-            <div
-              className={classNames({ 'textPreviewSegment': 1, highlight: segment.highlight, heOnly: heOnly, enOnly: enOnly })}
-              key={segment.ref}>
-              <sup><ContentText
-                text={{ "en": segment.number, "he": Sefaria.hebrew.encodeHebrewNumeral(segment.number) }}
-                defaultToInterfaceOnBilingual={true}
-              /></sup> <ContentText html={{ "he": segment.he + " ", "en": segment.en + " " }} defaultToInterfaceOnBilingual={!overrideLanguage} overrideLanguage={overrideLanguage} bilingualOrder={["en", "he"]} />
-            </div>
-          )
-        }
-      })
-      setPreviewText(previewHTML);
-    })
+              return(
+                  <div
+                      className={classNames({'textPreviewSegment': 1, highlight: segment.highlight, heOnly: heOnly, enOnly: enOnly})}
+                      key={segment.ref}>
+                    <sup><ContentText
+                        text={{"en": segment.number, "he": Sefaria.hebrew.tibetanNumeral(segment.number)}}
+                        defaultToInterfaceOnBilingual={true}
+                    /></sup> <ContentText html={{"he": segment.he+ " ", "en": segment.en+ " " }} defaultToInterfaceOnBilingual={!overrideLanguage} overrideLanguage={overrideLanguage} bilingualOrder={["en", "he"]}/>
+                  </div>
+              )
+            }
+          })
+          setPreviewText(previewHTML);
+        })
   }
 
   const checkEnterOnSelect = (e) => {
