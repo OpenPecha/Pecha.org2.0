@@ -74,3 +74,5 @@ dnspython~=2.5.0
 #opentelemetry-exporter-otlp
 #opentelemetry-propagator-b3
 #opentelemetry-propagator-jaeger
+
+mixpanel~=4.10.1
