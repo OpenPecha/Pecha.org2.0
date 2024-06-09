@@ -927,9 +927,6 @@ div:has(#bannerMessage) + .readerApp.singlePanel .mobileNavMenu {
 .loggedIn .help {
   margin-inline-start: 17px;
 
-.loggedIn .help {
-    margin-inline-start: 17px;
-}
 
 .loggedIn .help img {
     height: 24px;
