@@ -2,12 +2,9 @@
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from functools import partial
 from django.conf.urls import include, url
-from django.conf.urls import handler404, handler500
 from django.contrib import admin
-from django.http import HttpResponseRedirect
-import django.contrib.auth.views as django_auth_views
 from sefaria.forms import SefariaPasswordResetForm, SefariaSetPasswordForm, SefariaLoginForm
-from sefaria.settings import DOWN_FOR_MAINTENANCE, STATIC_URL
+from sefaria.settings import DOWN_FOR_MAINTENANCE
 
 import reader.views as reader_views
 import sefaria.views as sefaria_views

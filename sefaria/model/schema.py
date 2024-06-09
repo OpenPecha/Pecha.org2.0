@@ -1,31 +1,20 @@
 # -*- coding: utf-8 -*-
 import copy
-import dataclasses
-from typing import Optional, List
-
 import structlog
+import regex
 from functools import reduce
 import re2 as re
 from sefaria.system.decorators import conditional_graceful_exception
 from ..utils.tibetan import tib_to_int, int_to_tib
 
-logger = structlog.get_logger(__name__)
-
-try:
-    import re2 as re
-
-    re.set_fallback_notification(re.FALLBACK_WARNING)
-except ImportError:
-    logger.warning(
-        "Failed to load 're2'.  Falling back to 're' for regular expression parsing. See https://github.com/Sefaria/Sefaria-Project/wiki/Regular-Expression-Engines")
-    import re
-
-import regex
 from . import abstract as abst
 from sefaria.system.database import db
 from sefaria.model.lexicon import LexiconEntrySet
 from sefaria.system.exceptions import InputError, IndexSchemaError, DictionaryEntryNotFoundError, SheetNotFoundError
 from sefaria.utils.hebrew import hebrew_term
+
+logger = structlog.get_logger(__name__)
+
 """
                 -----------------------------------------
                  Titles, Terms, and Term Schemes
@@ -73,8 +62,8 @@ class TitleGroup(object):
                     self.required_attrs + self.optional_attrs))
         if '-' in self.primary_title("en"):
             raise InputError("Primary English title may not contain hyphens.")
-        # if not all(ord(c) < 128 for c in self.primary_title("en")):
-        #     raise InputError("Primary English title may not contain non-ascii characters")
+        if not all(ord(c) < 128 for c in self.primary_title("en")):
+            raise InputError("Primary English title may not contain non-ascii characters")
 
     def load(self, serial=None):
         if serial:
