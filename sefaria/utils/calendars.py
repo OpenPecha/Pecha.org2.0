@@ -453,7 +453,7 @@ def get_all_calendar_items(datetime_obj, diaspora=True, custom="sephardi"):
 
 
 def get_keyed_calendar_items(diaspora=True, custom=None):
-    cal_items = get_todays_calendar_items(diaspora=diaspora, custom=custom)
+    cal_items = []
     cal_dict = {}
     for cal_item in cal_items:
         cal_dict[cal_item["title"]["en"]] = cal_item

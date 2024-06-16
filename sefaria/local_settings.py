@@ -39,17 +39,20 @@ PROD_DATABASES = {
         'PORT': 5432
     }
 }
-LOCAL_DATABASE={
-      'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.getenv("sqlDB"), # Path to where you would like the database to be created including a file name, or path to an existing database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+LOCAL_DATABASE = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sefaria',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        'HOST': '127.0.0.1',
+        'PORT': '5433',
+        'OPTIONS': {
+            'options': '-c timezone=UTC'
+        }
     }
 }
-DATABASES=PROD_DATABASES if os.getenv('isLocale') is None else LOCAL_DATABASE
+DATABASES = LOCAL_DATABASE
 # Map domain to an interface language that the domain should be pinned to.
 # Leave as {} to prevent language pinning, in which case one domain can serve either Hebrew or English
 DOMAIN_LANGUAGES = {}
@@ -122,12 +125,12 @@ LOCAL_CACHES = {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     },
 }
-CACHES = PROD_CACHES if os.getenv('isLocale') is None else LOCAL_CACHES
+CACHES = LOCAL_CACHES
 SITE_PACKAGE = "sites.sefaria"
 
 
 ################ These are things you DO NOT NEED to touch unless you know what you are doing. ##############################
-DEBUG = os.getenv("DEBUG", True)
+DEBUG = True
 
 REMOTE_HOSTS = os.getenv('REMOTE_HOSTS', 'staging.pecha.org').replace(" ", "")
 
@@ -138,7 +141,7 @@ LOCAL_HOSTS = [
     '[::1]'
 ]
 
-ALLOWED_HOSTS = REMOTE_HOSTS.split(',') + LOCAL_HOSTS
+ALLOWED_HOSTS =  LOCAL_HOSTS
 
 OFFLINE = False
 DOWN_FOR_MAINTENANCE = False
@@ -178,10 +181,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #    "MANDRILL_API_KEY": "your api key",
 # }
 
-MONGO_HOST = os.getenv("MONGO_HOST", "ENV_NAME not defined")
+MONGO_HOST = "localhost"
 MONGO_PORT = 27017  # os.getenv("MONGO_PORT", "ENV_NAME not defined")
 # Name of the MongoDB database to use.
-SEFARIA_DB = os.getenv("MONGO_DATABASE_NAME", "ENV_NAME not defined")
+SEFARIA_DB = 'sefaria'
 # Leave user and password blank if not using Mongo Auth
 SEFARIA_DB_USER = ''
 SEFARIA_DB_PASSWORD = ''
@@ -189,6 +192,7 @@ APSCHEDULER_NAME = "apscheduler"
 
 # ElasticSearch server
 SEARCH_ADMIN = "http://localhost:9200"
+SEARCH_URL = "http://localhost:9200"
 # Whether to send texts and source sheet to Search Host for indexing after save
 SEARCH_INDEX_ON_SAVE = False
 SEARCH_INDEX_NAME_TEXT = 'text'  # name of the ElasticSearch index to use
