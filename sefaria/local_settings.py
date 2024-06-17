@@ -52,7 +52,7 @@ LOCAL_DATABASE = {
         }
     }
 }
-DATABASES = LOCAL_DATABASE
+DATABASES=PROD_DATABASES if os.getenv('isLocale') is None else LOCAL_DATABASE
 # Map domain to an interface language that the domain should be pinned to.
 # Leave as {} to prevent language pinning, in which case one domain can serve either Hebrew or English
 DOMAIN_LANGUAGES = {}
@@ -125,12 +125,12 @@ LOCAL_CACHES = {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     },
 }
-CACHES = LOCAL_CACHES
+CACHES = PROD_CACHES if os.getenv('isLocale') is None else LOCAL_CACHES
 SITE_PACKAGE = "sites.sefaria"
 
 
 ################ These are things you DO NOT NEED to touch unless you know what you are doing. ##############################
-DEBUG = True
+DEBUG = os.getenv("DEBUG", True)
 
 REMOTE_HOSTS = os.getenv('REMOTE_HOSTS', 'staging.pecha.org').replace(" ", "")
 
@@ -141,7 +141,7 @@ LOCAL_HOSTS = [
     '[::1]'
 ]
 
-ALLOWED_HOSTS =  LOCAL_HOSTS
+ALLOWED_HOSTS = REMOTE_HOSTS.split(',') + LOCAL_HOSTS
 
 OFFLINE = False
 DOWN_FOR_MAINTENANCE = False
@@ -181,10 +181,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #    "MANDRILL_API_KEY": "your api key",
 # }
 
-MONGO_HOST = "localhost"
+MONGO_HOST = os.getenv("MONGO_HOST", "ENV_NAME not defined")
 MONGO_PORT = 27017  # os.getenv("MONGO_PORT", "ENV_NAME not defined")
 # Name of the MongoDB database to use.
-SEFARIA_DB = 'sefaria'
+SEFARIA_DB = os.getenv("MONGO_DATABASE_NAME", "ENV_NAME not defined")
 # Leave user and password blank if not using Mongo Auth
 SEFARIA_DB_USER = ''
 SEFARIA_DB_PASSWORD = ''
