@@ -545,7 +545,6 @@ const Strings = {
     "Drag corners to crop image": "Drag corners to crop image",
     "Sort": "Sort",
     "Please log in to use this feature.": "Please log in to use this feature.",
-    "": ""
 
     // Updated translations
     "file_error_message": "ནོར་འཁྲུལ། པར་རིས་དེ་ཕབ་ལེན་བྱེད་སྐབས་ཕབ་ལེན་བྱེད་ཡུལ་གྱི་ཡིག་རིགས་ནོར་མེད་པ་ངེས་པར་དུ་དགོས། (དཔེར་ན། jpg, png)",

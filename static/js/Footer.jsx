@@ -1,6 +1,5 @@
 import React  from 'react';
 import Sefaria  from './sefaria/sefaria';
-import { InterfaceText } from './Misc';
 import PropTypes from'prop-types';
 import $  from './sefaria/sefariaJquery';
 import { InterfaceText, DonateLink } from './Misc';
