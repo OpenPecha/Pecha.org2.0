@@ -52,7 +52,7 @@ LOCAL_DATABASE = {
         }
     }
 }
-DATABASES=PROD_DATABASES if os.getenv('isLocale') is None else LOCAL_DATABASE
+DATABASES = PROD_DATABASES
 # Map domain to an interface language that the domain should be pinned to.
 # Leave as {} to prevent language pinning, in which case one domain can serve either Hebrew or English
 DOMAIN_LANGUAGES = {}
@@ -125,7 +125,7 @@ LOCAL_CACHES = {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     },
 }
-CACHES = PROD_CACHES if os.getenv('isLocale') is None else LOCAL_CACHES
+CACHES = PROD_CACHES
 SITE_PACKAGE = "sites.sefaria"
 
 
