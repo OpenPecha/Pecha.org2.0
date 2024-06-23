@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import Sefaria from './sefaria/sefaria';
-import $ from './sefaria/sefariaJquery';
-import { NavSidebar, Modules } from './NavSidebar';
-import TextCategoryPage from './TextCategoryPage';
-import Footer from './Footer';
+import PropTypes  from 'prop-types';
+import classNames  from 'classnames';
+import Sefaria  from './sefaria/sefaria';
+import $  from './sefaria/sefariaJquery';
+import { NavSidebar, Modules, RecentlyViewed } from './NavSidebar';
+import TextCategoryPage  from './TextCategoryPage';
+import Footer  from './Footer';
 import ComparePanelHeader from './ComparePanelHeader';
 import {
   TextBlockLink,
@@ -19,8 +19,8 @@ import {
 } from './Misc';
 
 
-const TextsPage = ({ categories, settings, setCategories, onCompareBack, openSearch,
-  toggleLanguage, openTextTOC, openDisplaySettings, multiPanel, initialWidth, compare }) => {
+const TextsPage = ({categories, settings, setCategories, onCompareBack, openSearch,
+  toggleLanguage, openTextTOC, openDisplaySettings, multiPanel, initialWidth, compare, toggleSignUpModal}) => {
   // List of Texts in a Category
   if (categories.length) {
     return (
@@ -71,7 +71,7 @@ const TextsPage = ({ categories, settings, setCategories, onCompareBack, openSea
 
   const title = compare ? null :
     <div className="navTitle tight sans-serif">
-        <CategoryHeader type="cats" buttonsToDisplay={["subcategory", "reorder"]}>
+        <CategoryHeader type="cats" toggleButtonIDs={["subcategory", "reorder"]}>
             <h1><InterfaceText>Browse the Library</InterfaceText></h1>
         </CategoryHeader>
       { multiPanel && Sefaria.interfaceLang !== "hebrew" && Sefaria._siteSettings.TORAH_SPECIFIC ?
@@ -88,12 +88,13 @@ const TextsPage = ({ categories, settings, setCategories, onCompareBack, openSea
     : null;
 
   const sidebarModules = [
-    multiPanel ? { type: "AboutSefaria" } : { type: null },
-    // {type: "Promo"},
-    // {type: "Translations"},
-    // {type: "LearningSchedules"},
-    // {type: "JoinTheCommunity"},
-    // {type: "Resources"},
+    multiPanel ? {type: "AboutSefaria"} : {type: null},
+    {type: "Promo"},
+    multiPanel ? {type: "RecentlyViewed", props: {toggleSignUpModal}} : {type: null},
+   // {type: "Translations"},
+   // {type: "LearningSchedules"},
+   // {type: "JoinTheCommunity"},
+   // {type: "Resources"},
   ];
 
   const footer = compare ? null : <Footer />;
@@ -104,11 +105,12 @@ const TextsPage = ({ categories, settings, setCategories, onCompareBack, openSea
       <div className="content">
         <div className="sidebarLayout">
           <div className="contentInner">
-            {title}
-            {about}
-            {dedication}
-            {libraryMessage}
-            {categoryListings}
+            { title }
+            { about }
+            { dedication }
+            { libraryMessage }
+            { !multiPanel && <RecentlyViewed toggleSignUpModal={toggleSignUpModal} mobile={true}/>}
+            { categoryListings }
           </div>
           {!compare ? <NavSidebar modules={sidebarModules} /> : null}
         </div>

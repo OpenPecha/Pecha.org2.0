@@ -224,7 +224,7 @@ def base_props(request):
             "versionPrefsByCorpus": request.version_preferences_by_corpus,
             "following": profile.followees.uids,
             "blocking": profile.blockees.uids,
-            "calendars": get_todays_calendar_items(**_get_user_calendar_params(request)),
+            "calendars": [],
             "notificationCount": profile.unread_notification_count(),
             "notifications": profile.recent_notifications().client_contents(),
             "saved": {"loaded": False,
@@ -247,7 +247,7 @@ def base_props(request):
             "versionPrefsByCorpus": request.version_preferences_by_corpus,
             "following": [],
             "blocking": [],
-            "calendars": get_todays_calendar_items(**_get_user_calendar_params(request)),
+            "calendars": [],
             "notificationCount": 0,
             "notifications": [],
             "saved": {"loaded": False, "items": []},
@@ -1101,7 +1101,8 @@ def _get_user_calendar_params(request):
 
 def texts_list(request):
     title = _("Pecha - Buddhism in your own words")
-    desc = _("The largest free library of Buddhist texts available to read online in Tibetan, English and Chinese")
+    desc  = _("The largest free library of Buddhist texts available to read online in Tibetan, English and Chinese")
+    props = get_user_history_props(request)
     return menu_page(request, page="navigation", title=title, desc=desc)
 
 
@@ -1122,14 +1123,17 @@ def saved(request):
     return menu_page(request, props, page="saved", title=title, desc=desc)
 
 
-def user_history(request):
+def get_user_history_props(request):
     if request.user.is_authenticated:
         profile = UserProfile(user_obj=request.user)
         uhistory = profile.get_history(secondary=False, serialized=True, annotate=True,
                                        limit=20) if profile.settings.get("reading_history", True) else []
     else:
         uhistory = _get_anonymous_user_history(request)
-    props = {"userHistory": {"loaded": True, "items": uhistory}}
+    return {"userHistory": {"loaded": True, "items": uhistory}}
+
+def user_history(request):
+    props = get_user_history_props(request)
     title = _("My User History")
     desc = _("See your user history on Sefaria")
     return menu_page(request, props, page="history", title=title, desc=desc)
@@ -1735,10 +1739,10 @@ def index_api(request, title, raw=False):
     API for manipulating text index records (aka "Text Info")
     """
     if request.method == "GET":
-        with_content_counts = bool(request.GET.get("with_content_counts", False))
+        with_content_counts = bool(int(request.GET.get("with_content_counts", False)))
         i = library.get_index(title).contents(raw=raw, with_content_counts=with_content_counts)
 
-        if request.GET.get("with_related_topics", False):
+        if bool(int(request.GET.get("with_related_topics", False))):
             i["relatedTopics"] = get_topics_for_book(title, annotate=True)
 
         return jsonResponse(i, callback=request.GET.get("callback", None))
@@ -1957,7 +1961,7 @@ def shape_api(request, title):
         else:
             cat_list = title.split("/")
             depth = request.GET.get("depth", 2)
-            include_dependents = request.GET.get("dependents", False)
+            include_dependents = bool(int(request.GET.get("dependents", False)))
             indexes = []
             if len(cat_list) == 1:
                 # try as corpus
@@ -2163,7 +2167,7 @@ def notes_api(request, note_id_or_ref):
             raise Http404
         oref = Ref(note_id_or_ref)
         cb = request.GET.get("callback", None)
-        private = request.GET.get("private", False)
+        private = bool(int(request.GET.get("private", False)))
         res = get_notes(oref, uid=creds["user_id"], public=(not private))
         return jsonResponse(res, cb)
 
@@ -2238,7 +2242,8 @@ def notes_api(request, note_id_or_ref):
 @api_view(["GET"])
 @catch_error_as_json
 def all_notes_api(request):
-    private = request.GET.get("private", False)
+
+    private = bool(int(request.GET.get("private", False)))
     if private:
         if not request.user.is_authenticated:
             res = {"error": "You must be logged in to access you notes."}
@@ -2255,17 +2260,17 @@ def related_api(request, tref):
     """
     Single API to bundle available content related to `tref`.
     """
-    if request.GET.get("private", False) and request.user.is_authenticated:
+    if bool(int(request.GET.get("private", False))) and request.user.is_authenticated:
         oref = Ref(tref)
         response = {
             "sheets": get_sheets_for_ref(tref, uid=request.user.id),
             "notes": get_notes(oref, uid=request.user.id, public=False)
         }
-    elif request.GET.get("private", False) and not request.user.is_authenticated:
+    elif bool(int(request.GET.get("private", False))) and not request.user.is_authenticated:
         response = {"error": "You must be logged in to access private content."}
     else:
         response = {
-            "links": get_links(tref, with_text=False, with_sheet_links=request.GET.get("with_sheet_links", False)),
+            "links": get_links(tref, with_text=False, with_sheet_links=bool(int(request.GET.get("with_sheet_links", False)))),
             "sheets": get_sheets_for_ref(tref),
             "notes": [],  # get_notes(oref, public=True) # Hiding public notes for now
             "webpages": get_webpages_for_ref(tref),
@@ -2765,7 +2770,7 @@ def name_api(request, name):
     name = name[1:] if topic_override else name
     # Number of results to return.  0 indicates no limit
     LIMIT = int(request.GET.get("limit", 10))
-    ref_only = request.GET.get("ref_only", False)
+    ref_only = bool(int(request.GET.get("ref_only", False)))
     completions_dict = get_name_completions(name, LIMIT, ref_only, topic_override)
     ref = completions_dict["ref"]
     topic = completions_dict["topic"]
@@ -2870,7 +2875,7 @@ def user_stats_api(request, uid):
     assert request.method == "GET", "Unsupported Method"
     u = request.user
     assert (u.is_active and u.is_staff) or (int(uid) == u.id)
-    quick = bool(request.GET.get("quick", False))
+    quick = bool(int(request.GET.get("quick", False)))
     if quick:
         return jsonResponse(public_user_data(uid))
     return jsonResponse(user_stats_data(uid))
@@ -3204,12 +3209,28 @@ def topics_list_api(request):
 
 
 @staff_member_required
+def generate_topic_prompts_api(request, slug: str):
+    if request.method == "POST":
+        from sefaria.helper.llm.tasks import generate_and_save_topic_prompts
+        from sefaria.helper.llm.topic_prompt import get_ref_context_hints_by_lang
+        topic = Topic.init(slug)
+        post_body = json.loads(request.body)
+        ref_topic_links = post_body.get('ref_topic_links')
+        for lang, ref__context_hints in get_ref_context_hints_by_lang(ref_topic_links).items():
+            orefs, context_hints = zip(*ref__context_hints)
+            generate_and_save_topic_prompts(lang, topic, orefs, context_hints)
+        return jsonResponse({"acknowledged": True}, status=202)
+    return jsonResponse({"error": "This API only accepts POST requests."})
+
+
+@staff_member_required
 def add_new_topic_api(request):
     if request.method == "POST":
         data = json.loads(request.POST["json"])
         isTopLevelDisplay = data["category"] == Topic.ROOT
         t = Topic({'slug': "", "isTopLevelDisplay": isTopLevelDisplay, "data_source": "sefaria", "numSources": 0})
         update_topic_titles(t, **data)
+        t.set_slug_to_primary_title()
         if not isTopLevelDisplay:  # not Top Level so create an IntraTopicLink to category
             new_link = IntraTopicLink({"toTopic": data["category"], "fromTopic": t.slug, "linkType": "displays-under",
                                        "dataSource": "sefaria"})
@@ -3325,14 +3346,37 @@ def reorder_topics(request):
         results.append(topic.contents())
     return jsonResponse({"topics": results})
 
+@staff_member_required()
+def topic_ref_bulk_api(request):
+    """
+    API to bulk edit RefTopicLinks
+    """
+    topic_links = json.loads(request.body)
+    all_links_touched = []
+    for link in topic_links:
+        tref = link.get('ref')
+        tref = Ref(tref).normal()
+        slug = link.get("toTopic")
+        linkType = _CAT_REF_LINK_TYPE_FILTER_MAP['authors'][0] if AuthorTopic.init(slug) else 'about'
+        descriptions = link.get("descriptions", link.get("description"))
+        languages = descriptions.keys()
+        for language in languages:
+            ref_topic_dict = edit_topic_source(slug, orig_tref=tref, new_tref=tref,
+                                               linkType=linkType, description=descriptions[language], interface_lang=language)
+        all_links_touched.append(ref_topic_dict)
+    return jsonResponse(all_links_touched)
+
+
 
 @catch_error_as_json
 def topic_ref_api(request, tref):
     """
     API to get RefTopicLinks, as well as creating, editing, and deleting of RefTopicLinks
     """
-
-    data = request.GET if request.method in ["DELETE", "GET"] else json.loads(request.POST.get('json'))
+    try:
+        data = request.GET if request.method in ["DELETE", "GET"] else json.loads(request.POST.get('json'))
+    except Exception as e:
+        data = json.loads(request.body)
     slug = data.get('topic')
     interface_lang = 'en' if data.get('interface_lang') == 'english' else 'he'
     tref = Ref(tref).normal()  # normalize input
@@ -3440,7 +3484,7 @@ def global_activity(request, page=1):
     if page > 40:
         return render_template(request, 'static/generic.html', None, {
             "title": "Activity Unavailable",
-            "content": "You have requested a page deep in Sefaria's history.<br><br>For performance reasons, this page is unavailable. If you need access to this information, please <a href='mailto:dev@sefaria.org'>email us</a>."
+            "content": "You have requested a page deep in Sefaria's history.<br><br>For performance reasons, this page is unavailable. If you need access to this information, please <a href='mailto:hello@sefaria.org'>email us</a>."
         })
 
     if "api" in request.GET:
@@ -3482,7 +3526,7 @@ def user_activity(request, slug, page=1):
     if page > 40:
         return render_template(request, 'static/generic.html', None, {
             "title": "Activity Unavailable",
-            "content": "You have requested a page deep in Sefaria's history.<br><br>For performance reasons, this page is unavailable. If you need access to this information, please <a href='mailto:dev@sefaria.org'>email us</a>."
+            "content": "You have requested a page deep in Sefaria's history.<br><br>For performance reasons, this page is unavailable. If you need access to this information, please <a href='mailto:hello@sefaria.org'>email us</a>."
         })
 
     q = {"user": profile.id}
@@ -4455,13 +4499,18 @@ def serve_static_by_lang(request, page):
     return render_template(request, 'static/{}/{}.html'.format(request.LANGUAGE_CODE, page), None, {})
 
 
+# TODO: This really should be handled by a CMS :)
 def annual_report(request, report_year):
     pdfs = {
         '2020': STATIC_URL + 'files/Sefaria 2020 Annual Report.pdf',
         '2021': 'https://indd.adobe.com/embed/98a016a2-c4d1-4f06-97fa-ed8876de88cf?startpage=1&allowFullscreen=true',
         '2022': STATIC_URL + 'files/Sefaria_AnnualImpactReport_R14.pdf',
+        '2023': 'https://issuu.com/sefariaimpact/docs/sefaria_2023_impact_report?fr=sMmRkNTcyMzMyNTk',
     }
-    if report_year not in pdfs:
+    # Assume the most recent year as default when one is not provided
+    if not report_year:
+        report_year = max(pdfs.keys()) # Earlier versions of Python do not preserve insertion order in dictionaries :(
+    elif report_year not in pdfs:
         raise Http404
     # Renders a simple template, does not extend base.html
     return render(request, template_name='static/annualreport.html',

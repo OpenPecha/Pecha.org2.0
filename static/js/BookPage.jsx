@@ -252,7 +252,7 @@ class BookPage extends Component {
               <div className="tocTop">
                 <div className="tocTitle" role="heading" aria-level="1">
                   <div className="tocTitleControls">
-                    <CategoryHeader type="books" buttonsToDisplay={["section", "edit"]}
+                    <CategoryHeader type="books" toggleButtonIDs={["section", "edit"]}
                                     data={title}><ContentText text={{en:title, he:heTitle}}/></CategoryHeader>
                                         {hasTranslation ?
                     <span><img src="/static/img/with_translation.svg" alt="內含藏文翻譯" style={{margin: '0px 10px'}}/></span> : null }

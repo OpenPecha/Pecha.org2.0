@@ -133,10 +133,12 @@ static/sheetrank.json
 
 env/*
 dump/*
-tmp/*
-log/*
-/static/bundles
-/dockerData
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/test-results/
+/playwright-report/
+/playwright/.cache/
 
 .env
 .envrc

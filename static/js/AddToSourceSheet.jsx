@@ -11,6 +11,8 @@ import PropTypes from 'prop-types';
 import Component from 'react-class';
 import sanitizeHtml  from 'sanitize-html';
 import { SignUpModalKind } from './sefaria/signupModalContent';
+import { GDocAdvertBox } from './Promotions';
+
 
 
 class AddToSourceSheetBox extends Component {
@@ -244,6 +246,7 @@ class AddToSourceSheetBox extends Component {
           <span className="int-en noselect">{ Sefaria._("Add to Sheet")}</span>
           <span className="int-he noselect">{ Sefaria._("Add to Sheet")}</span>
         </div>
+        <GDocAdvertBox/>
       </div>);
   }
 }
