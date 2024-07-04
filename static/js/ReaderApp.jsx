@@ -474,7 +474,7 @@ class ReaderApp extends Component {
             break;
           case "search":
             const query = state.searchQuery ? encodeURIComponent(state.searchQuery) : "";
-            hist.title = state.searchQuery ? state.searchQuery.stripHtml() + " | " : "";
+            hist.title = state.searchQuery ? state.searchQuery + " | " : "";
             hist.title += Sefaria._(siteName + " Search");
             hist.url   = "search" + (state.searchQuery ? (`&q=${query}&tab=${state.searchTab}` +
               state.textSearchState.makeURL({ prefix: 't', isStart: false }) +
@@ -920,7 +920,7 @@ toggleSignUpModal(modalContentKind = SignUpModalKind.Default) {
     });
   }
 }
-
+  
   handleNavigationClick(ref, currVersions, options) {
     this.openPanel(ref, currVersions, options);
   }
@@ -970,7 +970,7 @@ toggleSignUpModal(modalContentKind = SignUpModalKind.Default) {
     if (textRef) {
       this.setTextListHighlight(n, textRef);
     }
-    this.openPanelAt(n, citationRef, currVersions, {scrollToHighlighted: !!replace}, false);
+    this.openPanelAt(n, citationRef, currVersions, {scrollToHighlighted: !!replace});
   }
   openNamedEntityInNewPanel(n, textRef, namedEntityState) {
     //this.setTextListHighlight(n, [textRef]);
@@ -1422,21 +1422,13 @@ toggleSignUpModal(modalContentKind = SignUpModalKind.Default) {
     this.state.panels = []; // temporarily clear panels directly in state, set properly with setState in openPanelAt
     this.openPanelAt(0, ref, currVersions, options);
   }
-  openPanelAt(n, ref, currVersions, options, replace, convertCommentaryRefToBaseRef=true, replaceHistory=false, saveLastPlace=true) {
-    /* Open a new panel or replace existing panel. If book level, Open book toc
-    * @param {int} n: Open new panel after `n` with the new ref
-    * @param {string} ref: ref to use for new panel.  `ref` can refer to book, actual ref, or sheet.
-    * @param {Object} currVersions: Object with properties `en` and `he`
-    * @param {Object} options: options to use for new panel
-    * @param {bool} replace: whether to replace existing panel at `n`, otherwise insert new panel at `n`
-    * @param {bool} convertCommentaryRefToBaseRef: if true and ref is commentary ref (Rashi on Genesis 3:3:1), open Genesis 3:3 with Rashi's comments in the sidebar
-    * @param {bool} replaceHistory: can be true when openPanelAt is called from showBaseText in cases of ref normalizing in TextRange when we want to replace history with normalized ref
-    * @param {bool} saveLastPlace: whether to save user history.
-    */
-    this.replaceHistory = Boolean(replaceHistory);
+  openPanelAt(n, ref, currVersions, options, replace) {
+    // Open a new panel after `n` with the new ref
+    // If `replace`, replace existing panel at `n`, otherwise insert new panel at `n`
+    // If book level, Open book toc
     const parsedRef = Sefaria.parseRef(ref);
     const index = Sefaria.index(ref); // Do we have to worry about normalization, as in Header.subimtSearch()?
-    let panel, connectionPanel;
+    let panel;
     if (index) {
       panel = this.makePanelState({"menuOpen": "book toc", "bookRef": index.title});
     } else if (parsedRef.book === "Sheet") {
@@ -1449,12 +1441,8 @@ toggleSignUpModal(modalContentKind = SignUpModalKind.Default) {
         ...options
       });
     } else {  // Text
-      let filter = [];
-      if (convertCommentaryRefToBaseRef && Sefaria.isCommentaryRefWithBaseText(ref)) {
-        ({ref, filter} = Sefaria.getBaseRefAndFilter(ref));
-      }
       let refs, currentlyVisibleRef, highlightedRefs;
-      if (Array.isArray(ref)) {
+      if (ref.constructor === Array) {
         // When called with an array, set highlight for the whole spanning range of the array
         refs = ref;
         currentlyVisibleRef = Sefaria.normRef(ref);
@@ -1465,48 +1453,21 @@ toggleSignUpModal(modalContentKind = SignUpModalKind.Default) {
         currentlyVisibleRef = ref;
         highlightedRefs = [];
       }
-      let panelProps = {
+      //console.log("Higlighted refs:", highlightedRefs)
+      panel = this.makePanelState({
         refs,
         currVersions,
         highlightedRefs,
-        filter,
-        recentFilters: filter,
         currentlyVisibleRef, mode: "Text",
         ...options
-      };
-      if (filter.length > 0) {  // there will be a filter such as ["Rashi"] if convertCommentaryRefToBaseRef is true
-        [panel, connectionPanel] = this.makePanelWithConnectionsState(panelProps);
-      }
-      else {
-        panel = this.makePanelState(panelProps);
-      }
-      panel.currentlyVisibleRef = Sefaria.humanRef(panelProps.currentlyVisibleRef);
+      });
     }
 
     const newPanels = this.state.panels.slice();
     newPanels.splice(replace ? n : n+1, replace ? 1 : 0, panel);
-    if (connectionPanel) {
-      newPanels.push(connectionPanel);
-    }
     this.setState({panels: newPanels});
-    if (saveLastPlace) {
-      this.saveLastPlace(panel, n + 1, !!connectionPanel);
-    }
+    this.saveLastPlace(panel, n+1);
   }
-  makePanelWithConnectionsState(panelProps) {
-    // in the case of multipanel, create two panels based on panelProps
-    let connectionPanel;  // in mobile, connectionPanel will remain undefined
-    if (this.props.multiPanel) {
-        const connectionPanelProps = {...panelProps, mode: "Connections", connectionsMode: "TextList", connectionsCategory: "Commentary"};
-        connectionPanel = this.makePanelState(connectionPanelProps);
-    } else {
-        panelProps = {...panelProps, mode: "TextAndConnections", connectionsMode: "TextList", connectionsCategory: "Commentary", highlightedRefs: panelProps.refs};
-    }
-    const panel = this.makePanelState(panelProps);
-    panel.showHighlight = true;
-    return [panel, connectionPanel];
-  }
-
   openPanelAtEnd(ref, currVersions) {
     this.openPanelAt(this.state.panels.length+1, ref, currVersions);
   }
@@ -2146,7 +2107,6 @@ toggleSignUpModal(modalContentKind = SignUpModalKind.Default) {
       var classes = classNames({readerPanelBox: 1, sidebar: panel.mode == "Connections"});
       panels.push(<div className={classes} style={style} key={key}>
                     <ReaderPanel
-                      openPanelAt={this.openPanelAt}
                       panelPosition={i}
                       initialState={panel}
                       interfaceLang={this.props.interfaceLang}

@@ -109,6 +109,8 @@ const OpenTransBanner = ({ openTranslations }) => {
     );
 };
 
+
+
 /**
  * Banner which appears right above text column and informs a user of an action they can take
  * @param children: React element to display the call-to-action text.

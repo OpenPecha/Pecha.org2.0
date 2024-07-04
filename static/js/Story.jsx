@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React  from 'react';
 import Sefaria  from './sefaria/sefaria';
 import PropTypes  from 'prop-types';
 import {
@@ -9,8 +9,6 @@ import {
     SimpleLinkedBlock,
     ProfileListing,
     InterfaceText,
-    EnglishText,
-    HebrewText,
     CategoryHeader,
 } from './Misc';
 import {ContentText} from "./ContentText";
@@ -129,70 +127,6 @@ StorySheetList.propTypes = {
     toggleSignUpModal: PropTypes.func
 };
 
-
-const reviewStateToClassNameMap = {
-    "reviewed": "reviewed",
-    "not reviewed": "notReviewed",
-    "edited": "edited"
-}
-const reviewStateToDisplayedTextMap = {
-    "reviewed": "Reviewed",
-    "not reviewed": "Not Reviewed",
-    "edited": "Edited"
-}
-
-const ReviewStateIndicator = ({topic, topicLink}) => {
-    const [reviewStateByLang, markReviewed] = useReviewState(topic, topicLink);
-    if (!Sefaria.is_moderator){ return null; }
-    const langComponentMap = {he: HebrewText, en: EnglishText};
-    return (
-        <InterfaceText>
-            {
-                Object.entries(langComponentMap).map(([lang, LangComponent]) => (
-                    <LangComponent>
-                        <ReviewStateIndicatorLang reviewState={reviewStateByLang[lang]} markReviewed={() => markReviewed(lang)} />
-                    </LangComponent>
-                ))
-            }
-        </InterfaceText>
-    );
-};
-
-const ReviewStateIndicatorLang = ({reviewState, markReviewed}) => {
-    if (!reviewState) { return null; }
-    const reviewStateClassName = reviewStateToClassNameMap[reviewState];
-    const displayedText = reviewStateToDisplayedTextMap[reviewState];
-    return (
-        <div className={`button extraSmall reviewState ${reviewStateClassName}`} onClick={markReviewed}>
-            {displayedText}
-        </div>
-    );
-}
-
-const markReviewedPostRequest = (lang, topic, topicLink) => {
-    const postData = {
-        "topic": topic,
-        "is_new": false,
-        'new_ref': topicLink.ref,
-        'interface_lang': lang === 'en' ? 'english' : 'hebrew',
-        'description' : {...topicLink.descriptions[lang], 'review_state': 'reviewed'}
-    };
-    return Sefaria.postToApi(`/api/ref-topic-links/${topicLink.ref}`, {}, postData);
-}
-
-const useReviewState = (topic, topicLink) => {
-    const initialReviewStateByLang = Object.entries(topicLink?.descriptions).reduce((accum, [lang, desc]) => {
-        accum[lang] = desc?.review_state;
-        return accum;
-    }, {});
-    const [reviewStateByLang, setReviewState] = useState(initialReviewStateByLang);
-    const markReviewed = async (lang) => {
-        await markReviewedPostRequest(lang, topic, topicLink);
-        setReviewState(curr => ({...curr, [lang]: "reviewed"}));
-    }
-    return [reviewStateByLang, markReviewed];
-}
-
 const IntroducedTextPassage = ({text, topic, afterSave, toggleSignUpModal, bodyTextIsLink=false}) => {
     if (!text.ref) { return null; }
     const versions = text.versions || {}
@@ -206,12 +140,9 @@ const IntroducedTextPassage = ({text, topic, afterSave, toggleSignUpModal, bodyT
 
     return (
         <StoryFrame cls="introducedTextPassageStory">
-            <div className={"headerWithAdminButtonsContainer"}>
-                <CategoryHeader type="sources" data={[topic, text]} toggleButtonIDs={["edit"]}>
-                    <StoryTitleBlock en={text.descriptions?.en?.title} he={text.descriptions?.he?.title}/>
-                </CategoryHeader>
-                <ReviewStateIndicator topic={topic} topicLink={text}/>
-            </div>
+            <CategoryHeader type="sources" data={[topic, text]} buttonsToDisplay={["edit"]}>
+                <StoryTitleBlock en={text.descriptions?.en?.title} he={text.descriptions?.he?.title}/>
+            </CategoryHeader>
             <div className={"systemText learningPrompt"}>
                 <InterfaceText text={{"en": text.descriptions?.en?.prompt, "he": text.descriptions?.he?.prompt}} />
             </div>
@@ -251,7 +182,7 @@ const TextPassage = ({text, topic, afterSave, toggleSignUpModal, bodyTextIsLink=
 
   return (
     <StoryFrame cls="textPassageStory">
-      <CategoryHeader type="sources" data={[topic, text]} toggleButtonIDs={["edit"]}>
+      <CategoryHeader type="sources" data={[topic, text]} buttonsToDisplay={["edit"]}>
           <SaveLine
             dref={text.ref}
             versions={versions}

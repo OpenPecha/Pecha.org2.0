@@ -18,6 +18,7 @@ from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 
 from sefaria.helper.crm.crm_mediator import CrmMediator
+from sefaria.settings import DEBUG
 from sefaria.settings import MOBILE_APP_KEY
 from django.utils.translation import get_language
 logger = structlog.get_logger(__name__)

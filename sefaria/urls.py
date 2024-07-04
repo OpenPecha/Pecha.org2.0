@@ -2,9 +2,12 @@
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from functools import partial
 from django.conf.urls import include, url
+from django.conf.urls import handler404, handler500
 from django.contrib import admin
+from django.http import HttpResponseRedirect
+import django.contrib.auth.views as django_auth_views
 from sefaria.forms import SefariaPasswordResetForm, SefariaSetPasswordForm, SefariaLoginForm
-from sefaria.settings import DOWN_FOR_MAINTENANCE
+from sefaria.settings import DOWN_FOR_MAINTENANCE, STATIC_URL
 
 import reader.views as reader_views
 import sefaria.views as sefaria_views
@@ -259,9 +262,7 @@ urlpatterns += [
 # Topics API
 urlpatterns += [
     url(r'^api/topics$', reader_views.topics_list_api),
-    url(r'^api/topics/generate-prompts/(?P<slug>.+)$', reader_views.generate_topic_prompts_api),
     url(r'^api/topics-graph/(?P<topic>.+)$', reader_views.topic_graph_api),
-    url(r'^api/ref-topic-links/bulk$', reader_views.topic_ref_bulk_api),
     url(r'^api/ref-topic-links/(?P<tref>.+)$', reader_views.topic_ref_api),
     url(r'^api/v2/topics/(?P<topic>.+)$', reader_views.topics_api, {'v2': True}),
     url(r'^api/topics/(?P<topic>.+)$', reader_views.topics_api),
