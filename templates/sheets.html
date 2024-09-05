@@ -4,10 +4,10 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}{% if title %}{{ title|striptags|strip_html_entities }} | {% trans "Sefaria" %}{% else %}{% trans "Start a New Sheet - Sefaria Source Sheet Builder" %}{% endif %}{% endblock %}
+{% block title %}{% if title %}{{ title|striptags|strip_html_entities }} | {% trans "Pecha" %}{% else %}{% trans "Start a New Sheet - Pecha Source Sheet Builder" %}{% endif %}{% endblock %}
 
-{% block description %}{% if sheet.owner %}{% trans "A source sheet created with Sefaria's Source Sheet Builder." %}{% else %}{% trans "Create your own source sheet with Sefaria's Source Sheet Builder." %}{% endif %}{% endblock %}
-{% block soc_description %}{% if sheet.owner %}{% trans "A source sheet created with Sefaria's Source Sheet Builder." %}{% else %}{% trans "Create your own source sheet with Sefaria's Source Sheet Builder." %}{% endif %}{% endblock %}
+{% block description %}{% if sheet.owner %}{% trans "A source sheet created with Pecha's Source Sheet Builder." %}{% else %}{% trans "Create your own source sheet with Pecha's Source Sheet Builder." %}{% endif %}{% endblock %}
+{% block soc_description %}{% if sheet.owner %}{% trans "A source sheet created with Pecha's Source Sheet Builder." %}{% else %}{% trans "Create your own source sheet with Pecha's Source Sheet Builder." %}{% endif %}{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/tooltipster.css' %}"/>
@@ -187,6 +187,7 @@
                                         <div class="english optionItem" role="menuitem" tabindex="0">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: language_english{% endcomment %}
                                             <span>{% trans "English" %}</span>
                                         </span>
                                         </div>
@@ -199,6 +200,7 @@
                                         <div class="bilingual optionItem" role="menuitem" tabindex="0">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: both_english_and_tibetan{% endcomment %}   
                                             <span>{% trans "Bilingual" %}</span>
                                         </span>
                                         </div>
@@ -275,7 +277,7 @@
                                         <div class="hebrew">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
-                                            <span>{% trans "Hebrew" %}</span>
+                                            <span>{% trans "Tibetan" %}</span>
                                         </span>
                                         </div>
                                         <div class="bilingual">
@@ -354,6 +356,7 @@
                     </div>
                     {% if can_edit or can_add %}
                     <div class="sheetsMenuBarItem" id="insertMenu">
+                        {% comment %}Translators: View verb{% endcomment %}
                         <span class="menuHeader {{language_font_class}}" aria-haspopup="true" role="menuitem" tabindex="0">{% trans "Insert" %}</span>
                         <div class="optionsMenu" aria-hidden="true" aria-label="submenu">
                             <div class="optionItem" id="addSourceMenu" role="menuitem" tabindex="0">
@@ -697,7 +700,7 @@
                     </div>
                     <div id="customTextContainer" class="flexContainer">
                         <div class="{{ language_font_class }} contentToAdd en customTextEditables" tabindex="0">{% trans "english" %}</div>
-                        <div class="{{ language_font_class }} contentToAdd he customTextEditables" tabindex="0">{% trans "tibetan" %}</div>
+                        <div class="{{ language_font_class }} contentToAdd he customTextEditables" tabindex="0">{% trans "Tibetan" %}</div>
                     </div>
                     <div class="{{ language_font_class }} button" role="button" tabIndex="0">
                         <span>{% trans "Add to Sheet" %}</span>
@@ -1077,7 +1080,7 @@
         </div>
         <div id="notPublished" style="display:none;">
             <div class="{{ language_font_class }} header">
-                <span>{% trans "No problem, this sheet is still not listed on Sefaria." %}</span>
+                <span>{% trans "No problem, this sheet is still not listed on Pecha." %}</span>
             </div>
 
             <p>

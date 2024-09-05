@@ -12,9 +12,7 @@
 
     {% elif notification.type == "version" %}
         <div>
-            <span class="int-en">{% trans "New" %}{% if notification.content.language == "en" %}{% trans "English" %}{% else %}{% trans "Hebrew" %} {% endif %} {% trans "version of" %}
-                {{ notification.content.index|text_toc_link }}: {{notification.content.version }}</span>
-            <span class="int-he">{% trans "New" %}{% if notification.content.language == "en" %}{% trans "English" %}{% else %}{% trans "Hebrew" %} {% endif %} {% trans "version of" %}
+            <span class="{{language_font_class}}">{% trans "New" %}{% if notification.content.language == "en" %}{% trans "English" %}{% else %}{% trans "Tibetan" %} {% endif %} {% trans "version of" %}
                 {{ notification.content.index|text_toc_link }}: {{notification.content.version }}</span>
         </div>
         <div class="added-description">

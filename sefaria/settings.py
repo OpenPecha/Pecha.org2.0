@@ -22,6 +22,7 @@ LANGUAGE_CODE = 'es'
 
 LANGUAGES = (
     ('en', _("English")),
+    # Translators: language_code
     ('he', _("Hebrew")),
     ('zh', _("Chinese")),
     ('es', _("Spanish")),

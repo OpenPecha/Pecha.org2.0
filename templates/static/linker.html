@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 {% load i18n static %}
 
-{% block title %}{% trans "Linker Plugin" %} | {% trans "Sefaria" %}{% endblock %}
+{% block title %}{% trans "Linker Plugin" %} | {% trans "Pecha" %}{% endblock %}
 
-{% block description %}{% trans "Automatically turn citations on your website into links or dynamic popups with the full text from Sefaria." %}{% endblock %}
+{% block description %}{% trans "Automatically turn citations on your website into links or dynamic popups with the full text from Pecha." %}{% endblock %}
 
 {% block content %}
 <div id="linkerPage" class="container static">
     <div class="inner">
         <h1>
-            <span class="int-en">The Sefaria Linker</span>
+            <span class="int-en">The Pecha Linker</span>
             <span class="int-he">מחולל ההפניות ("הלינקר")</span>
         </h1>
 
         <div class="linker section">
 
-            <span class="int-en">The Sefaria Linker automatically connects Torah content across the internet to primary sources in our library,
-                and vice versa. Websites that use the Sefaria Linker give their users direct access on site to any primary sources they cite allowing curious
-                learners to explore more. The Linker also makes it possible for websites to be automatically linked to from the Sefaria sidebar when our
-                users are exploring texts your site mentions, exposing your site to new learners on Sefaria.
+            <span class="int-en">The Pecha Linker automatically connects Torah content across the internet to primary sources in our library,
+                and vice versa. Websites that use the Pecha Linker give their users direct access on site to any primary sources they cite allowing curious
+                learners to explore more. The Linker also makes it possible for websites to be automatically linked to from the Pecha sidebar when our
+                users are exploring texts your site mentions, exposing your site to new learners on Pecha.
             </span>
             <span class="int-he">
                הלינקר של ספריא מקשר בין מקורות יהודיים ממגוון אתרים למקורות בספרייה שלנו ומשם לאתרים הללו בחזרה.
@@ -33,8 +33,8 @@
         </h2>
         <p>
             <span class="int-en">
-                The Sefaria Linker is a free JavaScript plugin for websites that include citations to Torah texts.
-                You copy a few lines of code to your site and Sefaria will take care of the rest.
+                The Pecha Linker is a free JavaScript plugin for websites that include citations to Torah texts.
+                You copy a few lines of code to your site and Pecha will take care of the rest.
             </span>
             <span class="int-he">
                הלינקר הוא יישומון ג'אווה-סקריפט חינמי ועובד באתרים שיש בהם הפניות וציטוטים של מקורות יהודיים בתוכן האתר.
@@ -43,14 +43,14 @@
         </p>
 
         <h2>
-            <span class="int-en">Link Your Site to Sefaria</span>
+            <span class="int-en">Link Your Site to Pecha</span>
             <span class="int-he">מהאתר שלכם לספריא</span>
         </h2>
 
         <p>
             <span class="int-en">
                 Any textual citations on your website automatically become links which open a popup with the text in Hebrew and English.
-                A "Read More" button lets your users find the text on Sefaria to explore connections and context.
+                A "Read More" button lets your users find the text on Pecha to explore connections and context.
             </span>
             <span class="int-he">
                  כל הפניה או ציטוט שמופיעים באתר שלכם יהפכו בצורה אוטומטית לקישורים המפעילים בועת טקסט המכילה את טקסט המקור בעברית ו/או באנגלית.
@@ -58,16 +58,16 @@
             </span>
         </p>
 
-        <img src="{% static 'img/linker-popup.png' %}" alt="Image of Sefaria Linker popup">
+        <img src="{% static 'img/linker-popup.png' %}" alt="Image of Pecha Linker popup">
 
         <h2>
-            <span class="int-en">Link Sefaria to Your Site</span>
+            <span class="int-en">Link Pecha to Your Site</span>
             <span class="int-he">מספריא לאתר שלכם</span>
         </h2>
 
         <p>
-            <span class="int-en">Using the Linker automatically tells Sefaria that you have pages relevant to specific texts in our library.
-                After you install the linker, your pages may show up for Sefaria users in the sidebar connected to the texts they cite.
+            <span class="int-en">Using the Linker automatically tells Pecha that you have pages relevant to specific texts in our library.
+                After you install the linker, your pages may show up for Pecha users in the sidebar connected to the texts they cite.
             </span>
             <span class="int-he">
                 השימוש בלינקר מיידע את ספריא על כך שיש באתר שלכם דפים רלוונטיים לטקסטים בספרייה שלנו.
@@ -83,7 +83,7 @@
         </h2>
 
         <p>
-            <span class="int-en">You can install the Sefaria Linker by copying just a few lines of code to your website.</span>
+            <span class="int-en">You can install the Pecha Linker by copying just a few lines of code to your website.</span>
             <span class="int-he"> תוכלו להתקין את הלינקר בצורה פשוטה על ידי העתקת מספר שורות קוד לאתרכם.</span>
         </p>
 
@@ -110,8 +110,8 @@
                 linkerScript.onload = function() { sefaria.link({mode: 'popup-click'}); };
                 document.body.appendChild(linkerScript);  }());"
                 onClick="javascript: alert('To install the bookmarklet drag this link to your bookmark bar, then click it on pages with citations.')">
-                <span class="int-en">Sefaria Linker Bookmarklet.</span>
-                <span class="int-he">Sefaria Linker Bookmarklet</span>
+                <span class="int-en">Pecha Linker Bookmarklet.</span>
+                <span class="int-he">Pecha Linker Bookmarklet</span>
             </a>
             {% endautoescape %}
         </p>

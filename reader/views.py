@@ -699,6 +699,7 @@ def text_panels(request, ref, version=None, lang=None, sheet=None):
             else:
                 desc = getattr(primary_ref.index, 'enDesc', "")
                 book = primary_ref.normal()
+                # Translators: description_of_book_in_library
             read = _("Read the text of %(book)s online with commentaries and connections.") % {'book': book}
             desc = desc + " " + read if desc else read
 
@@ -721,14 +722,16 @@ def text_panels(request, ref, version=None, lang=None, sheet=None):
                            0] + "..."  # truncate as close to 160 characters as possible while maintaining whole word. Append ellipses.
 
             except (IndexError, KeyError):
-                desc = _("Explore 3,000 years of Jewish texts in Hebrew and English translation.")
+                # Translators: description
+                desc = _("Explore 2500 years of Buddhist texts in Tibetan and English translation.")
 
     else:
         sheet = panels[0].get("sheet", {})
-        sheet["title"] = unescape(sheet["title"])
-        title = strip_tags(sheet["title"]) + " | " + _("Sefaria")
+        sheet["title"] = unescape(sheet["title"]) 
+        title = strip_tags(sheet["title"]) + " | " + _("Pecha")
         breadcrumb = sheet_crumbs(request, sheet)
-        desc = unescape(sheet.get("summary", _("A source sheet created with Sefaria's Source Sheet Builder")))
+        # Translators: description_of_how_sheet_is_build
+        desc = unescape(sheet.get("summary", _("A source sheet created with Pecha's Source Sheet Builder")))
         noindex = sheet.get("noindex", False) or sheet["status"] != "public"
 
     if len(panels) > 0 and panels[0].get("refs") == [] and panels[0].get("mode") == "Text":
@@ -765,8 +768,10 @@ def texts_category_list(request, cats):
         return redirect("/texts/%s" % cats)
 
     if cats == "recent":
+        # Translators: text_status
         title = _("Recently Viewed")
-        desc = _("Texts that you've recently viewed on Sefaria.")
+        # Translators: desc_text_status
+        desc = _("Texts that you've recently viewed on Pecha.")
     else:
         cats = cats.split("/")
         tocObject = library.get_toc_tree().lookup(cats)
@@ -778,9 +783,11 @@ def texts_category_list(request, cats):
                                                                                                       "heDesc", '')
         catShortDesc = getattr(tocObject, "enShortDesc", '') if request.interfaceLang == "english" else getattr(
             tocObject, "heShortDesc", '')
+        # Translators: read_with_commentaries_and_connections
         catDefaultDesc = _("Read %(categories)s texts online with commentaries and connections.") % {
             'categories': cat_string}
-        title = cat_string + _(" | Sefaria")
+        # Translators: pecha
+        title = cat_string + _(" | Pecha")
         desc = catDesc if len(catDesc) else catShortDesc if len(catShortDesc) else catDefaultDesc
 
     props = {
@@ -813,10 +820,10 @@ def topics_category_page(request, topicCategory):
     }
 
     short_lang = 'en' if request.interfaceLang == 'english' else 'he'
-    title = topic_obj.get_primary_title(short_lang) + " | " + _(
-        "Texts & Source Sheets from Torah, Talmud and Sefaria's library of Jewish sources.")
-    desc = _(
-        "Jewish texts and source sheets about %(topic)s from Torah, Talmud and other sources in Sefaria's library.") % {
+    # Translators: pecha_library_title
+    title = topic_obj.get_primary_title(short_lang) + " | " + _("Texts & Source Sheets from Liturgy, Madyamika and Pecha's library of Buddhist sources.")
+    # Translators: pecha_library_desc
+    desc = _("Buddhist texts and source sheets about %(topic)s from Liturgy, Madyamika and other sources in Pecha's library.") % {
                'topic': topic_obj.get_primary_title(short_lang)}
 
     return render_template(request, 'base.html', props, {
@@ -834,9 +841,10 @@ def all_topics_page(request, letter):
         "initialNavigationTopicLetter": letter,
     }
     return render_template(request, 'base.html', props, {
-        "title": _("Explore Jewish Texts by Topic"),
-        "desc": _(
-            "Explore Jewish texts related to traditional and contemporary topics, coming from Torah, Talmud, and more."),
+        # Translators: Topics_page_title
+        "title": _("Explore Buddhist Texts by Topic"),
+        # Translators: Topics_page_desc
+        "desc": _("Explore Buddhist texts related to traditional and contemporary topics, coming from Liturgy, Madyamika, and more."),
     })
 
 
@@ -916,8 +924,10 @@ def search(request):
         "initialSheetSearchSortType": search_params["sheetSort"]
     }
     return render_template(request, 'base.html', props, {
-        "title": (search_params["query"] + " | " if search_params["query"] else "") + _("Sefaria Search"),
-        "desc": _("Search 3,000 years of Jewish texts in Hebrew and English translation."),
+        # Translators: search_page_title
+        "title": (search_params["query"] + " | " if search_params["query"] else "") + _("Pecha Search"),
+        # Translators: search_page_desc
+        "desc": _("Search 2,500 years of Buddhist texts in Tibetan and English translation."),
         "noindex": True
     })
 
@@ -943,7 +953,8 @@ def public_collections(request):
     props.update({
         "collectionListing": CollectionSet.get_collection_listing(request.user.id)
     })
-    title = _("Sefaria Collections")
+    # Translators: pecha_collections
+    title = _("Pecha Collections")
     return menu_page(request, props, "collectionsPublic")
 
 
@@ -1121,21 +1132,27 @@ def _get_user_calendar_params(request):
 
 
 def texts_list(request):
+    # Translators: pecha_website_title
     title = _("Pecha - Buddhism in your own words")
+    # Translators: pecha_website_desc
     desc = _("The largest free library of Buddhist texts available to read online in Tibetan, English and Chinese including Sutras, Tantras, Abhidharma, Vinaya, commentaries and more.")
     return menu_page(request, page="navigation", title=title, desc=desc)
 
 
 def calendars(request):
+    # Translators: pecha_calendars_title
     title = _("Learning Schedules") + " | " + _(SITE_SETTINGS["LIBRARY_NAME"]["en"])
-    desc = _("Weekly Torah portions, Daf Yomi, and other schedules for Torah learning.")
+    # Translators: pecha_calendars_desc
+    desc = _("Weekly portions of Eight Verses for Training the Mind and other schedules.")
     return menu_page(request, page="calendars", title=title, desc=desc)
 
 
 @login_required
 def saved(request):
+    # Translators: pecha_saved_title
     title = _("My Saved Content")
-    desc = _("See your saved content on Sefaria")
+    # Translators: pecha_saved_desc
+    desc = _("See your saved content on Pecha")
     profile = UserProfile(user_obj=request.user)
     props = {"saved": {"loaded": True,
                        "items": profile.get_history(saved=True, secondary=False, serialized=True, annotate=True,
@@ -1151,19 +1168,24 @@ def user_history(request):
     else:
         uhistory = _get_anonymous_user_history(request)
     props = {"userHistory": {"loaded": True, "items": uhistory}}
+    # Translators: pecha_user_history_title
     title = _("My User History")
-    desc = _("See your user history on Sefaria")
+    # Translators: pecha_user_history_desc
+    desc = _("See your user history on Pecha")
     return menu_page(request, props, page="history", title=title, desc=desc)
 
 
 def updates(request):
+    # Translators: new_text_update_title
     title = _("New Additions to the Pecha Library")
+    # Translators: new_text_update_desc
     desc = _("See texts, translations and connections that have been recently added to Pecha.")
     return menu_page(request, page="updates", title=title, desc=desc)
 
 
 @login_required
 def user_stats(request):
+    # Translators: user's_activity_statistics
     title = _("User Stats")
     return menu_page(request, page="user_stats", title=title)
 
@@ -1171,7 +1193,8 @@ def user_stats(request):
 @login_required
 def notifications(request):
     # Notifications content is not rendered server side
-    title = _("Sefaria Notifications")
+    # Translators: pecha_notifications_title
+    title = _("Pecha Notifications")
     notifications = UserProfile(user_obj=request.user).recent_notifications()
     props = {
         "notifications": notifications.client_contents(),
@@ -1181,6 +1204,7 @@ def notifications(request):
 
 @staff_member_required
 def modtools(request):
+    # Translators: tools_that_help_moderate_pecha_content
     title = _("Moderator Tools")
     return menu_page(request, page="modtools", title=title)
 
@@ -1226,8 +1250,10 @@ def sheet_crumbs(request, sheet=None):
     if main_topic is None:  # crumbs make no sense if there are no topics on sheet
         return ""
     breadcrumbJsonList = [
+        # Translators: list_of_topics
         _crumb(1, "/topics", _("Topics")),
         _crumb(2, f"/topics/{main_topic.slug}", main_topic.get_primary_title(short_lang)),
+        # Translators: source_sheet
         _crumb(3, f"/sheets/{sheet['id']}", _("Source Sheet"))
     ]
     return json.dumps({
@@ -1258,6 +1284,7 @@ def ld_cat_crumbs(request, cats=None, title=None, oref=None):
     elif title is not None and cats is None:
         cats = library.get_index(title).categories[:]
 
+    # Translators: list_of_Texts
     breadcrumbJsonList = [_crumb(1, "/texts", _("Texts"))]
     nextPosition = 2
 
@@ -3158,8 +3185,10 @@ def topics_page(request):
     }
     track_page_to_mp(request=request, page_title='Topics', text_ref='')
     return render_template(request, 'base.html', props, {
-        "title": _("Topics") + " | " + _("Sefaria"),
-        "desc": _("Explore Jewish Texts by Topic on Sefaria"),
+        # Translators: topic_page_title
+        "title": _("Topics") + " | " + _("Pecha"),
+        # Translators: topic_page_desc
+        "desc": _("Explore Buddhist Texts by Topic on Pecha"),
     })
 
 
@@ -3197,10 +3226,10 @@ def topic_page(request, topic, test_version=None):
         props["topicTestVersion"] = test_version
 
     short_lang = 'en' if request.interfaceLang == 'english' else 'he'
-    title = topic_obj.get_primary_title(short_lang) + " | " + _(
-        "Texts & Source Sheets from Torah, Talmud and Sefaria's library of Jewish sources.")
-    desc = _(
-        "Jewish texts and source sheets about %(topic)s from Torah, Talmud and other sources in Sefaria's library.") % {
+    # Translators: pecha_text_page_title 
+    title = topic_obj.get_primary_title(short_lang) + " | " + _("Texts & Source Sheets from Liturgy, Madyamika and Pecha's library of Buddhist sources.")
+    # Translators: pecha_text_page_desc
+    desc = _("Buddhist texts and source sheets about %(topic)s from Liturgy, Madyamika and other sources in Pecha's library.") % {
                'topic': topic_obj.get_primary_title(short_lang)}
     topic_desc = getattr(topic_obj, 'description', {}).get(short_lang, '')
     if topic_desc is not None:
@@ -3617,8 +3646,10 @@ def user_profile(request, username):
         "initialProfile": requested_profile.to_api_dict(),
         "initialTab": tab,
     }
-    title = _("%(full_name)s on Sefaria") % {"full_name": requested_profile.full_name}
-    desc = _('%(full_name)s is on Sefaria. Follow to view their public source sheets, notes and translations.') % {
+    # Translators: user_profile_page_title
+    title = _("%(full_name)s on Pecha") % {"full_name": requested_profile.full_name}
+    # Translators: user_profile_page_desc
+    desc = _('%(full_name)s is on Pecha. Follow to view their public source sheets, notes and translations.') % {
         "full_name": requested_profile.full_name}
     return render_template(request, 'base.html', props, {
         "title": title,
@@ -3632,6 +3663,7 @@ def profile_api(request):
     API for user profiles.
     """
     if not request.user.is_authenticated:
+        # Translators: user_profile_api_error
         return jsonResponse({"error": _("You must be logged in to update your profile.")})
 
     if request.method == "POST":
@@ -3670,8 +3702,10 @@ def account_user_update(request):
         error = None
         # some validation on post fields
         if accountUpdate["email"] != accountUpdate["confirmEmail"]:
+            # Translators: account_email_mismatch_error
             error = _("Email fields did not match")
         elif not request.user.check_password(accountUpdate["confirmPassword"]):
+            # Translators: account_password_mismatch_error
             error = _("Incorrect account password for this account")
         else:
             # get the logged in user
@@ -3753,6 +3787,7 @@ def topic_upload_photo(request, topic):
 @catch_error_as_json
 def profile_upload_photo(request):
     if not request.user.is_authenticated:
+        # Translators: profile_photo_upload_error
         return jsonResponse({"error": _("You must be logged in to update your profile photo.")})
     if request.method == "POST":
         now = epoch_time()
@@ -3794,6 +3829,7 @@ def profile_sync_api(request):
     }
     """
     if not request.user.is_authenticated:
+        # Translators: profile_sync_error_messages
         return jsonResponse({"error": _("You must be logged in to update your profile.")})
     # fields in the POST req which can be synced
     syncable_fields = ["settings", "user_history"]
@@ -3878,6 +3914,7 @@ def profile_sync_api(request):
 def delete_user_account_api(request):
     # Deletes the user and emails sefaria staff for followup
     if not request.user.is_authenticated:
+        # Translators: delete_user_account_error_message
         return jsonResponse({"error": _("You must be logged in to delete your account.")})
     uid = request.user.id
     user_email = request.user.email
@@ -3896,9 +3933,9 @@ def delete_user_account_api(request):
         logger.error("User {} deletion failed. {}".format(uid, e))
         response = jsonResponse({"error": "There was an error deleting the account", "user": user_email})
 
-    EmailMultiAlternatives(email_subject, email_msg, from_email="Sefaria System <dev@sefaria.org>",
-                           to=["Sefaria <hello@sefaria.org>"],
-                           reply_to=[reply_email if reply_email else "hello@sefaria.org"]).send()
+    EmailMultiAlternatives(email_subject, email_msg, from_email="Pecha System <dev@pecha.org>",
+                           to=["Pecha <hello@pecha.org>"],
+                           reply_to=[reply_email if reply_email else "hello@pecha.org"]).send()
     return response
 
 
@@ -4029,9 +4066,10 @@ def community_page(request, props={}):
     """
     Community Page
     """
-    title = _("From the Community: Today on Sefaria")
-    desc = _(
-        "New and featured source sheets, divrei torah, articles, sermons and more created by members of the Sefaria community.")
+    # Translators: community_page_title
+    title = _("From the Community: Today on Pecha")
+    # Translators: community_page_desc
+    desc = _("New and featured source sheets, divrei torah, articles, sermons and more created by members of the Sefaria community.")
     data = community_page_data(request, language=request.interfaceLang)
     data.update(props)  # don't overwrite data that was passed n with props
     return menu_page(request, page="community", props=data, title=title, desc=desc)
