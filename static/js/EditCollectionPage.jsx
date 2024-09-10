@@ -163,6 +163,7 @@ class EditCollectionPage extends Component {
             <InterfaceText>Description</InterfaceText>
           </label>
           <textarea id="collectionDescription" onChange={this.handleInputChange} value={this.state.description||""}></textarea>
+          console.log("this.state.description", this.state.description);
         </div>
 
         <div className="field">

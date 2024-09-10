@@ -21,10 +21,13 @@ TIME_ZONE = 'America/Halifax'
 LANGUAGE_CODE = 'es'
 
 LANGUAGES = (
+    # Translators: language_code
     ('en', _("English")),
     # Translators: language_code
     ('he', _("Hebrew")),
+    # Translators: language_code
     ('zh', _("Chinese")),
+    # Translators: language_code
     ('es', _("Spanish")),
 )
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-05 17:19+0530\n"
+"POT-Creation-Date: 2024-09-06 12:30+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#. Translators: language_code
 #. Translators: language_english
-#: reader/templatetags/sefaria_tags.py:226 sefaria/settings.py:24
+#: reader/templatetags/sefaria_tags.py:226 sefaria/settings.py:25
 #: templates/edit_text.html:185 templates/elements/notification.html:15
 #: templates/sheets.html:191 templates/sheets.html:274
 msgid "English"
 msgstr ""
 
 #. Translators: language_code
-#: reader/templatetags/sefaria_tags.py:227 sefaria/settings.py:26
+#: reader/templatetags/sefaria_tags.py:227 sefaria/settings.py:27
 msgid "Hebrew"
 msgstr ""
 
@@ -283,103 +284,126 @@ msgid ""
 "created by members of the Sefaria community."
 msgstr ""
 
-#: sefaria/forms.py:30
+#. Translators: placeholder_email_delete_message
+#: sefaria/forms.py:31
 msgid "Email Address to delete"
 msgstr ""
 
-#: sefaria/forms.py:31 sefaria/forms.py:35
+#. Translators: placeholder_admin_password
+#: sefaria/forms.py:33 sefaria/forms.py:39
 msgid "Admin Password"
 msgstr ""
 
-#: sefaria/forms.py:34
+#. Translators: placeholder_sheet_id_delete_message
+#: sefaria/forms.py:37
 msgid "Sheet ID to delete"
 msgstr ""
 
-#: sefaria/forms.py:39 sefaria/forms.py:45 sefaria/forms.py:130
+#. Translators: placeholder_email_address
+#: sefaria/forms.py:44 sefaria/forms.py:51 sefaria/forms.py:142
 #: templates/messages/2022-01-09-user-testing-modal.html:86
 #: templates/static/aramaic-translation-contest.html:140
 #: templates/static/home.html:362 templates/static/newsletter.html:24
 msgid "Email Address"
 msgstr ""
 
-#: sefaria/forms.py:40 sefaria/forms.py:48 templates/account_settings.html:97
+#. Translators: placeholder_password
+#: sefaria/forms.py:46 sefaria/forms.py:57 templates/account_settings.html:111
 msgid "Password"
 msgstr ""
 
-#: sefaria/forms.py:46 templates/edit_profile.html:27
+#. Translators: placeholder_first_name
+#: sefaria/forms.py:53 templates/edit_profile.html:27
 msgid "First Name"
 msgstr ""
 
-#: sefaria/forms.py:47 templates/edit_profile.html:33
+#. Translators: placeholder_last_name
+#: sefaria/forms.py:55 templates/edit_profile.html:33
 msgid "Last Name"
 msgstr ""
 
-#: sefaria/forms.py:78
+#. Translators: user_already_exists_message
+#: sefaria/forms.py:88
 msgid "A user with that email already exists."
 msgstr ""
 
-#: sefaria/forms.py:121
+#. Translators: mobile_app_key_error_message
+#: sefaria/forms.py:132
 msgid "Incorrect mobile_app_key provided"
 msgstr ""
 
-#: sefaria/forms.py:135
+#. Translators: placeholder_new_password
+#: sefaria/forms.py:148
 msgid "New password"
 msgstr ""
 
-#: sefaria/forms.py:136
+#. Translators: placeholder_new_password
+#: sefaria/forms.py:150
 msgid "Enter New Password"
 msgstr ""
 
-#: sefaria/forms.py:141
+#. Translators: placeholder_repeat_new_password
+#: sefaria/forms.py:156
 msgid "New password confirmation"
 msgstr ""
 
-#: sefaria/forms.py:143
+#. Translators: placeholder_repeat_new_password
+#: sefaria/forms.py:159
 msgid "Repeat New Password"
 msgstr ""
 
-#: sefaria/model/collection.py:93
+#. Translators: set_collection_name_message
+#: sefaria/model/collection.py:94
 msgid "Please set a name for your collection."
 msgstr ""
 
-#: sefaria/model/collection.py:117
+#. Translators: collection_name_taken_message
+#: sefaria/model/collection.py:119
 msgid ""
 "A public collection with this name already exists. Please choose a different "
 "name before publishing."
 msgstr ""
 
-#: sefaria/model/collection.py:119
+#. Translators: collection_image_required_message
+#: sefaria/model/collection.py:122
 msgid ""
 "Public Collections are required to include a collection image (a square "
 "image will work best)."
 msgstr ""
 
-#: sefaria/model/collection.py:121
+#. Translators: collection_sheet_count_message
+#: sefaria/model/collection.py:125
 msgid "Public Collections are required to have at least 3 public sheets."
 msgstr ""
 
-#: sefaria/model/collection.py:284
+#. Translators: collection_invitation_email_subject
+#: sefaria/model/collection.py:289
 #, python-format
-msgid "%(name)s invited you to a collection on Sefaria"
+msgid "%(name)s invited you to a collection on Pecha"
 msgstr ""
 
-#: sefaria/model/user_profile.py:283
+#. Translators: email_already_exist_message
+#: sefaria/model/user_profile.py:284
 msgid "A user with that email already exists"
 msgstr ""
 
-#: sefaria/model/user_profile.py:288
+#. Translators: email_invalid_message
+#: sefaria/model/user_profile.py:290
 msgid "The email address is not valid."
 msgstr ""
 
-#: sefaria/settings.py:27
+#. Translators: language_code
+#: sefaria/settings.py:29
 msgid "Chinese"
 msgstr ""
 
-#: sefaria/settings.py:28
+#. Translators: language_code
+#: sefaria/settings.py:31
 msgid "Spanish"
 msgstr ""
 
-#: sefaria/views.py:196 sefaria/views.py:199 sefaria/views.py:283
+#. Translators: error_message
+#: sefaria/views.py:197 sefaria/views.py:200 sefaria/views.py:284
 #: templates/static/app.html:383
 #: templates/static/aramaic-translation-contest.html:189
 #: templates/static/home.html:392 templates/static/mobile.html:388
@@ -387,54 +411,65 @@ msgstr ""
 msgid "Sorry, there was an error."
 msgstr ""
 
-#: sourcesheets/views.py:402
+#. Translators: creating_new_collection_message
+#: sourcesheets/views.py:403
 msgid "You must be logged in to create a new collection."
 msgstr ""
 
-#: sourcesheets/views.py:565
+#. Translators: error_message_when_trying_to_remove_the_last_owner_of_a_collection
+#: sourcesheets/views.py:566
 msgid ""
 "Leaving this collection would leave it without any owners. Please appoint "
 "another owner before leaving, or delete the collection."
 msgstr ""
 
-#: sourcesheets/views.py:1160
+#. Translators: error_message_when_trying_to_upload_media_without_logging_in
+#: sourcesheets/views.py:1162
 msgid "You must be logged in to access this api."
 msgstr ""
 
-#: templates/404.html:4
-msgid "Page Not Found | Sefaria"
+#. Translators: page_not_found_title
+#: templates/404.html:5
+msgid "Page Not Found | Pecha"
 msgstr ""
 
-#: templates/404.html:11
+#. Translators: page_not_found_message
+#: templates/404.html:13
 msgid "Page Not Found"
 msgstr ""
 
-#: templates/404.html:15
+#. Translators: link_not_working_message
+#: templates/404.html:18
 msgid ""
 "The requested URL couldn't be found.If you've arrived here from a link on "
 "another site,you may want to let them know their link isn't working."
 msgstr ""
 
-#: templates/500.html:4 templates/500.html:10
+#. Translators: server_related_error_message
+#: templates/500.html:5 templates/500.html:12
 msgid "Internal Server Error"
 msgstr ""
 
-#: templates/500.html:15
+#. Translators: send_message_to_developer_request
+#: templates/500.html:18
 msgid ""
 "Unfortunately, we've encountered an error.An email has been sent "
 "automatically to our developers.If you have any questions about the problem,"
 "or think you can help us figure out what went wrong,please email our "
 msgstr ""
 
-#: templates/500.html:15
+#. Translators: developer_team
+#: templates/500.html:20
 msgid "development team"
 msgstr ""
 
+#. Translators: account_setting
 #: templates/account_settings.html:12
 msgid "Account Settings"
 msgstr ""
 
-#: templates/account_settings.html:16 templates/account_settings.html:129
+#. Translators: cancel_request
+#: templates/account_settings.html:17 templates/account_settings.html:143
 #: templates/edit_profile.html:17 templates/edit_text.html:69
 #: templates/edit_text.html:97 templates/edit_text.html:150
 #: templates/elements/login_prompt.html:8 templates/profile.html:181
@@ -442,93 +477,106 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: templates/account_settings.html:19 templates/account_settings.html:126
+#. Translators: save_request
+#: templates/account_settings.html:21 templates/account_settings.html:140
 #: templates/edit_profile.html:20 templates/edit_text.html:96
 #: templates/edit_text.html:149 templates/sheets.html:455
 #: templates/sheets.html:828 templates/sheets.html:981
 msgid "Save"
 msgstr ""
 
-#: templates/account_settings.html:25
+#. Translators: rate_of_notification
+#: templates/account_settings.html:28
 msgid "Notification Frequency (Maximum)"
 msgstr ""
 
-#: templates/account_settings.html:29
+#. Translators: to_send_notification_daily
+#: templates/account_settings.html:33
 msgid "Daily"
 msgstr ""
 
-#: templates/account_settings.html:32
+#. Translators: to_send_notification_weekly
+#: templates/account_settings.html:37
 msgid "Weekly"
 msgstr ""
 
-#: templates/account_settings.html:35
+#. Translators: never_send_notification
+#: templates/account_settings.html:41
 msgid "Never"
 msgstr ""
 
-#: templates/account_settings.html:42
+#. Translators: website_language_selection_title
+#: templates/account_settings.html:49
 msgid "Site Language"
 msgstr ""
 
-#: templates/account_settings.html:46 templates/sheets.html:705
+#. Translators: website_language_selection_english_option
+#: templates/account_settings.html:54 templates/sheets.html:705
 msgid "english"
 msgstr ""
 
 #. Translators: language_Tibetan
-#: templates/account_settings.html:50 templates/edit_text.html:186
+#. Translators: website_language_selection_tibetan_option
+#: templates/account_settings.html:59 templates/edit_text.html:186
 #: templates/elements/notification.html:15 templates/sheets.html:197
 #: templates/sheets.html:280 templates/sheets.html:706
 msgid "Tibetan"
 msgstr ""
 
-#: templates/account_settings.html:57
+#. Translators: user's_preferred_translation_language
+#: templates/account_settings.html:67
 msgid "Preferred Translation Language"
 msgstr ""
 
-#: templates/account_settings.html:70
+#. Translators: user's_reading_history
+#: templates/account_settings.html:81
 msgid "Reading History"
 msgstr ""
 
-#: templates/account_settings.html:74
+#. Translators: reading_history_enable
+#: templates/account_settings.html:86
 msgid "On"
 msgstr ""
 
-#: templates/account_settings.html:77
+#. Translators: reading_history_disable
+#: templates/account_settings.html:90
 msgid "Off"
 msgstr ""
 
-#: templates/account_settings.html:85
+#. Translators: developer_team
+#: templates/account_settings.html:99
 msgid "Account Email (This is used for login)"
 msgstr ""
 
-#: templates/account_settings.html:90
+#: templates/account_settings.html:104
 msgid "Change Email"
 msgstr ""
 
-#: templates/account_settings.html:95
+#: templates/account_settings.html:109
 msgid "New Email"
 msgstr ""
 
-#: templates/account_settings.html:96
+#: templates/account_settings.html:110
 msgid "Confirm New Email"
 msgstr ""
 
-#: templates/account_settings.html:99
+#: templates/account_settings.html:113
 msgid "Update Email"
 msgstr ""
 
-#: templates/account_settings.html:106
+#: templates/account_settings.html:120
 msgid "Google Account (Allows for exporting sheets to Google Drive)"
 msgstr ""
 
-#: templates/account_settings.html:111
+#: templates/account_settings.html:125
 msgid "Disconnect"
 msgstr ""
 
-#: templates/account_settings.html:118
+#: templates/account_settings.html:132
 msgid "Your Google Account has been disconnected"
 msgstr ""
 
-#: templates/account_settings.html:121
+#: templates/account_settings.html:135
 msgid "You can link to a new Google Account the next time you export a sheet"
 msgstr ""
 

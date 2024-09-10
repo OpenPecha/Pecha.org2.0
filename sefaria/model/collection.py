@@ -90,6 +90,7 @@ class Collection(abst.AbstractMongoRecord):
         assert super(Collection, self)._validate()
 
         if len(self.name) == 0:
+            # Translators: set_collection_name_message
             raise InputError(_("Please set a name for your collection."))
 
         return True
@@ -114,10 +115,13 @@ class Collection(abst.AbstractMongoRecord):
             # it can't be change even to add a new public sheet. 
             if self.name_taken():
                 # Require public collections to have a unique name
+                # Translators: collection_name_taken_message
                 raise InputError(_("A public collection with this name already exists. Please choose a different name before publishing."))
             if not getattr(self, "imageUrl", False):
+                # Translators: collection_image_required_message
                 raise InputError(_("Public Collections are required to include a collection image (a square image will work best)."))
             if self.public_sheet_count() < 3:
+                # Translators: collection_sheet_count_message
                 raise InputError(_("Public Collections are required to have at least 3 public sheets."))
 
 
@@ -281,8 +285,9 @@ class Collection(abst.AbstractMongoRecord):
                                             })
         finally:
             translation.activate(curr_lang)
-        subject       = _("%(name)s invited you to a collection on Sefaria") % {'name': inviter.full_name}
-        from_email    = "Sefaria <hello@sefaria.org>"
+            # Translators: collection_invitation_email_subject
+        subject       = _("%(name)s invited you to a collection on Pecha") % {'name': inviter.full_name}
+        from_email    = "Pecha <hello@pecha.org>"
         to            = email
 
         msg = EmailMultiAlternatives(subject, message_html, from_email, [to])

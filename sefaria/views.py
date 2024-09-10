@@ -193,6 +193,7 @@ def generic_subscribe_to_newsletter_api(request, org, email):
             return jsonResponse({"status": "ok"})
         else:
             logger.error(f"Failed to subscribe to list")
+            # Translators: error_message
             return jsonResponse({"error": _("Sorry, there was an error.")})
     except ValueError as e:
         logger.error(f"Failed to subscribe to list: {e}")

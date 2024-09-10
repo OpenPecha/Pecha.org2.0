@@ -399,6 +399,7 @@ def collections_api(request, slug=None):
         if not request.user.is_authenticated and request.method == "POST":
             key = request.POST.get("apikey")
             if not key:
+                # Translators: creating_new_collection_message
                 return jsonResponse({"error": _("You must be logged in to create a new collection.")})
             apikey = db.apikeys.find_one({"key": key})
             if not apikey:
@@ -561,8 +562,8 @@ def collections_role_api(request, slug, uid, role):
     if role not in ("member", "publisher", "admin", "remove"):
         return jsonResponse({"error": "Unknown collection contributor role."})
     if uid == request.user.id and collection.admins == [request.user.id] and role != "admin":
-        return jsonResponse({"error": _(
-            "Leaving this collection would leave it without any owners. Please appoint another owner before leaving, or delete the collection.")})
+        # Translators: error_message_when_trying_to_remove_the_last_owner_of_a_collection
+        return jsonResponse({"error": _("Leaving this collection would leave it without any owners. Please appoint another owner before leaving, or delete the collection.")})
     if role == "remove":
         collection.remove_member(uid)
     else:
@@ -1157,6 +1158,7 @@ def export_to_drive(request, credential, sheet_id):
 @catch_error_as_json
 def upload_sheet_media(request):
     if not request.user.is_authenticated:
+        # Translators: error_message_when_trying_to_upload_media_without_logging_in
         return jsonResponse({"error": _("You must be logged in to access this api.")})
     if request.method == "POST":
         from PIL import Image
