@@ -5,8 +5,8 @@
 
 {% load sefaria_tags %}
 
-
-{% block title %}{% trans "Edit Collection on Sefaria" %}{% endblock %}
+{% comment %}Translators: edit_collection.title{% endcomment %}
+{% block title %}{% trans "Edit Collection on Pecha" %}{% endblock %}
 
 {% block css %}
 body {
@@ -17,6 +17,7 @@ body {
 {% block content %}
 <div id="editCollectionPageContainer" class="static biReady">
   <div id="editCollectionPageContainerInner" class="inner">
+    {% comment %}Translators: edit_collection.loading{% endcomment %}
     <h1>{% trans "Loading..." %}</h1>
   </div>
 </div>
