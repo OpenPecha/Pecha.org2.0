@@ -1310,7 +1310,7 @@ class ReaderControls extends Component {
       return null
     } else {
       return (
-        <div>{Sefaria._("")}</div>
+        <div className={ribbonStyle}>{Sefaria._("In Progresss")}</div>
       )
     } 
   }
