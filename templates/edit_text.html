@@ -61,11 +61,15 @@
 	</div>
 
 	<div id="newTextModal" class="modal">
+		{% comment %}Translators: edit_text.add_new_text{% endcomment %}
 		<div class="header">{% trans "Add a New Text" %}</div>
+		{% comment %}Translators: edit_text.text_commentator_name{% endcomment %}
 		<div id="newTextMsg">{% trans "Text or commentator name:" %}</div>
 		<input id="newTextName">
 		<span id="newTextActions">
+			{% comment %}Translators: edit_text.add_button{% endcomment %}
 			<span id="newTextOK" class="action btn inactive">{% trans "Add" %}</span>
+			{% comment %}Translators: edit_text.cancel_button{% endcomment %}
 			<span id="newTextCancel" class="action btn">{% trans "Cancel" %}</span>
 
 		</span>
@@ -83,8 +87,10 @@
 
 			{% if request.user.is_authenticated %}
 			<div id="addReview">
+				{% comment %}Translators: edit_text.your_review{% endcomment %}
 				<div id="yourReviewTitle">{% trans "Your Review:" %}</div>
 				<textarea id="reviewText"></textarea>
+				{% comment %}Translators: edit_text.review_question{% endcomment %}
 				<a href="#" id="reviewHelpLink">{% trans "How should I write a review?" %}</a>
 				<div id="score>">
 					<div id="raty"></div>
@@ -93,52 +99,71 @@
 			</div>
 
 			<div id="reviewButtonsBox">
+				{% comment %}Translators: edit_text.save_button{% endcomment %}
 				<div class="btn save">{% trans "Save" %}</div>
+				{% comment %}Translators: edit_text.cancel_button{% endcomment %}
 				<div class="btn cancel">{% trans "Cancel" %}</div>
 			</div>
 			{% else %}
 			<div id="loginToReview">
+				{% comment %}Translators: edit_text.add_new_text{% endcomment %}
 				{% trans "To add your review, please " %}<a href="/login?next={{ request.get_full_path }}">{% trans "log in" %}</a>{% trans "or" %} <a href="/register?next={{ request.get_full_path }}">{% trans "register" %}</a>.
 			</div>
 			<div id="reviewButtonsBox">
+				{% comment %}Translators: edit_text.close_button{% endcomment %}
 				<div class="btn cancel">{% trans "Close" %}</div>
 			</div>
 			{% endif %}
 	</div>
 	<div id="reviewHelp">
+		    {% comment %}Translators: edit_text.review_message{% endcomment %}
 			<h3>{% trans "Writing Helpful Reviews" %}</h3>
+			{% comment %}Translators: edit_text.historical_text{% endcomment %}
 			<p><b>{% trans "For primary texts and historical translations:" %}</b>{% trans " Indicate what outside source (book, web page) was used to compare the text, or make clear that your review is only looking at the text present." %}</p>
 			<div class="reviewExamples">
+				{% comment %}Translators: edit_text.compare_printed_edition{% endcomment %}
 				<div class="exampleReview">{% trans "I compared this text to X printed edition and found no problems." %}</div>
+				{% comment %}Translators: edit_text.all_looks_good{% endcomment %}
 				<div class="exampleReview">{% trans "I checked this text against the edition on X website, all looks good." %}</div>
+				{% comment %}Translators: edit_text.no_issue_message{% endcomment %}
 				<div class="exampleReview">{% trans "I read this text carefully and don't see anything wrong." %}</div>
 			</div>
-
+			{% comment %}Translators: edit_text.original_translation{% endcomment %}
 			<p><b>{% trans "For original translations:" %}</b>{% trans " Review the text carefully next to the original, and comment on its accuracy and style according to our " %}<a href="/translation-guidelines" target="_blank">{% trans "translation guidelines" %}</a>.</p>
 			<div class="reviewExamples">
+				{% comment %}Translators: edit_text.accurate{% endcomment %}
 				<div class="exampleReview">{% trans "This translation seems accurate to me." %}</div>
+				{% comment %}Translators: edit_text.translation_review{% endcomment %}
 				<div class="exampleReview">{% trans "The language could be improved, but the translation seems right." %}</div>
+				{% comment %}Translators: edit_text.misunderstand_term_X{% endcomment %}
 				<div class="exampleReview">{% trans "This translation misunderstands the term X." %}</div>
 			</div>
 
 			<div id="scoreHelp">
+				{% comment %}Translators: edit_text.score_review{% endcomment %}
 				<b>{% trans "How to Score your Review:" %}</b>
 				<div class="scoreExample">
+					{% comment %}Translators: edit_text.compared_to_source_message{% endcomment %}
 					<span class="raty" data-raty="1"></span>{% trans " Compared closesly to a source, confident there are no problems." %}
 				</div>
 				<div class="scoreExample">
+					{% comment %}Translators: edit_text.compared_to_source_no_problem_message{% endcomment %}
 					<span class="raty" data-raty="0.8"></span>{% trans " Compared to a source, didn't notice any problems." %}
 				</div>
 				<div class="scoreExample">
+					{% comment %}Translators: edit_text.proble_free_need_review{% endcomment %}
 					<span class="raty" data-raty="0.6"></span>{% trans " Looks problem free, but could be reviewed more closely." %}
 				</div>
 				<div class="scoreExample">
+					{% comment %}Translators: edit_text.found_small_issues_need_to_address{% endcomment %}
 					<span class="raty" data-raty="0.4"></span>{% trans " Found some issues that need to be addressed." %}
 				</div>
 				<div class="scoreExample">
+					{% comment %}Translators: edit_text.found_serious_issues_need_address{% endcomment %}
 					<span class="raty" data-raty="0.2"></span>{% trans " Found serious problems that need to be addressed." %}
 				</div>
 			</div>
+			{% comment %}Translators: common.form.button.ok{% endcomment %}
 			<div id="reviewHelpOK" class="btn">{% trans "OK" %}</div>
 		</div>
 	</div>
@@ -146,13 +171,16 @@
 
 	<div id="newVersionBox">
         <div id="editButtons" style="display:none;">
+			{% comment %}Translators: common.form.button.save{% endcomment %}
             <span id="addVersionSave" class='button small'>{% trans "Save" %}</span>
+			{% comment %}Translators: common.form.button.cancel{% endcomment %}
             <span id='addVersionCancel' class='button small white'>{% trans "Cancel" %}</span>
         </div>
 		<div id="addVersionHeader">
 			<div id="editTitle"></div>
 			<div id="addVersionHeaderLeft">
 				<div class="compareTitle"></div>
+				{% comment %}Translators: common.label.source{% endcomment %}
 				<a class="compareSource" href="#" target="_blank">{% trans "Source " %}<i class="fa fa-external-link"></i></a>
 			</div>
 			<div id="addVersionHeaderRight">
@@ -160,10 +188,12 @@
 				<div id="textTypeForm">
 					<label class="option">
 						<input type="radio" id="originalRadio" name="newTextType" value="original" checked="checked">
+						{% comment %}Translators: edit_text.original_translation{% endcomment %}
 						{% trans "Original Translation" %}
 					</label>
 					<label class="option">
 						<input type="radio" id="copyRadio" name="newTextType" value="copy">
+						{% comment %}Translators: edit_text.copied_text{% endcomment %}
 						{% trans "Copied Text" %}
 					</label>
 					<span id="showOriginal"></span>
@@ -175,14 +205,19 @@
 					<div id="copyWarning" class="alert">
 						{% trans "Copied texts must either be in the " %}<b>{% trans "Public Domain" %}</b>{% trans " or carry a " %}<b>{% trans "Creative Commons" %}</b>{% trans " license such as " %}<a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0</a>, <a href="http://creativecommons.org/licenses/by/3.0" target="_blank">CC-BY</a>, or <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">CC-BY-SA</a>{% trans ". You can learn more about when a text passes into the Public Domain on this" %} <a href="http://copyright.cornell.edu/resources/publicdomain.cfm" target="_blank">{% trans "summary of Copyright Terms" %}</a>.
 					</div>
+					{% comment %}Translators: edit_text.version_title{% endcomment %}
 					<div><span>{% trans "Version Title:" %}</span> <input id="versionTitle"></div>
+					{% comment %}Translators: edit_text.copied_from{% endcomment %}
 					<div><span>{% trans "Copied from:" %}</span> <input placeholder="a URL or book" id="versionSource"></div>
 				</div>
 
 				<div id="languageForm">
+					{% comment %}Translators: common.label.language{% endcomment %}
 					<span>{% trans "Language:" %}</span>
 					<select id="language">
+					  {% comment %}Translators: common.edit_text.label.english.{% endcomment %}
 					  <option value="en">{% trans "English" %}</option>
+					  {% comment %}Translators: common.edit_text.label.tibetan{% endcomment %}
 					  <option value="he">{% trans "Tibetan" %}</option>
 					</select>
 				</div>

@@ -1,9 +1,17 @@
 {% extends "base.html" %}
 {% load i18n cache humanize sefaria_tags static%}
 
-{% block title %}{% if title %}{{ title|striptags|strip_html_entities }} | {% trans "Visualized" %} | {% trans "Sefaria Source Sheet Builder" %}{% else %}{% trans "Start a New Sheet - Sefaria Source Sheet Builder" %}{% endif %}{% endblock %}
+{% block title %}{% if title %}{{ title|striptags|strip_html_entities }} | 
+{% comment %}Translators: sheets_visual.visualized{% endcomment %}
+{% trans "Visualized" %} | 
+{% comment %}Translators: sheets_visual.pecha_source_sheet_builder{% endcomment %}
+{% trans "Pecha Source Sheet Builder" %}{% else %}
+{% comment %}Translators: sheets_visual.start_a_new_sheet{% endcomment %}
+{% trans "Start a New Sheet - Pecha Source Sheet Builder" %}{% endif %}{% endblock %}
 
-{% block description %}{% if sheet.owner %}{% blocktrans %}Visual layout of a source sheet by {{ sheet.owner|user_name }} created with Sefaria's Source Sheet Builder.{% endblocktrans %}{% else %}{% trans "Create your own source sheet with Sefaria's Source Sheet Builder." %}{% endif %}{% endblock %}
+{% block description %}{% if sheet.owner %}{% blocktrans %}Visual layout of a source sheet by {{ sheet.owner|user_name }} created with Pecha's Source Sheet Builder.{% endblocktrans %}{% else %}
+{% comment %}Translators: sheets_visual.create_your_own_source_sheet_with_source_sheet_builder{% endcomment %}
+{% trans "Create your own source sheet with Pecha's Source Sheet Builder." %}{% endif %}{% endblock %}
 
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/tooltipster.css' %}" />
@@ -27,6 +35,7 @@
 <div id="link"></div>
 <div id="error"></div>
 <a href="/sheets/{{sheet.id}}" id="textTocLink">
+	{% comment %}Translators: sheets_visual.back_to_sheet{% endcomment %}
     <span class="{{ language_font_class }}">&laquo; {% trans "Back to Sheet" %}</span>
 </a>
 <div id="controls">

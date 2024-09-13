@@ -2,9 +2,11 @@
 {% load i18n %}
 {% load sefaria_tags %}
 
-{% block title %}{% trans "Authors on Sefaria" %}{% endblock %}
+{% comment %}Translators: people.authors_on_pecha{% endcomment %}
+{% block title %}{% trans "Authors on Pecha" %}{% endblock %}
 
-{% block description %}{% trans "Biographies and information about the authors of Jewish texts on Sefaria, together with links to their available texts." %}{% endblock %}
+{% comment %}Translators: people.biography_and_informations_about_authors{% endcomment %}
+{% block description %}{% trans "Biographies and information about the authors of Buddhist texts on Pecha, together with links to their available texts." %}{% endblock %}
 
 {% block css %}
     #languageToggle {
@@ -20,12 +22,14 @@
 <div id="peoplePage" class="biReady container static">
     <div class="inner">
         <h1>
+            {% comment %}Translators: people.authors{% endcomment %}
             <span class="{{ language_font_class }}">{% trans "Authors" %}</span>
         </h1>
         <div class="section">
             <div class="authors-row">
                 <div class="author">
-                    <span class="{{ language_font_class }}"><a href="/people/Talmud">{% trans "People in the Talmud" %}</a></span>
+                    {% comment %}Translators: people.choejuk_author{% endcomment %}
+                    <span class="{{ language_font_class }}"><a href="/people/Talmud">{% trans "People in the Choejuk" %}</a></span>
                 </div>
 
             </div>

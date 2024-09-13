@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load i18n cache %}
 
-{% block title %}{% trans "Top Contributors | Sefaria" %}{% endblock %}
+{% comment %}Translators: leaderboard.label_top_contributor_pecha{% endcomment %}
+{% block title %}{% trans "Top Contributors | Pecha" %}{% endblock %}
 
-{% block description %}{% trans "See who has been contributing most to Sefaria in terms of texts, translations, and source sheet." %}{% endblock %}
+{% comment %}Translators: leaderboard.contributor_leaderboard{% endcomment %}
+{% block description %}{% trans "See who has been contributing most to Pecha in terms of texts, translations, and source sheet." %}{% endblock %}
 
 {% block css %}
 
@@ -27,6 +29,7 @@
 <div id="leaderboardPage" class="static">
     <div class="inner">
         <h1>
+            {% comment %}Translators: leaderboard.label.top_contributor{% endcomment %}
             <span class="{{ language_font_class }}">{% trans "Top Contributors" %}</span>
         </h1>
 

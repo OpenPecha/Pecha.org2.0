@@ -3,8 +3,10 @@
 {% load i18n %} 
 {% load sefaria_tags %}
 
+{% comment %}Translators: common.person.pecha.title{% endcomment %}
 {% block title %}{{ name }} | {% trans "Pecha" %}{% endblock %}
 
+{% comment %}Translators: common.person.pecha.description{% endcomment %}
 {% block description %}{{ bio }} | {% trans "Pecha" %}{% endblock %}
 
 
@@ -83,38 +85,38 @@
         <div class="section">
             <div id="external_links">
                 <h3>
+                    {% comment %}Translators: common.person.learn_more{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Learn More" %}</span>
                 </h3>
                 {% if enWikiLink and heWikiLink %}
                     <p>
-                        <span class="int-en"><a href="{{ enWikiLink }}">{% trans "Wikipedia" %}</a><i class="fa fa-external-link"></i></span>
-                        <span class="int-he"><a href="{{ heWikiLink }}">{% trans "Wikipedia" %}</a><i class="fa fa-external-link fa-flip-horizontal"></i></span>
+                        {% comment %}Translators: person.wikipedia.english_tibetan_both{% endcomment %}
+                        <span class="{{language_font_class}}"><a href="{{ enWikiLink }}">{% trans "Wikipedia" %}</a><i class="fa fa-external-link"></i></span>
                     </p>
 
                 {% elif enWikiLink %}
                     <p>
-                        <span class="int-en"><a href="{{ enWikiLink }}">{% trans "Wikipedia" %}</a><i class="fa fa-external-link"></i></span>
-                        <span class="int-he"><a href="{{ enWikiLink }}">{% trans "Wikipedia" %}</a><i class="fa fa-external-link fa-flip-horizontal"></i></span>
+                        {% comment %}Translators: person.wikipedia.english{% endcomment %}
+                        <span class="{{language_font_class}}"><a href="{{ enWikiLink }}">{% trans "Wikipedia" %}</a><i class="fa fa-external-link"></i></span>
                     </p>
                 {% elif heWikiLink %}
                     <p>
-                        <span class="int-en"><a href="{{ heWikiLink }}">{% trans "Wikipedia (Hebrew)" %}</a><i class="fa fa-external-link"></i></span>
-                        <span class="int-he"><a href="{{ heWikiLink }}">{% trans "Wikipedia (Hebrew)" %}</a><i class="fa fa-external-link fa-flip-horizontal"></i></span>
+                        {% comment %}Translators: person.wikipedia.tibetan{% endcomment %}
+                        <span class="{{language_font_class}}"><a href="{{ heWikiLink }}">{% trans "Wikipedia (Tibetan)" %}</a><i class="fa fa-external-link"></i></span>
                     </p>
                 {% endif %}
 
                 {% if jeLink %}
                     <p>
-                        <span class="int-en"><a href="{{ jeLink }}">{% trans "Jewish Encyclopedia" %}</a><i class="fa fa-external-link"></i></span>
-                        <span class="int-he"><a href="{{ jeLink }}">{% trans "Jewish Encyclopedia" %}</a><i class="fa fa-external-link fa-flip-horizontal"></i></span>
+                        {% comment %}Translators: person.buddhist_encyclopedia{% endcomment %}
+                        <span class="{{language_font_class}}"><a href="{{ jeLink }}">{% trans "Buddhist Encyclopedia" %}</a><i class="fa fa-external-link"></i></span>
                     </p>
                 {% endif %}
             </div>
             <div id="relationships">
                  {% for k, rel_type in relationships.items %}
                  <h3>
-                     <span class="int-en">{{ rel_type.en }}</span>
-                     <span class="int-he">{{ rel_type.he }}</span>
+                     <span class="{{language_font_class}}">{{ rel_type.en }}</span>
                  </h3>
                      {% for person in rel_type.people %}
                          <p>
@@ -126,6 +128,7 @@
             {% if indexes|length %}
             <div id="indexes">
                 <h3>
+                    {% comment %}Translators: person.works{% endcomment %}
                      <span class="{{ language_font_class }}">{% trans "Works" %}</span>
                 </h3>
                 {% for indx in indexes %}
@@ -138,6 +141,7 @@
             {% if places %}
             <div id="person-graphic-column">
                 <h3>
+                    {% comment %}Translators: person.map{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Map" %}</span>
                 </h3>
                     <div id="place-map"></div>

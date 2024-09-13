@@ -3,7 +3,7 @@
 {% load sefaria_tags %}
 {% load humanize %}
 
-{% comment %}Translators: pecha.org/discussions.discuss_text_message_title{% endcomment %}
+{% comment %}Translators: discussions.discuss_text_message_title{% endcomment %}
 {% block title %}{% trans "Discuss a Text on Pecha" %}{% endblock %}
 
 {% block content %}
@@ -12,14 +12,14 @@
 
     <span class="row">
         <span class="span12">
-            {% comment %}Translators: pecha.org/discussions.discuss_text_message_h1{% endcomment %}
+            {% comment %}Translators: discussions.discuss_text_message_h1{% endcomment %}
             <h1>{% trans "Discuss a Text on Pecha" %}</h1>
         </span>
         <span class="span6 offset3">
             <div class="alert alert-error">
-                {% comment %}Translators: pecha.org/discussions.experimental_message{% endcomment %}
+                {% comment %}Translators: discussions.experimental_message{% endcomment %}
                 {% trans "This is an <b>EXPERIMENTAL" %}</b>{% trans " feature. Please try it out and let us know what is" %} <b>{% trans "exciting" %}</b>{% trans " and what is" %} <b>{% trans "frustrating" %}</b>{% trans " about it!" %}
-                {% comment %}Translators: pecha.org/discussions.send_feedback_message{% endcomment %}
+                {% comment %}Translators: discussions.send_feedback_message{% endcomment %}
                 <a href="mailto:hello@pecha.org" target="_blank" class="btn btn-mini">{% trans "Send us Feedback" %}</a>
             </div>
         </span>
@@ -27,25 +27,25 @@
 
     <span class="row">
         <span class="span6">
-            {% comment %}Translators: pecha.org/discussions.choose_text{% endcomment %}
+            {% comment %}Translators: discussions.choose_text{% endcomment %}
             <h2>{% trans "Choose a Text" %}</h2>
             <!--<span class="btn btn-large btn-primary">Browse</span>-->
             <div id="chooseText"></div>
         </span>
         <span class="span5">
-            {% comment %}Translators: pecha.org/discussions.start_a_discussion_h2{% endcomment %}
+            {% comment %}Translators: discussions.start_a_discussion_header{% endcomment %}
             <h2>{% trans "Start a Discussion" %}</h2>
-            {% comment %}Translators: pecha.org/discussions.with_link_participate{% endcomment %}
+            {% comment %}Translators: discussions.with_link_can_participate{% endcomment %}
             <div>{% trans "Anyone with the link below will be able to view and participate." %}</div>
             <!--<i id="discussLinkIcon" class="fa fa-link"></i> -->
             <input id="discussLink" placeholder="choose a text to get your link" />
             <br><br>
-            {% comment %}Translators: pecha.org/discussions.get_started{% endcomment %}
+            {% comment %}Translators: discussions.get_started{% endcomment %}
             <a id="goLink" class='btn btn-large btn-primary' href='#'>{% trans "Get Started" %}</a>
             <br><br>
             {% if discussions|length %}
             <div>
-                {% comment %}Translators: pecha.org/discussions.your_discussion{% endcomment %}
+                {% comment %}Translators: discussions.your_discussions{% endcomment %}
             <h3>{% trans "Your Discussions" %}</h3>
             {% for discussion in discussions %}
                 <div class="discussion">

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% comment %}Translators: no_path.admin_delete_sheet{% endcomment %}
+{% comment %}Translators: admin.admin_delete_sheet{% endcomment %}
 {% block title %}{% trans "Admin: Delete a Sheet" %} | {% trans "Pecha" %}{% endblock %}
 
 {% block content %}
@@ -9,18 +9,18 @@
 <div id="deleteSheet" class="static">
     <div class="inner">
         <h1>
-            {% comment %}Translators: no_path.delete_sheet{% endcomment %}
+            {% comment %}Translators: admin.delete_sheet{% endcomment %}
             <span class={{language_font_class}}>{% trans "Delete Sheet" %}</span>
         </h1>
-        {% comment %}Translators: no_path.caution_messsage{% endcomment %}
+        {% comment %}Translators: admin.caution_messsage{% endcomment %}
         <h2>{% trans "CAUTION THIS WILL DELETE THE SHEET ID YOU INPUT" %}</h2>
-        {% comment %}Translators: no_path.can't_undone_message{% endcomment %}
+        {% comment %}Translators: admin.can't_undone_message{% endcomment %}
         <h3>{% trans "IT CANNOT BE UNDONE." %}</h3>
         <form method="post" autocomplete="off" if="delete-form" action="{% url "delete/sheet" %}">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="button control-elem">
-                {% comment %}Translators: no_path.delete_sheet_button{% endcomment %}
+                {% comment %}Translators: admin.delete_sheet_button{% endcomment %}
                 <span class={{language_font_class}}>{% trans "Delete Sheet" %}</span>
             </button>
         </form>

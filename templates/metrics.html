@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 {% load i18n cache humanize sefaria_tags %}
 
-{% block title %}{% trans "Sefaria Metrics" %}{% endblock %}
+{% comment %}Translators: metrics.pecha_metrics.title{% endcomment %}
+{% block title %}{% trans "Pecha Metrics" %}{% endblock %}
 
-{% block description %}{% trans "See graphs charting Sefaria's progress since 2013 across metrics including word counts, number of links and number of source sheets." %}{% endblock %}
+{% comment %}Translators: metrics.graph_chart_display_message{% endcomment %}
+{% block description %}{% trans "See graphs charting Pecha's progress since 2024 across metrics including word counts, number of links and number of source sheets." %}{% endblock %}
 
 {% block content %}
 
 <div id="metricsPage" class="biReady container static">
 	<div class="inner">
         <h1>
+			{% comment %}Translators: metrics.label.metrics{% endcomment %}
             <span class="{{ language_font_class }}">{% trans "Metrics" %}</span>
         </h1>
 		<div id="metricsBox">
+			{% comment %}Translators: common.metrics.loading{% endcomment %}
 			{% trans "Loading..." %}
 		</div>
 	</div>

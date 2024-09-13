@@ -4,10 +4,22 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}{% if title %}{{ title|striptags|strip_html_entities }} | {% trans "Pecha" %}{% else %}{% trans "Start a New Sheet - Pecha Source Sheet Builder" %}{% endif %}{% endblock %}
+{% block title %}{% if title %}{{ title|striptags|strip_html_entities }} | 
+{% comment %}Translators: common.sheets.pecha{% endcomment %}
+{% trans "Pecha" %}{% else %}
+{% comment %}Translators: sheets.starts_a_new_sheet{% endcomment %}
+{% trans "Start a New Sheet - Pecha Source Sheet Builder" %}{% endif %}{% endblock %}
 
-{% block description %}{% if sheet.owner %}{% trans "A source sheet created with Pecha's Source Sheet Builder." %}{% else %}{% trans "Create your own source sheet with Pecha's Source Sheet Builder." %}{% endif %}{% endblock %}
-{% block soc_description %}{% if sheet.owner %}{% trans "A source sheet created with Pecha's Source Sheet Builder." %}{% else %}{% trans "Create your own source sheet with Pecha's Source Sheet Builder." %}{% endif %}{% endblock %}
+{% block description %}{% if sheet.owner %}
+{% comment %}Translators: sheets.a_source_sheet_created_with_sheet_builder{% endcomment %}
+{% trans "A source sheet created with Pecha's Source Sheet Builder." %}{% else %}
+{% comment %}Translators: sheets.create_your_own_sheet{% endcomment %}
+{% trans "Create your own source sheet with Pecha's Source Sheet Builder." %}{% endif %}{% endblock %}
+{% block soc_description %}{% if sheet.owner %}
+{% comment %}Translators: sheets.a_source_sheet_created_with_source_sheet_builder{% endcomment %}
+{% trans "A source sheet created with Pecha's Source Sheet Builder." %}{% else %}
+{% comment %}Translators: sheets.create_your_own_source_sheet_with_source_sheet_builder{% endcomment %}
+{% trans "Create your own source sheet with Pecha's Source Sheet Builder." %}{% endif %}{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/tooltipster.css' %}"/>
@@ -28,6 +40,7 @@
             <div class="sheetsMenuBarInner">
                 <div class="sheetsMenuBarCommands">
                     <div class="sheetsMenuBarItem" id="fileMenu">
+                        {% comment %}Translators: common.sheets.lable.file{% endcomment %}
                         <span class="menuHeader {{language_font_class}}" aria-haspopup="true" role="menuitem" tabindex="0">{% trans "File" %}</span>
                         <div class="optionsMenu" aria-hidden="true" aria-label="submenu">
                             {% if not new_sheet %}
@@ -35,6 +48,7 @@
                             <div class="optionItem" id="copySheet" role="menuitem" tabindex="0">
                                 <img src="{% static 'img/copy.png' %}" alt="Copy Sheet Icon">
                                 <span class="optionItemText {{language_font_class}}">
+                                    {% comment %}Translators: sheets.copy_sheet{% endcomment %}
                                     <span>{% trans "Copy Sheet" %}</span>
                                 </span>
                             </div>
@@ -43,6 +57,7 @@
                             <div class="optionItem" id="exportToDrive" role="menuitem" tabindex="0">
                                 <i class="fa fa-google"></i>
                                 <span class="optionItemText {{language_font_class}}">
+                                    {% comment %}Translators: sheets.export_to_google_drive{% endcomment %}
                                     <span>{% trans "Export to Google Drive" %}</span>
                                 </span>
                             </div>
@@ -50,6 +65,7 @@
                             <div class="optionItem" id="embedSheet" role="menuitem" tabindex="0">
                                 <img src="{% static 'img/embed.png' %}" alt="Embed Sheet Icon">
                                 <span class="optionItemText {{language_font_class}}">
+                                    {% comment %}Translators: sheets.embed_sheet{% endcomment %}
                                     <span>{% trans "Embed Sheet" %}</span>
                                 </span>
 
@@ -58,6 +74,7 @@
                             <div class="optionItem" id="deleteSheet" role="menuitem" tabindex="0">
                                 <img src="{% static 'img/delete.png' %}" alt="Delete Sheet Icon">
                                 <span class="optionItemText {{language_font_class}}">
+                                    {% comment %}Translators: sheets.delete_sheet{% endcomment %}
                                     <span>{% trans "Delete Sheet" %}</span>
                                 </span>
 
@@ -69,6 +86,7 @@
                             <div class="optionItem" id="editTags" role="menuitem" tabindex="0">
                                 <img src="{% static 'img/edittags.png' %}" alt="Edit Sheet Tags Icon">
                                 <span class="optionItemText {{language_font_class}}">
+                                    {% comment %}Translators: common.sheets.tags{% endcomment %}
                                     <span>{% trans "Tags" %}</span>
                                 </span>
 
@@ -81,6 +99,7 @@
                                 <div class="optionTitle" id="assignmentsModalTrigger">
                                     <img src="{% static 'img/assignment.png' %}" alt="Assignment Icon">
                                     <span class="optionItemText {{language_font_class}}">
+                                        {% comment %}Translators: sheets.assignments{% endcomment %}
                                         <span>{% trans "Assignments" %}</span>
                                     </span>
                                 </div>
@@ -95,6 +114,7 @@
                             <div class="optionItem" id="print" role="menuitem" tabindex="0">
                                 <img src="{% static 'img/print.png' %}" alt="Print Icon">
                                 <span class="optionItemText {{language_font_class}}">
+                                    {% comment %}Translators: sheets.print{% endcomment %}
                                 <span>{% trans "Print" %}</span>
                             </span>
                             </div>
@@ -103,6 +123,7 @@
                                 <i class="fa fa-picture-o"></i>
                                 <span class="optionItemText {{language_font_class}}">
                                 <a href="/sheets/visual/{{sheet.id}}">
+                                    {% comment %}Translators: sheets.visualize{% endcomment %}
                                     <span>{% trans "Visualize" %}</span>
                                 </a>
                             </span>
@@ -111,9 +132,11 @@
                                 <i class="fa fa-pencil"></i>
                                 <span class="optionItemText {{language_font_class}}">
                                 <span id="highlightToggleActivate">
+                                    {% comment %}Translators: sheets.highlight_mode{% endcomment %}
                                     <span>{% trans "Highlight Mode" %}</span>
                                 </span>
                                 <span id="highlightToggleDeactivate">
+                                    {% comment %}Translators: sheets.exit_highlight_mode{% endcomment %}
                                     <span>{% trans "Exit Highlight Mode" %}</span>
                                 </span>
                             </span>
@@ -122,17 +145,20 @@
                         </div>
                     </div>
                     <div class="sheetsMenuBarItem" id="formatMenu">
+                        {% comment %}Translators: common.sheets.format{% endcomment %}
                         <span class="menuHeader {{language_font_class}}" aria-haspopup="true" role="menuitem" tabindex="0">{% trans "Format" %}</span>
                         <div class="optionsMenu" aria-hidden="true" aria-label="submenu">
                             <div class="optionItem {{language_font_class}}" id="numbered" role="menuitem" tabindex="0">
                                 <i class="fa fa-check hidden"></i>
                                 <span class="optionItemText">
+                                    {% comment %}Translators: sheets.number_sources{% endcomment %}
                                 <span>{% trans "Number Sources" %}</span>
                             </span>
                             </div>
                             <div class="optionItem" id="boxed" role="menuitem" tabindex="0">
                                 <i class="fa fa-check hidden"></i>
                                 <span class="optionItemText {{language_font_class}}">
+                                    {% comment %}Translators: sheets.box_sources{% endcomment %}
                                 <span>{% trans "Box Sources" %}</span>
                             </span>
                             </div>
@@ -146,6 +172,7 @@
                             <div class="optionItem" id="resetText" role="menuitem" tabindex="0">
                                 <img src="{% static 'img/reset text.png' %}" alt="Reset Source Text Icon">
                                 <span class="optionItemText {{language_font_class}}">
+                                    {% comment %}Translators: sheets.reset_source_text{% endcomment %}
                                 <span>{% trans "Reset Source Text" %}</span>
                             </span>
                             </div>
@@ -153,6 +180,7 @@
                             <div class="optionItem" id="splitSourceToSegment" role="menuitem" tabindex="0">
                                 <i class="fa fa-file-o hidden"></i>
                                 <span class="optionItemText">
+                                {% comment %}Translators: sheets.auto_segment_text{% endcomment %}
                                 <span class="{{ language_font_class }}">{% trans "Auto-Segment Text" %}</span>
                             </span>
                             </div>
@@ -161,6 +189,7 @@
                             <div class="optionItem" id="removeNikkudot" role="menuitem" tabindex="0">
                                 <i class="fa fa-file-o hidden"></i>
                                 <span class="optionItemText">
+                                {% comment %}Translators: sheets.remove_vowel_points{% endcomment %}
                                 <span class="{{ language_font_class }}">{% trans "Remove Vowel Points" %}</span>
                             </span>
                             </div>
@@ -168,6 +197,7 @@
                             <div class="optionItem" id="addSourceTitle" role="menuitem" tabindex="0">
                                 <i class="fa fa-pencil"></i>
                                 <span class="optionItemText">
+                                {% comment %}Translators: sheets.add_source_title{% endcomment %}
                                 <span class="{{ language_font_class }}">{% trans "Add Source Title" %}</span>
                             </span>
                             </div>
@@ -179,6 +209,7 @@
                                          tabindex="0">
                                         <i class="fa fa-file-o hidden"></i>
                                         <span class="optionItemText {{language_font_class}}">
+                                        {% comment %}Translators: sheets.sheet_language{% endcomment %}
                                         <span>{% trans "Sheet Language" %}</span>
                                     </span>
                                         <i class="optionItemCaret fa fa-caret"></i>
@@ -187,20 +218,21 @@
                                         <div class="english optionItem" role="menuitem" tabindex="0">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
-                                            {% comment %}Translators: language_english{% endcomment %}
+                                            {% comment %}Translators: common.sheets.english{% endcomment %}
                                             <span>{% trans "English" %}</span>
                                         </span>
                                         </div>
                                         <div class="hebrew optionItem" role="menuitem" tabindex="0">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText">
+                                                {% comment %}Translators: common.sheets.tibetan{% endcomment %}
                                             <span class="{{ language_font_class }}">{% trans "Tibetan" %}</span>
                                         </span>
                                         </div>
                                         <div class="bilingual optionItem" role="menuitem" tabindex="0">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
-                                            {% comment %}Translators: both_english_and_tibetan{% endcomment %}   
+                                            {% comment %}Translators: common.sheets.bilingual{% endcomment %}   
                                             <span>{% trans "Bilingual" %}</span>
                                         </span>
                                         </div>
@@ -212,6 +244,7 @@
                                     <div class="optionTitle menuHeader" aria-haspopup="true" role="menuitem"
                                          tabindex="0"><i class="fa fa-file-o hidden"></i>
                                         <span class="optionItemText {{language_font_class}}">
+                                        {% comment %}Translators: sheets.sheet_layout{% endcomment %}
                                         <span>{% trans "Sheet Layout" %}</span>
                                     </span>
                                         <i class="optionItemCaret fa fa-caret"></i>
@@ -220,12 +253,14 @@
                                         <div class="stacked optionItem" role="menuitem" tabindex="0">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: sheets.stacked{% endcomment %}
                                             <span>{% trans "Stacked" %}</span>
                                         </span>
                                         </div>
                                         <div class="sideBySide optionItem" role="menuitem" tabindex="0">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: sheets.side_by_side{% endcomment %}    
                                             <span>{% trans "Side-by-Side" %}</span>
                                         </span>
                                         </div>
@@ -237,6 +272,7 @@
                                     <div class="optionTitle menuHeader" aria-haspopup="true" role="menuitem"
                                          tabindex="0"><i class="fa fa-file-o hidden"></i>
                                         <span class="optionItemText {{language_font_class}}">
+                                        {% comment %}Translators: sheets.side_by_side_layout{% endcomment %}    
                                         <span>{% trans "Side-by-Side Layout" %}</span>
                                     </span>
                                         <i class="optionItemCaret fa fa-caret"></i>
@@ -245,12 +281,14 @@
                                         <div class="heLeft optionItem" role="menuitem" tabindex="0">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: sheets.tibetan_left{% endcomment %}    
                                             <span>{% trans "Tibetan Left" %}</span>
                                         </span>
                                         </div>
                                         <div class="heRight optionItem" role="menuitem" tabindex="0">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: sheets.tibetan_right{% endcomment %}    
                                             <span>{% trans "Tibetan Right" %}</span>
                                         </span>
                                         </div>
@@ -263,6 +301,7 @@
                                     <div class="optionTitle menuHeader" aria-haspopup="true" role="menuitem"
                                          tabindex="0"><i class="fa fa-file-o hidden"></i>
                                         <span class="optionItemText {{language_font_class}}">
+                                        {% comment %}Translators: sheets.source_language{% endcomment %}    
                                         <span>{% trans "Source Language" %}</span>
                                     </span>
                                         <i class="optionItemCaret fa fa-caret"></i>
@@ -271,18 +310,21 @@
                                         <div class="english">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: common.sheets.english{% endcomment %}    
                                             <span>{% trans "English" %}</span>
                                         </span>
                                         </div>
                                         <div class="hebrew">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: common.sheets.tibetan{% endcomment %}    
                                             <span>{% trans "Tibetan" %}</span>
                                         </span>
                                         </div>
                                         <div class="bilingual">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: common.sheets.bilingual{% endcomment %}    
                                             <span>{% trans "Bilingual" %}</span>
                                         </span>
                                         </div>
@@ -294,6 +336,7 @@
                                     <div class="optionTitle menuHeader" aria-haspopup="true" role="menuitem"
                                          tabindex="0"><i class="fa fa-file-o hidden"></i>
                                         <span class="optionItemText {{language_font_class}}">
+                                        {% comment %}Translators: sheets.source_layout{% endcomment %}    
                                         <span>{% trans "Source Layout" %}</span>
                                     </span>
                                         <i class="optionItemCaret fa fa-caret"></i>
@@ -302,12 +345,14 @@
                                         <div class="stacked">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: sheets.stacked{% endcomment %}    
                                             <span>{% trans "Stacked" %}</span>
                                         </span>
                                         </div>
                                         <div class="sideBySide">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: sheets.side_by_side{% endcomment %}    
                                             <span>{% trans "Side-by-Side" %}</span>
                                         </span>
                                         </div>
@@ -319,6 +364,7 @@
                                     <div class="optionTitle menuHeader" aria-haspopup="true" role="menuitem"
                                          tabindex="0"><i class="fa fa-file-o hidden"></i>
                                         <span class="optionItemText {{language_font_class}}">
+                                        {% comment %}Translators: sheets.side_by_side_layout{% endcomment %}
                                         <span>{% trans "Side-by-Side Layout" %}</span>
                                     </span>
                                         <i class="optionItemCaret fa fa-caret"></i>
@@ -327,12 +373,14 @@
                                         <div class="heLeft">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: sheets.tibetan_left{% endcomment %}        
                                             <span>{% trans "Tibetan Left" %}</span>
                                         </span>
                                         </div>
                                         <div class="heRight">
                                             <i class="fa fa-check hidden"></i>
                                             <span class="optionItemText {{language_font_class}}">
+                                            {% comment %}Translators: sheets.tibetan_right{% endcomment %}
                                             <span>{% trans "Tibetan Right" %}</span>
                                         </span>
                                         </div>
@@ -343,6 +391,7 @@
                                     <div class="optionTitle">
                                         <i class="fa fa-file-o hidden"></i>
                                         <span class="optionItemText {{language_font_class}}">
+                                        {% comment %}Translators: sheets.reset_to_sheet_default{% endcomment %}
                                         <span>{% trans "Reset to Sheet Default" %}</span>
                                     </span>
                                     </div>
@@ -356,30 +405,34 @@
                     </div>
                     {% if can_edit or can_add %}
                     <div class="sheetsMenuBarItem" id="insertMenu">
-                        {% comment %}Translators: View verb{% endcomment %}
+                        {% comment %}Translators: sheets.insert{% endcomment %}
                         <span class="menuHeader {{language_font_class}}" aria-haspopup="true" role="menuitem" tabindex="0">{% trans "Insert" %}</span>
                         <div class="optionsMenu" aria-hidden="true" aria-label="submenu">
                             <div class="optionItem" id="addSourceMenu" role="menuitem" tabindex="0">
                                 <img src="{% static 'img/source.png' %}" alt="Add Source Icon">
                                 <span class="optionItemText {{language_font_class}}">
+                                {% comment %}Translators: sheets.source{% endcomment %}
                                 <span>{% trans "Source" %}</span>
                             </span>
                             </div>
                             <div class="optionItem" id="addCustomMenu" role="menuitem" tabindex="0">
                                 <img src="{% static 'img/custom text.png' %}" alt="Add outside text icon">
                                 <span class="optionItemText {{language_font_class}}">
+                                {% comment %}Translators: sheets.text{% endcomment %}
                                 <span>{% trans "Text" %}</span>
                             </span>
                             </div>
                             <div class="optionItem" id="addCommentMenu" role="menuitem" tabindex="0">
                                 <img src="{% static 'img/comment.png' %}" alt="Add Comment Icon">
                                 <span class="optionItemText {{language_font_class}}">
+                                {% comment %}Translators: sheets.comment{% endcomment %}    
                                 <span>{% trans "Comment" %}</span>
                             </span>
                             </div>
                             <div class="optionItem" id="addMediaMenu" role="menuitem" tabindex="0">
                                 <img src="{% static 'img/media.png' %}" alt="Add Media Icon">
                                 <span class="optionItemText {{language_font_class}}">
+                                {% comment %}Translators: sheets.media{% endcomment %}
                                 <span>{% trans "Media" %}</span>
                             </span>
                             </div>
@@ -387,14 +440,17 @@
                     </div>
                     {% endif %}
                     <div class="sheetsMenuBarItem" id="highlightMenu">
+                        {% comment %}Translators: sheets.highlight_tools{% endcomment %}
                         <span class="{{language_font_class}} menuHeader" aria-haspopup="true" role="menuitem" tabindex="0">{% trans "Highlight Tools" %}</span>
                         <div class="optionsMenu" aria-hidden="true" aria-label="submenu">
                             <div class="optionItem segmentedContinuousToggle" data-mode="continuous">
                             <span class="optionItemText">
                                 <span class="continuousActive" role="menuitem" tabindex="0">
+                                    {% comment %}Translators: sheets.paragraph_tools{% endcomment %}
                                     <span class="{{ language_font_class }}">{% trans "Paragraph View" %}</span>
                                 </span>
                                 <span class="segmentedActive" role="menuitem" tabindex="0">
+                                    {% comment %}Translators: sheets.line_by_line_view{% endcomment %}
                                     <span class="{{ language_font_class }}">{% trans "Line-by-line View" %}</span>
                                 </span>
                             </span>
@@ -402,12 +458,14 @@
                             {% if can_edit %}
                             <div class='optionItem resetHighlighter'>
                             <span class="optionItemText">
+                                {% comment %}Translators: sheets.reset{% endcomment %}
                                 <span class="{{ language_font_class }}">{% trans "Reset" %}</span>
                             </span>
                             </div>
                             {% endif %}
                             <div class="optionGroup">
                                 <div class="optionTitle menuHeader" aria-haspopup="true" role="menuitem" tabindex="0">
+                                {% comment %}Translators: sheets.filter{% endcomment %}    
                                 <span class="optionItemText"><span class="{{ language_font_class }}">{% trans "Filter" %}</span>
                                     <i class="optionItemCaret fa fa-caret"></i>
                                 </div>
@@ -424,15 +482,19 @@
                     {% if sheet.dateModified %}
                         {% if can_edit or can_add %}
                             <span class="lastSavedStamp">
+                                {% comment %}Translators: sheets.last_saved{% endcomment %}
                                 <span class="{{ language_font_class }}">{% trans "Last Saved" %} {{sheet.dateModified|format_date_by_language}}</span>
                             </span>
                             <span class="lastSavedConfirmed">
+                                {% comment %}Translators: sheets.all_changes_saved_in_pecha{% endcomment %}
                                 <span class="{{ language_font_class }}">{% trans "All changes saved in Pecha" %}</span>
                             </span>
                             <span class="saving">
+                                {% comment %}Translators: sheets.saving{% endcomment %}
                                 <span class="{{ language_font_class }}">{% trans "Saving..." %}</span>
                             </span>
                             <span class="pending">
+                                {% comment %}Translators: sheets.changes_pending{% endcomment %}
                                 <span class="{{ language_font_class }}">{% trans "Changes Pending..." %}</span>
                             </span>
 
@@ -442,6 +504,7 @@
                     </div>
                     <div class="sheetsMenuBarItem" id="higlightModeMenu">
                     <span id="highlightModeDisplay">
+                        {% comment %}Translators: sheets.highlight_mode_is_on{% endcomment %}
                         <span class="{{ language_font_class }}">{% trans "Highlight Mode is On" %}</span>
                     </span>
                     </div>
@@ -452,22 +515,27 @@
                     <a id="save" class="button" data-mode="editing" role="button" tabIndex="0">
                         <i class="fa fa-floppy-o {{language_font_class}}"></i>
                         <span id="doSave">
+                        {% comment %}Translators: common.sheets.save{% endcomment %}    
                         <span>{% trans "Save" %}</span>
                     </span>
                         <span id="inSave">
+                        {% comment %}Translators: common.sheets.saving{% endcomment %}    
                         <span>{% trans "Saving..." %}</span>
                     </span>
                     </a>
                     {% elif is_owner %}
                     <a id="share" class="button {{language_font_class}}" role="button" tabIndex="0">
                         <img src="{% static 'img/share.png' %}" alt="Share Icon">
+                        {% comment %}Translators: common.sheets.share{% endcomment %}
                         <span>{% trans "Share" %}</span>
                     </a>
                     <a id="onlineMode" href="/sheets/{{sheet.id}}" class="button {{language_font_class}}" role="button" tabIndex="0">
+                        {% comment %}Translators: sheets.view_in_library{% endcomment %}
                         <span>{% trans "View in Library" %}</span>
                     </a>
                     {% else %}
                     <a id="onlineMode" href="/sheets/{{sheet.id}}" class="button {{language_font_class}}" role="button" tabIndex="0">
+                        {% comment %}Translators: sheets.view_in_library{% endcomment %}
                         <span>{% trans "View in Library" %}</span>
                     </a>
                     {% endif %}
@@ -504,7 +572,8 @@
         </div>
 
         {% endif %}
-
+        
+        {% comment %}Translators: sheets.header_title{% endcomment %}
         <div id="bsdHeader">{% trans "Header Title" %}</div>
         <div id="sheetHeader" {% if not displayed_collection %}style="display:none" {% endif %}>
             {% if displayed_collection and displayed_collection.headerUrl %}
@@ -557,18 +626,25 @@
 
         <details id="sheetMetadata">
             <summary>
+                {% comment %}Translators: sheets.more_info{% endcomment %}
                 <span>{% trans "More info" %}</span>
             </summary>
             <div class="metadataOpenDetails">
                 <div>
-                {% if can_edit %}<span
+                {% if can_edit %}<span>
+                        {% comment %}Translators: common.sheets.edit{% endcomment %}
                         class="editButton">{% trans "Edit" %}</span>{% endif %}</span>
+                        {% comment %}Translators: sheets.created{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Created" %} <span class="date">{{ sheet.dateCreated|format_date_by_language }}</span> · <span
-                            class="views">{% if sheet.views == 1%}{% trans "View" %} {% else %}{{ sheet.views }}
+                            class="views">{% if sheet.views == 1%}
+                            {% comment %}Translators: common.sheets.view{% endcomment %}
+                            {% trans "View" %} {% else %}{{ sheet.views }}
+                            {% comment %}Translators: common.sheets.views{% endcomment %}
                 {% endif %}{% trans "Views" %}</span>{% if can_edit %}<span></span>{% endif %}</span>
                 </div>
                 {% if sheet.via %}
                 <div id="via">
+                    {% comment %}Translators: sheets.based_on{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Based on" %} <a
                         href="/sheets/{{ sheet.via }}">{% trans "a sheet" %}</a>{% trans "by" %} {{ sheet.viaOwner|user_link }}
                     </span>
@@ -576,12 +652,14 @@
 
                 {% elif assigner_id %}
                 <div id="assignmentAttribution">
+                    {% comment %}Translators: sheets.assigned_by{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Assigned by" %}</span>
                     {{ assigner_id|user_link }}
                 </div>
 
                 {% elif sheet.assigner_id %}
                 <div id="assignmentAttribution">
+                    {% comment %}Translators: sheets.assigned_by{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Assigned by" %}</span>
                     {{ sheet.assigner_id|user_link }}
                 </div>
@@ -625,32 +703,38 @@
             <div class="buttonBar">
                 <div class="addInterfaceButton" id="sourceButton" tabindex="0" role="button"><img
                         src="{% static 'img/source.png' %}" alt="Add Source Icon">
+                        {% comment %}Translators: common.sheets.source{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Source" %}</span>
                 </div><!--
          -->
                 <div class="addInterfaceButton" id="connectionButton" tabindex="0" role="button">
                     <img src="{% static 'img/connection.png' %}" alt="Add Connections Icon">
+                    {% comment %}Translators: sheets.connection{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Connection" %}</span>
                 </div><!--
          -->
                 <div class="addInterfaceButton" id="customTextButton" tabindex="0" role="button">
                     <img src="{% static 'img/custom text.png' %}" alt="Add Outside Text Icon">
+                    {% comment %}Translators: common.sheets.text{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Text" %}</span>
                 </div><!--
          -->
                 <div class="addInterfaceButton" id="mediaButton" tabindex="0" role="button">
                     <img src="{% static 'img/media.png' %}" alt="Add Media Icon">
+                    {% comment %}Translators: common.sheets.media{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Media" %}</span>
                 </div><!--
          -->
                 <div class="addInterfaceButton" id="commentButton" tabindex="0" role="button">
                     <img src="{% static 'img/comment.png' %}" alt="Add Comment Icon">
+                    {% comment %}Translators: common.sheets.comment{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Comment" %}</span>
                 </div>
             </div>
             <div class="contentDiv">
                 <div id="addsourceDiv">
                     <div id="inlineAddDialogTitle" class="inlineAddDesc">
+                        {% comment %}Translators: sheets.select_a_text{% endcomment %}
                         <span class="{{ language_font_class }}">{% trans "Select a text" %}</span>
                     </div>
                     <div class="blockContainer">
@@ -659,14 +743,17 @@
                         <div class="buttonContainer">
                             {% comment %} <div id="inlineAddBrowseBox" class="inlineAddSourceByttons">
                                 <div id="inlineAddSourceOK" class='button disabled' role="button" tabIndex="0">
+                                    {% comment %}Translators: sheets.add_source{% endcomment %}
                                     <span class="{{ language_font_class }}">{% trans "Add Source" %}</span>
                                 </div>
                             </div> {% endcomment %}
                             {% comment %} <div class="inlineAddOr">
+                                {% comment %}Translators: common.sheets.or{% endcomment %}
                                 <span class="{{ language_font_class }}">{% trans "or" %}</span>
                             </div> {% endcomment %}
                             <div id="inlineAddBrowseBox" class="inlineAddSourceByttons">
                                 <div id="inlineAddBrowse" class='button' role="button" tabIndex="0">
+                                    {% comment %}Translators: sheets.browse_sources{% endcomment %}
                                     <span class="{{ language_font_class }}">{% trans "Browse Sources" %}</span>
                                 </div>
                             </div>
@@ -676,15 +763,18 @@
                 </div>
                 <div id="addconnectionDiv">
                     <div class="inlineAddDesc">
+                        {% comment %}Translators: sheets.select_connected_texts{% endcomment %}
                         <span class="{{ language_font_class }}">{% trans "Select connected texts" %}</span>
                     </div>
                     <div id="connectionsToAdd"></div>
                     <div class="button" role="button" tabIndex="0">
+                        {% comment %}Translators: sheets.add_to_sheet{% endcomment %}
                         <span class="{{ language_font_class }}">{% trans "Add to Sheet" %}</span>
                     </div>
                 </div>
                 <div id="addcustomTextDiv">
                     <div class="inlineAddDesc">
+                    {% comment %}Translators: sheets.write_or_paste_text{% endcomment %}    
                     <span class="{{ language_font_class }}">{% trans "Write or paste text" %}</span>
                     </div>
                     <div id="customTextLanguageToggle" class="toggle">
@@ -699,15 +789,19 @@
                     </span>
                     </div>
                     <div id="customTextContainer" class="flexContainer">
+                        {% comment %}Translators: common.sheets.english{% endcomment %}
                         <div class="{{ language_font_class }} contentToAdd en customTextEditables" tabindex="0">{% trans "english" %}</div>
+                        {% comment %}Translators: common.sheets.tibetan{% endcomment %}
                         <div class="{{ language_font_class }} contentToAdd he customTextEditables" tabindex="0">{% trans "Tibetan" %}</div>
                     </div>
                     <div class="{{ language_font_class }} button" role="button" tabIndex="0">
+                        {% comment %}Translators: sheets.add_to_sheet{% endcomment %}
                         <span>{% trans "Add to Sheet" %}</span>
                     </div>
                 </div>
                 <div id="addmediaDiv">
                     <div class="{{ language_font_class }} inlineAddDesc">
+                        {% comment %}Translators: sheets.add_image_youtbe_soundcloud_link_or_mp3{% endcomment %}
                         <span>{% trans "Add Image, Youtube Video, SoundCloud link, or MP3" %}</span>
 
                     </div>
@@ -717,15 +811,18 @@
                         <div class="buttonContainer">
                             <div class="inlineAddSourceByttons">
                                 <div class="{{ language_font_class }} button" role="button" tabIndex="0">
+                                    {% comment %}Translators: sheets.add_to_sheet{% endcomment %}
                                     <span>{% trans "Add to Sheet" %}</span>
                                 </div>
                             </div>
                             <div class="{{ language_font_class }} inlineAddOr">
+                                {% comment %}Translators: common.sheets.or{% endcomment %}
                                 <span>{% trans "or" %}</span>
                             </div>
                             <div class="inlineAddSourceByttons">
                                 <label for="addmediaFileSelector" class="button" role="button" tabIndex="0">
                                     <i class="{{ language_font_class }} fa fa-upload" aria-hidden="true"></i>
+                                    {% comment %}Translators: sheets.upload_an_image{% endcomment %}
                                     <span>{% trans "Upload an Image" %}</span>
                                 </label>
                                 <input id="addmediaFileSelector" type="file" style="display:none">
@@ -735,10 +832,12 @@
                 </div>
                 <div id="addcommentDiv">
                     <div class="{{ language_font_class }} inlineAddDesc">
+                        {% comment %}Translators: sheets.comment_on_this_section{% endcomment %}
                         <span>{% trans "Comment on this section" %}</span>
                     </div>
                     <div class="contentToAdd" tabindex="0" data-gramm="false"><br></div>
                     <div class="{{ language_font_class }} button" role="button" tabIndex="0">
+                        {% comment %}Translators: sheets.add_to_sheet{% endcomment %}
                         <span>{% trans "Add to Sheet" %}</span>
                     </div>
                 </div>
@@ -747,6 +846,7 @@
         {% endif %}
 
         <div id="sheetLoading" style="display:none">
+            {% comment %}Translators: common.sheets.loading{% endcomment %}
             <span class="{{ language_font_class }}">{% trans "Loading..." %}</span>
         </div>
 
@@ -758,22 +858,32 @@
                     allowfullscreen></iframe>
 
             <h3>
-                <span class="{{ language_font_class }}">{% trans "Watch a 2 minute intro video or " %}<a class="empty_readmore">{% trans "read more" %}</a>.</span>
+                {% comment %}Translators: sheets.watch_a_2_minute_video_or{% endcomment %}
+                <span class="{{ language_font_class }}">{% trans "Watch a 2 minute intro video or " %}<a class="empty_readmore">
+                    {% comment %}Translators: common.sheets.read_more{% endcomment %}
+                    {% trans "read more" %}</a>.</span>
             </h3>
             <div id="howItWorks">
                 <h1>
+                    {% comment %}Translators: sheets.source_sheet_builder_how_it_works{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "Source Sheet Builder: How it Works" %}</span>
 
                 </h1>
                 <ul>
                     <li>
                 <span class="{{ language_font_class }}">
-                    <b>{% trans "Add Sources" %}</b>{% trans "by typing a citation like:" %}
+                    {% comment %}Translators: sheets.add_sources{% endcomment %}
+                    <b>{% trans "Add Sources" %}</b>
+                    {% comment %}Translators: sheets.by_typing_a_citation_like{% endcomment %}
+                    {% trans "by typing a citation like:" %}
 			        <div id="cite"><i>Genesis 4:5-8</i>, <i>Mishnah Peah 2:6</i>, <i>Berakhot 2a:4-7</i>, <i>Bereishit Rabbah 1:4</i>.</div>
                 </span>
                     </li>
                     <li>
-                        <span class="{{ language_font_class }}"><b>{% trans "Reorder Sources" %}</b>{% trans "by dragging and dropping." %}</span>
+                        {% comment %}Translators: sheets.reorder_sources{% endcomment %}
+                        <span class="{{ language_font_class }}"><b>{% trans "Reorder Sources" %}</b>
+                            {% comment %}Translators: sheets.by_dragging_and_dropping{% endcomment %}
+                            {% trans "by dragging and dropping." %}</span>
                     </li>
                     <li>
                         <span class="{{ language_font_class }}"><b>{% trans "Print" %}</b>{% trans "your sheets to paper or PDF, or just" %} <b>{% trans "Share" %}</b>{% trans " the link." %}</span>
@@ -797,6 +907,7 @@
         <div id="printFooter {{ language_font_class }}">
             <img src="{% static 'img/pecha-icon.png' %}">
             <div style="padding: 8px;">
+                {% comment %}Translators: sheets.made_with_pecha_source_sheet_builder{% endcomment %}
                 {% trans "Made with the Pecha Source Sheet Builder" %}
                 <br/>
                 www.pecha.org/sheets
@@ -808,6 +919,7 @@
                 <span class="close-button"></span>
                 <div class='tagSelector'>
                     <div class='tagSelectorTitle'>
+                        {% comment %}Translators: sheets.add_higlight{% endcomment %}
                         <span class="{{ language_font_class }}">{% trans "Add Highlight" %}</span>
                     </div>
                     <div class='sheetHighlighterTags'></div>
@@ -819,9 +931,11 @@
                         <div class='colorSwatch' style='background-color: #a4b7de'></div>
                         <div class='colorSwatch' style='background-color: #e8dde5'></div>
                         <div class='colorSwatch' style='background-color: #d2ddc9'></div>
+                        {% comment %}Translators: sheets.create_new{% endcomment %}
                         <div class='tagName {{ language_font_class }}' contenteditable='true'>{%trans "Create New" %}</div>
                     </div>
                     <div class='save button {{ language_font_class }}'>
+                        {% comment %}Translators: common.sheets.save{% endcomment %}
                         <span>{% trans "Save" %}</span>
                     </div>
                 </div>
@@ -834,6 +948,7 @@
 
     {% if author %}
     <div id="bottomAuthor">
+        {% comment %}Translators: sheets.source_sheet_created_on_pecha_by{% endcomment %}
         <span class="{{ language_font_class }}">{% trans "Source Sheet created on Pecha by " %}</span>
         {{ sheet.owner|user_link }}
         {% if sheet.via %}
@@ -850,16 +965,20 @@
     <div id="assignmentsModal" class="modal s2Modal">
         <span class="close-button"></span>
         <div class="title {{ language_font_class }}">
+            {% comment %}Translators: sheets.assignments{% endcomment %}
             <span>{% trans "Assignments" %}</span>
         </div>
         <div class="content {{ language_font_class }}" id="assignmentDirections">
+            {% comment %}Translators: sheets.assignment_feature_description{% endcomment %}
             <span>{% trans "Assignments allow you to create a template that your students can fill out on their own." %}</span>
         </div>
         <input id="assignmentURLLink" value="{{ request.META.HTTP_HOST }}/sheets/new?assignment={{sheet.id}}"/>
         <div class='button' id="makeSheetAssignableButton">
+            {% comment %}Translators: sheets.assign_this_sheet{% endcomment %}
             <span class="{{ language_font_class }}">{% trans "Assign this Sheet" %}</span>
         </div>
         <div class='button' id="StopCollectingAssignmentsButton">
+            {% comment %}Translators: sheets.stop_collection_assignments{% endcomment %}
             <span class="{{ language_font_class }}">{% trans "Stop Collecting Assignments" %}</span>
         </div>
         <br/>
@@ -867,6 +986,7 @@
             <div class="line"></div>
 
             <div class="title">
+                {% comment %}Translators: sheets.saved_assignments{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Saved Assignments" %}</span>
             </div>
             {% for assignment_sheet in assignments_from_sheet %}
@@ -876,6 +996,7 @@
 
             {% empty %}
             <em>
+                {% comment %}Translators: sheets.student's_assignment_is_viewable_here{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Your student's saved assignments will be viewable here." %}</span>
             </em>
             {% endfor %}
@@ -885,13 +1006,14 @@
 
     <div id="shareWithOthers" class="modal s2Modal">
         <div class="content">
-            <textarea id="sheetSummaryInput"
-                      placeholder='{%trans "Write a summary to help others understand your sheet..."%}'>{{sheet.summary}}</textarea>
+            {% comment %}Translators: sheets.write_a_summary_to_help_others_understand_your_sheet{% endcomment %}
+            <textarea id="sheetSummaryInput" placeholder='{%trans "Write a summary to help others understand your sheet..."%}'>{{sheet.summary}}</textarea>
         </div>
 
         <div class="line"></div>
 
         <div class="content">
+            {% comment %}Translators: sheets.add_tags{% endcomment %}
             <input id="addTag" placeholder='{%trans "Add Tags..."%}'/>
             <ul id="tags"></ul>
             <div id="suggestedTags"></div>
@@ -902,6 +1024,7 @@
 
         <div class="content sideLabeled">
             <label class="labelforOnOffSwitch {{ language_font_class }}">
+                {% comment %}Translators: sheets.list_on_pecha{% endcomment %}
                 <span>{% trans "List on Pecha" %}</span>
             </label>
             <div>
@@ -918,6 +1041,7 @@
         {% if sheet_collections %}
         <div class="content sideLabeled" id="sourceSheetGroupOptions">
             <label for="sourceSheetGroupSelect">
+                {% comment %}Translators: sheets.display_collection{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Display Collection" %}</span>
             </label>
             
@@ -925,6 +1049,7 @@
                 <div class="custom-select {{ language_font_class }}">
                     <select id="sourceSheetShareSelect">
                         <option class="{{ language_font_class }}" value="">
+                            {% comment %}Translators: common.sheets.none{% endcomment %}
                             {% trans 'None' %}
                         </option>
     
@@ -940,6 +1065,7 @@
                     </select>
                 </div>
                 <div id="collectionsMessage">
+                    {% comment %}Translators: sheets.visit_yout_profile_to_manage_your_collection{% endcomment %}
                     <span class="{{ language_font_class }}">{% trans "To manage the collections this sheet appears in, visit your profile." %}</span>
                 </div>
             </div>
@@ -949,6 +1075,7 @@
 
         <div class="content sideLabeled">
             <label class="{{ language_font_class }}" for="shareURL">
+                {% comment %}Translators: sheets.share_a_link{% endcomment %}
                 <span>{% trans "Share a link" %}</span>
             </label>
             <div>
@@ -960,21 +1087,26 @@
 
         <div class="content">
             <label class="{{ language_font_class }}" for="sourceSheetShareSelect">
+                {% comment %}Translators: sheets.anyone_with_access_can{% endcomment %}
                 <span>{% trans "Anyone with access can" %}</span>
             </label>
             <div class="custom-select {{ language_font_class }}">
                 <select id="sourceSheetShareSelect">
                     <option value="view">
+                        {% comment %}Translators: common.sheets.view{% endcomment %}
                         {% trans "View" %}
                     </option>
                     <option value="add">
+                        {% comment %}Translators: common.sheets.add{% endcomment %}
                         {% trans "Add" %}
                     </option>
                     <option value="edit">
+                        {% comment %}Translators: common.sheets.edit{% endcomment %}
                         {% trans "Edit" %}
                     </option>
                 </select>
             </div>
+            {% comment %}Translators: common.sheets.save{% endcomment %}
             <div class="ok button {{ language_font_class }}">{% trans "Save" %}</div>
         </div>
 
@@ -990,9 +1122,11 @@
         </ul>
         <div class="actions">
             <div class="button ok">
+                {% comment %}Translators: common.sheets.add{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Add" %}</span>
             </div>
             <div class="button white cancel">
+                {% comment %}Translators: common.sheets.cancel{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Cancel" %}</span>
             </div>
         </div>
@@ -1001,9 +1135,11 @@
     <div id="embedSheetModal" class="gradient modal s2Modal">
         <span class="close-button"></span>
         <div class="title">
+            {% comment %}Translators: sheets.embed_sheet{% endcomment %}
             <span class="{{ language_font_class }}">{% trans "Embed Sheet" %}</span>
         </div>
         <div class="content center">
+            {% comment %}Translators: sheets.copy_and_paste_embed_sheet_below{% endcomment %}
             <span class="{{ language_font_class }}">{% trans "Copy and paste the embed code below. Adjust the values of width and height to best fit your design." %}</span>
         </div>
         <textarea><iframe src="https://{{ request.get_host }}{{ request.get_full_path }}?embed=1" width="600px" height="600px"></iframe></textarea>
@@ -1011,10 +1147,12 @@
 
     <div id="addParashaToSheetModal" class="modal s2Modal">
         <div class="header">
+            {% comment %}Translators: sheets.add_a_parasha_to_a_source_sheet{% endcomment %}
             <span class="{{ language_font_class }}">{% trans "Add a Parasha to a Source Sheet" %}</span>
         </div>
         <div class="actions">
             <div class="button white cancel">
+                {% comment %}Translators: common.sheets.cancel{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Cancel" %}</span>
             </div>
         </div>
@@ -1023,6 +1161,7 @@
     <div id="overlay"></div>
 
     <div id="overrideLayoutModal" class="modal s2Modal">
+        {% comment %}Translators: sheets.change_this_source's_layout{% endcomment %}
         <div class="header {{ language_font_class }}">{% trans "Change this source's layout" %}</div>
 
         <span id="biLayoutToggleSource" class="toggle"><span id="hebLeftSource" class="toggleOption"><img
@@ -1039,7 +1178,9 @@
                 src="{% static 'img/tibetan.png' %}"></span></span>
         <br/>
 
+        {% comment %}Translators: common.sheets.ok{% endcomment %}
         <div class="{{ language_font_class }} button ok">{% trans "OK" %}</div>
+        {% comment %}Translators: sheets.reset_to_sheet_default{% endcomment %}
         <h6 id="resetToDefaults {{ language_font_class }}"><small>{% trans "Reset to sheet defaults" %}</small></h6>
 
 
@@ -1049,48 +1190,59 @@
     <div id="publishPromptModal" class="modal s2Modal">
         <div id="prompt">
             <div class="header {{ language_font_class }}">
+                {% comment %}Translators: sheets.would_you_like_to_make_source_sheet_public{% endcomment %}
                 <span>{% trans "Would you like to make your Source Sheet public?" %}</span>
             </div>
 
             <p>
             <span class="{{ language_font_class }}">
+                {% comment %}Translators: sheets.encouragement_to_share_your_sheet_in_community{% endcomment %}
                 {% trans "Your Source Sheet is looking great! You can share it with other members of the Pecha Community by making it public." %}
             </span>
             </p>
 
             <div class="{{ language_font_class }} button publish">
+                {% comment %}Translators: sheets.make_public{% endcomment %}
                 <span>{% trans "Make Public" %}</span>
             </div>
             <div class="{{ language_font_class }} button white later">
+                {% comment %}Translators: sheets.maybe_later{% endcomment %}
                 <span>{% trans "Maybe Later" %}</span>
             </div>
         </div>
         <div id="published" style="display:none;">
             <div class="header">
+                {% comment %}Translators: sheets.your_sheet_is_now_public{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Your Sheet is now Public!" %}</span>
             </div>
 
             <p>
-                <span class = "{{ language_font_class }}">{% trans "Thank you for contributing to a free, growing resource for Jewish learning." %}</span>
+                {% comment %}Translators: sheets.thankyou_for_contributing_to_free_buddhist_digital_library{% endcomment %}
+                <span class = "{{ language_font_class }}">{% trans "Thank you for contributing to a free, growing resource for Buddhist learning." %}</span>
             </p>
 
             <div class="{{ language_font_class }} button ok">
+                {% comment %}Translators: common.sheets.ok{% endcomment %}
                 <span>{% trans "OK" %}</span>
             </div>
         </div>
         <div id="notPublished" style="display:none;">
             <div class="{{ language_font_class }} header">
+                {% comment %}Translators: sheets.this_sheet_is_still_not_public{% endcomment %}
                 <span>{% trans "No problem, this sheet is still not listed on Pecha." %}</span>
             </div>
 
             <p>
             <span class="{{ language_font_class }}">
+                {% comment %}Translators: sheets.you_can_make_your_sheet_public_in_future{% endcomment %}
                 {% trans "You can make your sheet public in the future from the" %}
+                {% comment %}Translators: common.sheets.share{% endcomment %}
                 <span class="label">{% trans "Share" %}</span> menu.
             </span>
             </p>
 
             <div class="{{ language_font_class }} button ok">
+                {% comment %}Translators: common.sheets.ok{% endcomment %}
                 <span>{% trans "OK" %}</span>
             </div>
         </div>

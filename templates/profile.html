@@ -17,7 +17,7 @@
 			{% if profile.position or profile.organization %}
 			<div id="profileTagline">
 				<span id="position">{{ profile.position }}</span>
-				<span id="at">{% if profile.organization and profile.position %}{% trans "at " %}{% endif %}</span><span id="organization">{{ profile.organization}}</span>
+				<span id="at">{% if profile.organization and profile.position %}{% at %}{% endif %}</span><span id="organization">{{ profile.organization}}</span>
 			</div>
 			{% endif %}
 
@@ -49,18 +49,21 @@
 
 				{% if profile.facebook %}
 				<div id="profileFacebook">
+					{% comment %}Translators: common.profile.facebook{% endcomment %}
 					<a href="{{ profile.facebook|normalize_url }}" target="_blank">{% trans "Facebook" %}</a>
 				</div>
 				{% endif %}
 
 				{% if profile.twitter %}
 				<div id="profileTwittr">
+					{% comment %}Translators: common.profile.twitter{% endcomment %}
 					<a href="http://www.twitter.com/{{ profile.twitter }}" target="_blank">{% trans "Twitter" %}</a>
 				</div>
 				{% endif %}
 
 				{% if profile.linkedin %}
 				<div id="profileLinkedIn">
+					{% comment %}Translators: common.profile.linkedlin{% endcomment %}
 					<a href="{{ profile.linkedin|normalize_url }}" target="_blank">{% trans "LinkedIn" %}</a>
 				</div>
 				{% endif %}
@@ -70,17 +73,22 @@
 			<div id="buttons">
 				{% if profile.id != request.user.id %}
 					<div id="messageMe" class="button white control-elem">
+						{% comment %}Translators: profile.message{% endcomment %}
 						<span>{% trans "Message" %}</span>
 					</div>
 					<div id="followMe" class="{% if following %}following{% else %}follow{% endif %} button blue control-elem">
                         <span class="{{ language_font_class }}">
+							{% comment %}Translators: common.profile.follow{% endcomment %}
                             <span class="follow">{% trans "Follow" %}</span>
+							{% comment %}Translators: common.profile.following{% endcomment %}
                             <span class="state following">{% trans "Following" %}</span>
+							{% comment %}Translators: common.profile.unfollow{% endcomment %}
                             <span class="unfollow">{% trans "Unfollow" %}</span>
                         </span>
 					</div>
 				{% endif %}
 				{% if profile.id == request.user.id %}
+				    {% comment %}Translators: profile.edit_profile{% endcomment %}
 					<a id="editProfile" href="/settings/profile"class="{{ language_font_class }}">{% trans "Edit Profile" %}</a>
 				{% endif %}
 			</div>
@@ -96,6 +104,7 @@
 
 		{% if sheets.count %}
 		<div id="profileSheets" class="section">
+			{% comment %}Translators: profile.source_sheet{% endcomment %}
 			<h2>{% trans "Source Sheets" %} - {{ sheets.count }}</h2>
 
 			<ul id="pinnedSheets" class="sheetsBox">
@@ -116,6 +125,7 @@
 
 		{% if notes|length %}
 		<div id="profileNotes" class="section">
+			{% comment %}Translators: profile.label.notes{% endcomment %}
 			<h2>{% trans "Notes" %} - {{ notes|length }}</h2>
 			{% include "elements/activity_feed.html" with activity=notes single=1 %}
 		</div>
@@ -123,8 +133,10 @@
 
 		{% if activity|length %}
 		<div id="profileActivity" class="section">
+			{% comment %}Translators: profile.activity{% endcomment %}
 			<h2>{% trans "Activity" %}</h2>
 			{% include "elements/activity_feed.html" with activity=activity|slice:":3" single=1 hide_more_link=1 %}
+			{% comment %}Translators: profile.more_activity{% endcomment %}
 			<a id="moreActivity" class="page-link" href="/activity/{{ profile.slug }}/">{% trans "More Activity" %} &rsaquo;</a>
 		</div>
 		{% endif %}

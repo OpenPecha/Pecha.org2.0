@@ -4,17 +4,20 @@
 {% load sefaria_tags %}
 {% load humanize %}
 
-{% block title %}{% trans "Random Text | Sefaria.org" %}{% endblock %}
+{% comment %}Translators: random.random_text_pecha_dot_org{% endcomment %}
+{% block title %}{% trans "Random Text | Pecha.org" %}{% endblock %}
 
 {% block content %}
 
 <div id="randomPage" class="container doc">
     <div class="row">
         <div class="span8 offset2">
-            <h1>{% trans "A Random Text on Sefaria" %}</h1>
+            {% comment %}Translators: random.a_random_text_on_pecha{% endcomment %}
+            <h1>{% trans "A Random Text on Pecha" %}</h1>
            
             <center>
                 <div id="getRandom" class="btn btn-large btn-primary">
+                    {% comment %}Translators: random.get_random{% endcomment %}
                     {% trans "Get Random" %}
                 </div>
             </center>

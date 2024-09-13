@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% comment %}Translators: pecha{% endcomment %}
-{% block title %}{% trans "Create an Account" %} | {% trans "Pecha" %}{% endblock %}
+{% comment %}Translators: registration.register.create_an_account{% endcomment %}
+{% block title %}{% trans "Create an Account" %} | 
 
+{% comment %}Translators: common.registration.register.pecha{% endcomment %}
+{% trans "Pecha" %}{% endblock %}
+
+{% comment %}Translators: registration.register.create_an_account_description{% endcomment %}
 {% block description %}{% trans "Create an account on Pecha to make source sheets, take notes and follow other people." %}{% endblock %}
 
 {% block content %}
@@ -11,6 +15,7 @@
 <div id="register" class="biReady registrationContent static">
     <div class="inner">
         <h1>
+          {% comment %}Translators: common.registration.register.sign_up{% endcomment %}
           <span>{% trans "Sign Up" %}</span>
         </h1>
         <form id="register-form" action="{% url "register" %}" method="post" autocomplete="false">
@@ -20,10 +25,12 @@
             <input type="hidden" name="next" value="{{ next }}" />
         {% endif %}
         <button type="submit" class="control-elem button">
+          {% comment %}Translators: common.registration.register.sign_up{% endcomment %}
             <span>{% trans "Sign Up" %}</span>
         </button>
         </form>
         <a class="registration-links control-elem" href="{% url "login" %}{% if next %}?next={{ next }}{% endif %}">
+          {% comment %}Translators: registration.register.login_if_already_have_an_account{% endcomment %}
           <span>{% trans "Already have an account? Log in" %}</span>
         </a>
         {% comment %} <p class="registration-links control-elem" href="{% url "login" %}{% if next %}?next={{ next }}{% endif %}">

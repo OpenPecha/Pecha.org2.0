@@ -1,22 +1,28 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans "Admin: Delete a User" %} | {% trans "Pecha" %}{% endblock %}
+{% comment %}Translators: delete_user_account.adming_delete_a_user{% endcomment %}
+{% block title %}{% trans "Admin: Delete a User" %} | 
+{% comment %}Translators: common.delete_user_account.pecha{% endcomment %}
+{% trans "Pecha" %}{% endblock %}
 
 {% block content %}
 
 <div id="deleteUser" class="static">
     <div class="inner">
         <h1>
-            <span class="int-en">{% trans "Delete User" %}</span>
+            {% comment %}Translators: registration.delete_user_account.delete_user{% endcomment %}
+            <span class="{{language_font_class}}">{% trans "Delete User" %}</span>
         </h1>
         <form method="post" if="delete-form" action="{% url "delete/user-account" %}">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="button control-elem">
-                <span class="int-en">{% trans "Delete User" %}</span>
+                {% comment %}Translators: registration.delete_user_account.delete_user{% endcomment %}
+                <span class="{{language_font_class}}">{% trans "Delete User" %}</span>
             </button>
         </form>
+        {% comment %}Translators: registration.delete_user_account.delete_user_message{% endcomment %}
         {% trans "Note: deleting a user can take a while; once you hit "Delete User" please be patient as the user is deleted
         from our system, and do not leave the page." %}
     </div>
