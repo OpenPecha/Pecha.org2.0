@@ -3,8 +3,13 @@
 <div id="loginPrompt" class="modal">
 	<h3>{{ msg }}</h3>
 
-	<a id="loginLink" class="button" href="">Log In</a> <a id="registerLink"  class="button" >{% trans 'Sign Up' %}</a>
+	<a id="loginLink" class="button" href="">
+		{% comment %}Translators: common.templates.elements.login_prompts.log_in{% endcomment %}
+		{% trans 'Log In' %}</a> <a id="registerLink"  class="button" >
+		{% comment %}Translators: common.templates.elements.login_prompts.sign_up{% endcomment %}	
+		{% trans 'Sign Up' %}</a>
 	<div>
+		{% comment %}Translators: common.templates.elements.login_prompts.cancel{% endcomment %}
 		<div class="cancel">{% trans 'Cancel' %}</div>
 	</div>
 </div>

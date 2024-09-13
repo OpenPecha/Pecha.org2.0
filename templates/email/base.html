@@ -14,15 +14,18 @@
 	</tr>
 	<tr style="font-size:13px">
 		<div style="padding:20px 0;border-top:1px solid #bbb">
+		{% comment %}Translators: templates.email.base.you_are_recieving_this_message_because_you_have_an_account_on_link{% endcomment %}	
 		{% blocktrans %}
             You're receiving this message because you have an account on
-        {% endblocktrans %}
             <a href="http://www.pecha.org">www.pecha.org</a>.
+			{% endblocktrans %}
             <br>
+		{% comment %}Translators: templates.email.base.to_change_your_email_settings{% endcomment %}	
         {% blocktrans with settings_url="/settings/account"|absolute_url %}
             To change your email settings, click <a href="{{ settings_url }}">here</a>
         {% endblocktrans %}
             <br>
+		{% comment %}Translators: templates.email.base.feedback_is_welcome{% endcomment %}	
         {% blocktrans with hello_email="mailto:hello@pecha.org" %}
             Your feedback is welcome. Feel free to send us an <a href="{{ hello_email }}">email</a>.
         {% endblocktrans %}

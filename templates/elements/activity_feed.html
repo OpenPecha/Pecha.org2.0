@@ -4,36 +4,45 @@
 {% for event in activity %}
     <li>
         {% if event.rev_type == "delete index" %}
+            {% comment %}Translators: templates.elements.activity_feed.deleted_the_text{% endcomment %}
             <span class="topline">{{ event.user|user_link }} {% trans "deleted the text" %} <i>{% if he %}{{ event.title|he_ref }}{% else %}{{ event.title }}{% endif %}</i>.
             </span>
 
 
         {% elif event.rev_type == "delete text" %}
+            {% comment %}Translators: templates.elements.activity_feed.deleted_a_text_version{% endcomment %}
             <span class="topline">{{ event.user|user_link }} {% trans "deleted a text version of" %} <b>{{ event.title|ref_link }}</b>.
             </span>
+            {% comment %}Translators: templates.elements.activity_feed.version{% endcomment %}
     	   <div class="versionLine">{% trans "Version" %}: {% if he %}{{ event.version|he_version }}{% else %}{{ event.version }}{% endif %} ({{ event.language|lang_code }})</div>
 
 
         {% elif "text" in event.rev_type %}
 	    	<span class="topline">{{ event.user|user_link }} 
     		{% if event.rev_type == "add text" and event.version == "Sefaria Community Translation" %}
+                {% comment %}Translators: templates.elements.activity_feed.translated{% endcomment %}
     			{% trans "translated" %} 
             {% elif event.rev_type == "add text" %}
+                {% comment %}Translators: templates.elements.activity_feed.added{% endcomment %}
                 {% trans "added" %}
     		{% elif event.rev_type == "edit text" %}
+                {% comment %}Translators: templates.elements.activity_feed.edited{% endcomment %}     
     			{% trans "edited" %} 
     		{% elif event.rev_type == "revert text" %}
+                {% comment %}Translators: templates.elements.activity_feed.reverted{% endcomment %}
     			{% trans "reverted" %}
     		{% endif %}
 	    	{% if he%}{{ event.ref|he_ref_link }}{% else %}{{ event.ref|ref_link }}{% endif %}
             {% if event.method == "API" %} (via API) {% endif %}
             {% if event.summary %}
-                {% trans "and " %}<a class="showAllActivity" href="{{ event.history_url }}">{{ event.updates_count }} {% trans "others" %} &raquo;</a>
+                {% "and " %}<a class="showAllActivity" href="{{ event.history_url }}">{{ event.updates_count }} {% "others" %} &raquo;</a>
 
 	    	{% elif not single %}
+            {% comment %}Translators: templates.elements.activity_feed.history{% endcomment %}
 	    		<a class="historyLink" href="{{ event.history_url }}">{% trans "history" %} &raquo;</a>
 	    	{% endif %}
 	    	</span>
+            {% comment %}Translators: templates.elements.activity_feed.version{% endcomment %}
             <div class="versionLine">{% trans "Version" %}: {% if he %}{{ event.version|he_version }}{% else %}{{ event.version }}{% endif %} ({{ event.language|lang_code }})</div>
 	    	<div class="text ver-{{ event.language }}">
 	    		{% autoescape off %}{{ event.diff_html }}{% endautoescape %}
@@ -43,20 +52,23 @@
 	    {% elif "link" in event.rev_type %}
 	    	<span class="topline">{{ event.user|user_link }}  
     		{% if event.rev_type == "add link" %}
+            {% comment %}Translators: templates.elements.activity_feed.added_a_connection{% endcomment %}
     			{% trans "added a connection" %} 
     		{% elif event.rev_type == "edit link" %}
+            {% comment %}Translators: templates.elements.activity_feed.edited_a_connection{% endcomment %}
     			{% trans "edited a connection" %}  
     		{% elif event.rev_type == "delete link" %}
+            {% comment %}Translators: templates.elements.activity_feed.deleted_a_connection{% endcomment %}
     			{% trans "deleted a connection" %}  
     		{% endif %}
     		{% if event.new.type %}({{ event.new.type }}){% endif %}
-	    	{% trans "between" %}
+	    	{% "between" %}
             {% if he %}
                 {% filter he_ref_link %}{% firstof event.new.refs.0 event.old.refs.0 %}{% endfilter %}
             {% else %}
                 {% filter ref_link %}{% firstof event.new.refs.0 event.old.refs.0 %}{% endfilter %}
             {% endif %}
-            {% trans "and " %}
+            {% "and " %}
             {% if he %}
                 {% filter he_ref_link %}{% firstof event.new.refs.1 event.old.refs.1 %}{% endfilter %}
             {% else %}
@@ -65,18 +77,25 @@
 	    	{% if event.method == "API" %} (via API) {% endif %}
             </span>
             <div class="versionLine">
-            {% if event.rev_type == "add link" and event.new.generated_by == "add_commentary_links" %}({% trans "automatic commentary link" %}){% endif %}
-            {% if event.rev_type == "add link" and event.new.generated_by == "add_links_from_text" %}({% trans "automatic citation link" %}){% endif %}
+            {% if event.rev_type == "add link" and event.new.generated_by == "add_commentary_links" %}
+            {% comment %}Translators: templates.elements.activity_feed.automatic_commentary_link{% endcomment %}
+            ({% trans "automatic commentary link" %}){% endif %}
+            {% if event.rev_type == "add link" and event.new.generated_by == "add_links_from_text" %}
+            {% comment %}Translators: templates.elements.activity_feed.automatic_citation_link{% endcomment %}
+            ({% trans "automatic citation link" %}){% endif %}
             </div>
 
 
 	    {% elif "note" in event.rev_type %}
 	    	<span class="topline">{{ event.user|user_link }}  
     		{% if event.rev_type == "add note" %}
+            {% comment %}Translators: templates.elements.activity_feed.added_a_note_to{% endcomment %}
     			{% trans "added a note to " %} 
     		{% elif event.rev_type == "edit note" %}
+            {% comment %}Translators: templates.elements.activity_feed.edited_a_note_on{% endcomment %}
     			{% trans "edited a note on " %}  
     		{% elif event.rev_type == "delete note" %}
+            {% comment %}Translators: templates.elements.activity_feed.deleted_a_note_on{% endcomment %}
     			{% trans "deleted a note on " %} 
     		{% endif %}
             {% if he %}
@@ -94,12 +113,15 @@
 	   	{% elif "index" in event.rev_type %}
 	    	<span class="topline">{{ event.user|user_link }}  
     		{% if event.rev_type == "add index" %}
+            {% comment %}Translators: templates.elements.activity_feed.added_text_info_for_the_text{% endcomment %}
     			{% trans "added text info for the text" %}
     		{% elif event.rev_type == "edit index" %}
+            {% comment %}Translators: templates.elements.activity_feed.edited_the_text_info_of{% endcomment %}
     			{% trans "edited the text info of" %} 
     		{% endif %}
 	    	{% if he %}{{ event.title|he_ref_link }}{% else %}{{ event.title|ref_link }}{% endif %}.
             {% if event.method == "API" %} (via API) {% endif %}
+            {% comment %}Translators: templates.elements.activity_feed.details{% endcomment %}
             <span class="indexDetailsLink">{% trans "details" %} &raquo;</span>
 	    	</span>
 
@@ -113,14 +135,18 @@
         {% elif "term" in event.rev_type %}
             <span class="topline">{{ event.user|user_link }}  
             {% if event.rev_type == "add term" %}
+            {% comment %}Translators: templates.elements.activity_feed.added_a_term{% endcomment %}
                 {% trans "added a term" %}
             {% elif event.rev_type == "edit term" %}
+            {% comment %}Translators: templates.elements.activity_feed.edited_the_term{% endcomment %}
                 {% trans "edited the term" %} 
             {% elif event.rev_type == "delete term" %}
+            {% comment %}Translators: templates.elements.activity_feed.deleted_the_term{% endcomment %}
                 {% trans "deleted the term" %} 
             {% endif %}
             {% if he %}{% firstof event.new.name event.old.name %}{% else %}{% firstof event.new.name event.old.name %}{% endif %}.
             {% if event.method == "API" %} (via API) {% endif %}
+            {% comment %}Translators: templates.elements.activity_feed.details{% endcomment %}
             <span class="indexDetailsLink">{% trans "details" %} &raquo;</span>
             </span>
 
@@ -133,10 +159,13 @@
 
 
 	    {% elif "review" in event.rev_type %}
+            {% comment %}Translators: templates.elements.activity_feed.reviewed{% endcomment %}
             <span class="topline">{{ event.user|user_link }} {% trans "reviewed" %} {% if he %}{{ event.ref|he_ref_link }}{% else %}{{ event.ref|ref_link }}{% endif %} .</span>
             {% if not single %}
+                {% comment %}Translators: templates.elements.activity_feed.delethistoryed_the_text{% endcomment %}
                 <a class="historyLink" href="{{ event.history_url }}">{% trans "history" %} &raquo;</a>
             {% endif %} 
+            {% comment %}Translators: templates.elements.activity_feed.version{% endcomment %}
             <div class="versionLine">{% trans "Version" %}: {% if he %}{{ event.version|he_version }}{% else %}{{ event.version }}{% endif %} ({{ event.language|lang_code }})</div>
             <div class="score raty" data-raty="{{ event.score }}"></div>
             <div class="text">
@@ -145,6 +174,7 @@
         
 
         {% elif event.rev_type == "publish sheet" %}
+            {% comment %}Translators: templates.elements.activity_feed.published_a_new_source_sheet{% endcomment %}
             <span class="topline">{{ event.user|user_link }} {% trans "published a new Source Sheet" %}, {{ event.sheet|sheet_link }}.
             </span>
 
@@ -155,6 +185,7 @@
     		{{ event.date|naturaltime }}
     	</div>
         {% if event.summary %}
+            {% comment %}Translators: templates.elements.activity_feed.related{% endcomment %}
             <a class="showAllActivity bottom" href="{{ event.history_url }}">{{ event.updates_count }} {% trans "related" %} &raquo;</a>
         {% endif %}
     </li>
@@ -163,19 +194,24 @@
         <i>{{ empty_message }}</i>
     {% elif profile %}
         {% if filter_type %}
+        {% comment %}Translators: templates.elements.activity_feed.no_matching_public_activity_yet{% endcomment %}
         <i>{% trans "No matching public activity yet." %}</i>
         {% else %}
+        {% comment %}Translators: templates.elements.activity_feed.no_public_acitivity_yet{% endcomment %}
         <i>{% trans "No public activity yet." %}</i>
         {% endif %}
     {% else %}
         {% if filter_type %}
+        {% comment %}Translators: templates.elements.activity_feed.no_match_public_history_items{% endcomment %}
         <i>{% trans "No matching public history items." %}</i>
         {% else %}
+        {% comment %}Translators: templates.elements.activity_feed.no_public_history_items{% endcomment %}
         <i>{% trans "No public history items." %}</i>
         {% endif %}
     {% endif %}
 {% endfor %}
 </ul>
 {% if next_page and not hide_more_link %}
+    {% comment %}Translators: templates.elements.activity_feed.older_activity{% endcomment %}
     <a class="page-link" id="older" href="{{ next_page }}">{% trans "Older Activity" %} &raquo;</a>
 {% endif %}

@@ -5,14 +5,16 @@
 	<tr>
 	{% autoescape off %}
 		{% with register=registerUrl|absolute_url collection=collection_slug|collection_link|absolute_link %}
+		{% comment %}Translators: templates.email.collection_signup_invitation_email.invited_to_contribute_to_the_collection{% endcomment %}
 		{% blocktrans %}
 		{{ inviter }} invited you to contribute to the collection {{ collection }} on Sefaria.
 		{% endblocktrans %}
 
 		<br><br>
 
+		{% comment %}Translators: templates.email.collection_signup_invitation_email.to accept_this_invitation_create_a_free_account{% endcomment %}
 		{% blocktrans %}
-		To accept this invitation, <a href="{{ register }}">create a free Sefaria account</a>.
+		To accept this invitation, <a href="{{ register }}">create a free Pecha account</a>.
 		{% endblocktrans %}
 		
 		<br><br>
@@ -21,9 +23,10 @@
 	</tr>
 	<tr style="font-size:13px">
 		<div style="padding:20px 0;border-top:1px solid #bbb">
+		{% comment %}Translators: templates.email.collection_signup_invitation_email.collecton_on_pecha_feature_description{% endcomment %}	
 		{% blocktrans %}
-		Sefaria is a free living library of Jewish texts. Collections on Sefaria help you easily build and share collections of source sheets you create or find on Sefaria.<br>.
-		Feel free to send any questions over <a href="mailto:hello@sefaria.org">email</a>.
+		Pecha is a free living library of Buddhist texts. Collections on Pecha help you easily build and share collections of source sheets you create or find on Sefaria.<br>.
+		Feel free to send any questions over <a href="mailto:hello@pecha.org">email</a>.
 		{% endblocktrans %}
 		</div>
 	<tr>

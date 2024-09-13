@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-06 12:30+0530\n"
+"POT-Creation-Date: 2024-09-13 12:01+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: language_code
-#. Translators: language_english
+#. Translators: common.edit_text.label.english.
+#. Translators: common.sheets.english
 #: reader/templatetags/sefaria_tags.py:226 sefaria/settings.py:25
-#: templates/edit_text.html:185 templates/elements/notification.html:15
-#: templates/sheets.html:191 templates/sheets.html:274
+#: templates/edit_text.html:219 templates/sheets.html:222
+#: templates/sheets.html:314
 msgid "English"
 msgstr ""
 
@@ -31,9 +32,9 @@ msgstr ""
 msgid "Hebrew"
 msgstr ""
 
-#. Translators: both_english_and_tibetan
-#: reader/templatetags/sefaria_tags.py:228 templates/sheets.html:204
-#: templates/sheets.html:286
+#. Translators: common.sheets.bilingual
+#: reader/templatetags/sefaria_tags.py:228 templates/sheets.html:236
+#: templates/sheets.html:328
 msgid "Bilingual"
 msgstr ""
 
@@ -49,19 +50,28 @@ msgid ""
 "Explore 2500 years of Buddhist texts in Tibetan and English translation."
 msgstr ""
 
-#. Translators: name_of_website
-#: reader/views.py:731 reader/views.py:3189 templates/delete-sheet.html:4
-#: templates/person.html:6 templates/person.html:8
-#: templates/registration/delete_user_account.html:4
-#: templates/registration/password_reset_complete.html:3
-#: templates/registration/password_reset_confirm.html:4
-#: templates/registration/password_reset_done.html:3
-#: templates/registration/password_reset_form.html:4
-#: templates/registration/register.html:5 templates/sheets.html:7
-#: templates/static/home.html:18 templates/static/home.html:32
-#: templates/static/linker.html:4 templates/static/newsletter.html:4
-#: templates/static/privacy-policy.html:4 templates/static/terms.html:4
-#: templates/static/visualizations.html:7
+#. Translators: common.person.pecha.title
+#. Translators: common.person.pecha.description
+#. Translators: common.delete_user_account.pecha
+#. Translators: registration.password_reset_complete.pecha
+#. Translators: registration.password_reset_confirm.pecha
+#. Translators: common.registration.password_reset_done.pecha
+#. Translators: common.registration.password_reset_form.pecha
+#. Translators: common.registration.register.pecha
+#. Translators: common.sheets.pecha
+#. Translators: common.templates.static.newsletter.pecha
+#. Translators: common.templates.static.privacy_policy.pecha
+#. Translators: common.templates.static.terms.pecha
+#: reader/views.py:731 reader/views.py:3189 templates/delete-sheet.html:5
+#: templates/person.html:7 templates/person.html:10
+#: templates/registration/delete_user_account.html:7
+#: templates/registration/password_reset_complete.html:6
+#: templates/registration/password_reset_confirm.html:7
+#: templates/registration/password_reset_done.html:6
+#: templates/registration/password_reset_form.html:8
+#: templates/registration/register.html:8 templates/sheets.html:9
+#: templates/static/newsletter.html:7 templates/static/privacy-policy.html:8
+#: templates/static/terms.html:8
 msgid "Pecha"
 msgstr ""
 
@@ -300,10 +310,9 @@ msgid "Sheet ID to delete"
 msgstr ""
 
 #. Translators: placeholder_email_address
+#. Translators: common.templates.static.newsletter.email_address
 #: sefaria/forms.py:44 sefaria/forms.py:51 sefaria/forms.py:142
-#: templates/messages/2022-01-09-user-testing-modal.html:86
-#: templates/static/aramaic-translation-contest.html:140
-#: templates/static/home.html:362 templates/static/newsletter.html:24
+#: templates/static/newsletter.html:29
 msgid "Email Address"
 msgstr ""
 
@@ -313,12 +322,14 @@ msgid "Password"
 msgstr ""
 
 #. Translators: placeholder_first_name
-#: sefaria/forms.py:53 templates/edit_profile.html:27
+#. Translators: edit_profile.first_name
+#: sefaria/forms.py:53 templates/edit_profile.html:32
 msgid "First Name"
 msgstr ""
 
 #. Translators: placeholder_last_name
-#: sefaria/forms.py:55 templates/edit_profile.html:33
+#. Translators: edit_profile.last_name
+#: sefaria/forms.py:55 templates/edit_profile.html:39
 msgid "Last Name"
 msgstr ""
 
@@ -404,10 +415,6 @@ msgstr ""
 
 #. Translators: error_message
 #: sefaria/views.py:197 sefaria/views.py:200 sefaria/views.py:284
-#: templates/static/app.html:383
-#: templates/static/aramaic-translation-contest.html:189
-#: templates/static/home.html:392 templates/static/mobile.html:388
-#: templates/static/newsletter.html:56
 msgid "Sorry, there was an error."
 msgstr ""
 
@@ -468,86 +475,100 @@ msgstr ""
 msgid "Account Settings"
 msgstr ""
 
-#. Translators: cancel_request
-#: templates/account_settings.html:17 templates/account_settings.html:143
-#: templates/edit_profile.html:17 templates/edit_text.html:69
-#: templates/edit_text.html:97 templates/edit_text.html:150
-#: templates/elements/login_prompt.html:8 templates/profile.html:181
-#: templates/sheets.html:999 templates/sheets.html:1021
+#. Translators: account_setting.cancel_request
+#. Translators: account_setting.cancel_setting_button
+#. Translators: edit_profile.cancel_button
+#. Translators: edit_text.cancel_button
+#. Translators: common.form.button.cancel
+#. Translators: common.templates.elements.login_prompts.cancel
+#. Translators: common.sheets.cancel
+#: templates/account_settings.html:17 templates/account_settings.html:150
+#: templates/edit_profile.html:20 templates/edit_text.html:73
+#: templates/edit_text.html:105 templates/edit_text.html:177
+#: templates/elements/login_prompt.html:13 templates/profile.html:193
+#: templates/sheets.html:1133 templates/sheets.html:1159
 msgid "Cancel"
 msgstr ""
 
-#. Translators: save_request
-#: templates/account_settings.html:21 templates/account_settings.html:140
-#: templates/edit_profile.html:20 templates/edit_text.html:96
-#: templates/edit_text.html:149 templates/sheets.html:455
-#: templates/sheets.html:828 templates/sheets.html:981
+#. Translators: account_setting.save_request
+#. Translators: account_setting.save_setting_button
+#. Translators: edit_profile.save_button
+#. Translators: edit_text.save_button
+#. Translators: common.form.button.save
+#. Translators: common.sheets.save
+#: templates/account_settings.html:21 templates/account_settings.html:146
+#: templates/edit_profile.html:24 templates/edit_text.html:103
+#: templates/edit_text.html:175 templates/sheets.html:519
+#: templates/sheets.html:942 templates/sheets.html:1113
 msgid "Save"
 msgstr ""
 
-#. Translators: rate_of_notification
+#. Translators: account_setting.rate_of_notification
 #: templates/account_settings.html:28
 msgid "Notification Frequency (Maximum)"
 msgstr ""
 
-#. Translators: to_send_notification_daily
+#. Translators: account_setting.to_send_notification_daily
 #: templates/account_settings.html:33
 msgid "Daily"
 msgstr ""
 
-#. Translators: to_send_notification_weekly
+#. Translators: account_setting.to_send_notification_weekly
 #: templates/account_settings.html:37
 msgid "Weekly"
 msgstr ""
 
-#. Translators: never_send_notification
+#. Translators: account_setting.never_send_notification
 #: templates/account_settings.html:41
 msgid "Never"
 msgstr ""
 
-#. Translators: website_language_selection_title
+#. Translators: account_setting.language_selection_title
 #: templates/account_settings.html:49
 msgid "Site Language"
 msgstr ""
 
-#. Translators: website_language_selection_english_option
-#: templates/account_settings.html:54 templates/sheets.html:705
+#. Translators: account_setting.language_english_option
+#. Translators: common.sheets.english
+#: templates/account_settings.html:54 templates/sheets.html:796
 msgid "english"
 msgstr ""
 
-#. Translators: language_Tibetan
-#. Translators: website_language_selection_tibetan_option
-#: templates/account_settings.html:59 templates/edit_text.html:186
-#: templates/elements/notification.html:15 templates/sheets.html:197
-#: templates/sheets.html:280 templates/sheets.html:706
+#. Translators: account_setting.language_tibetan_option
+#. Translators: common.edit_text.label.tibetan
+#. Translators: common.sheets.tibetan
+#: templates/account_settings.html:58 templates/edit_text.html:221
+#: templates/sheets.html:229 templates/sheets.html:321
+#: templates/sheets.html:798
 msgid "Tibetan"
 msgstr ""
 
-#. Translators: user's_preferred_translation_language
-#: templates/account_settings.html:67
+#. Translators: account_setting.user's_preferred_translation_language
+#: templates/account_settings.html:66
 msgid "Preferred Translation Language"
 msgstr ""
 
-#. Translators: user's_reading_history
-#: templates/account_settings.html:81
+#. Translators: account_setting.user's_reading_history
+#: templates/account_settings.html:80
 msgid "Reading History"
 msgstr ""
 
-#. Translators: reading_history_enable
-#: templates/account_settings.html:86
+#. Translators: account_setting.reading_history_enable
+#: templates/account_settings.html:85
 msgid "On"
 msgstr ""
 
-#. Translators: reading_history_disable
-#: templates/account_settings.html:90
+#. Translators: account_setting.reading_history_disable
+#: templates/account_settings.html:89
 msgid "Off"
 msgstr ""
 
-#. Translators: developer_team
-#: templates/account_settings.html:99
+#. Translators: account_setting.login_account_email_message
+#: templates/account_settings.html:98
 msgid "Account Email (This is used for login)"
 msgstr ""
 
+#. Translators: account_setting.change_email_message
 #: templates/account_settings.html:104
 msgid "Change Email"
 msgstr ""
@@ -560,639 +581,759 @@ msgstr ""
 msgid "Confirm New Email"
 msgstr ""
 
-#: templates/account_settings.html:113
+#. Translators: account_setting.update_email_message
+#: templates/account_settings.html:114
 msgid "Update Email"
 msgstr ""
 
-#: templates/account_settings.html:120
+#. Translators: account_setting.google_account_message
+#: templates/account_settings.html:122
 msgid "Google Account (Allows for exporting sheets to Google Drive)"
 msgstr ""
 
-#: templates/account_settings.html:125
+#. Translators: account_setting.google_account_disconnect_with_pecha_acc
+#: templates/account_settings.html:128
 msgid "Disconnect"
 msgstr ""
 
-#: templates/account_settings.html:132
+#. Translators: account_setting.google_account_disconnected_message
+#: templates/account_settings.html:136
 msgid "Your Google Account has been disconnected"
 msgstr ""
 
-#: templates/account_settings.html:135
+#. Translators: account_setting.export_sheet_message
+#: templates/account_settings.html:140
 msgid "You can link to a new Google Account the next time you export a sheet"
 msgstr ""
 
-#: templates/activity.html:7 templates/activity.html:36
+#. Translators: pecha.org/activity.revision_history
+#: templates/activity.html:8 templates/activity.html:43
 msgid "Revision History of"
 msgstr ""
 
-#: templates/activity.html:9 templates/activity.html:11
-msgid "Sefaria Activity"
+#. Translators: pecha.org/activity.activity
+#: templates/activity.html:11 templates/activity.html:14
+msgid "Pecha Activity"
 msgstr ""
 
-#: templates/activity.html:17
-msgid "View the complete revision hisotry of this text on Sefaria."
-msgstr ""
-
-#: templates/activity.html:19
-msgid ""
-"View a user's acitvitiy history on Sefaria, including published source "
-"sheets, and text translations, edits or additions."
-msgstr ""
-
+#. Translators: pecha.org/activity.revision_history_message
 #: templates/activity.html:21
+msgid "View the complete revision history of this text on Pecha."
+msgstr ""
+
+#. Translators: pecha.org/activity.activity_message
+#: templates/activity.html:24
 msgid ""
-"View the complete log of public activity on Sefaria, including published "
+"View a user's activitiy history on Pecha, including published source sheets, "
+"and text translations, edits or additions."
+msgstr ""
+
+#. Translators: pecha.org/activity.view_log_message
+#: templates/activity.html:27
+msgid ""
+"View the complete log of public activity on Pecha, including published "
 "source sheets, and text translations, edits or additions. "
 msgstr ""
 
-#: templates/activity.html:43
+#. Translators: pecha.org/activity.public_activity
+#: templates/activity.html:51
 msgid "Public Activity"
 msgstr ""
 
-#: templates/activity.html:47
-msgid "Recent Activity on Sefaria"
+#. Translators: pecha.org/activity.recent_activity
+#: templates/activity.html:56
+msgid "Recent Activity on Pecha"
 msgstr ""
 
-#: templates/activity.html:52
+#. Translators: pecha.org/activity.all_activity_drop_down
+#: templates/activity.html:62
 msgid "All Activity"
 msgstr ""
 
-#: templates/activity.html:53
+#. Translators: pecha.org/activity.translation_option
+#: templates/activity.html:64
 msgid "Translations"
 msgstr ""
 
-#: templates/activity.html:54 templates/metrics.html:49
-#: templates/profile.html:99
+#. Translators: pecha.org/activity.source_sheets_option
+#. Translators: profile.source_sheet
+#: templates/activity.html:66 templates/metrics.html:53
+#: templates/profile.html:108
 msgid "Source Sheets"
 msgstr ""
 
-#: templates/activity.html:55
+#. Translators: pecha.org/activity.new_texts_option
+#: templates/activity.html:68
 msgid "New Texts"
 msgstr ""
 
-#: templates/activity.html:56
+#. Translators: pecha.org/activity.edit_list_option
+#: templates/activity.html:70
 msgid "Edits"
 msgstr ""
 
-#: templates/activity.html:57 templates/profile.html:119
+#. Translators: pecha.org/activity.notes_option
+#. Translators: profile.label.notes
+#: templates/activity.html:72 templates/profile.html:129
 msgid "Notes"
 msgstr ""
 
-#: templates/activity.html:58
+#. Translators: pecha.org/activity.reviews_option
+#: templates/activity.html:74
 msgid "Reviews"
 msgstr ""
 
-#: templates/activity.html:59
+#. Translators: pecha.org/activity.text_info_option_option
+#: templates/activity.html:76
 msgid "Text Info"
 msgstr ""
 
-#: templates/activity.html:60
+#. Translators: pecha.org/activity.reversions_option
+#: templates/activity.html:78
 msgid "Reversions"
 msgstr ""
 
-#: templates/activity.html:61
+#. Translators: pecha.org/activity.flagged_option
+#: templates/activity.html:80
 msgid "Flagged"
 msgstr ""
 
-#: templates/delete-sheet.html:4
+#. Translators: admin.admin_delete_sheet
+#: templates/delete-sheet.html:5
 msgid "Admin: Delete a Sheet"
 msgstr ""
 
-#: templates/delete-sheet.html:11 templates/delete-sheet.html:19
-#: templates/sheets.html:61
+#. Translators: admin.delete_sheet
+#. Translators: admin.delete_sheet_button
+#. Translators: sheets.delete_sheet
+#: templates/delete-sheet.html:13 templates/delete-sheet.html:24
+#: templates/sheets.html:78
 msgid "Delete Sheet"
 msgstr ""
 
-#: templates/delete-sheet.html:13
+#. Translators: admin.caution_messsage
+#: templates/delete-sheet.html:16
 msgid "CAUTION THIS WILL DELETE THE SHEET ID YOU INPUT"
 msgstr ""
 
-#: templates/delete-sheet.html:14
+#. Translators: admin.can't_undone_message
+#: templates/delete-sheet.html:18
 msgid "IT CANNOT BE UNDONE."
 msgstr ""
 
-#: templates/discussions.html:6 templates/discussions.html:14
-msgid "Discuss a Text on Sefaria"
+#. Translators: discussions.discuss_text_message_title
+#. Translators: discussions.discuss_text_message_h1
+#: templates/discussions.html:7 templates/discussions.html:16
+msgid "Discuss a Text on Pecha"
 msgstr ""
 
-#: templates/discussions.html:18
+#. Translators: discussions.experimental_message
+#: templates/discussions.html:21
 msgid "This is an <b>EXPERIMENTAL"
 msgstr ""
 
-#: templates/discussions.html:18
+#: templates/discussions.html:21
 msgid " feature. Please try it out and let us know what is"
 msgstr ""
 
-#: templates/discussions.html:18
+#: templates/discussions.html:21
 msgid "exciting"
 msgstr ""
 
-#: templates/discussions.html:18
+#: templates/discussions.html:21
 msgid " and what is"
 msgstr ""
 
-#: templates/discussions.html:18
+#: templates/discussions.html:21
 msgid "frustrating"
 msgstr ""
 
-#: templates/discussions.html:18
+#: templates/discussions.html:21
 msgid " about it!"
 msgstr ""
 
-#: templates/discussions.html:26
+#. Translators: discussions.send_feedback_message
+#: templates/discussions.html:23
+msgid "Send us Feedback"
+msgstr ""
+
+#. Translators: discussions.choose_text
+#: templates/discussions.html:31
 msgid "Choose a Text"
 msgstr ""
 
-#: templates/discussions.html:31
+#. Translators: discussions.start_a_discussion_header
+#: templates/discussions.html:37
 msgid "Start a Discussion"
 msgstr ""
 
-#: templates/discussions.html:33
+#. Translators: discussions.with_link_can_participate
+#: templates/discussions.html:39
 msgid "Anyone with the link below will be able to view and participate."
 msgstr ""
 
-#: templates/discussions.html:37
+#. Translators: discussions.get_started
+#: templates/discussions.html:44
 msgid "Get Started"
 msgstr ""
 
-#: templates/discussions.html:41
+#. Translators: discussions.your_discussions
+#: templates/discussions.html:49
 msgid "Your Discussions"
 msgstr ""
 
+#. Translators: edit_collection.title
 #: templates/edit_collection.html:9
-msgid "Edit Collection on Sefaria"
+msgid "Edit Collection on Pecha"
 msgstr ""
 
-#: templates/edit_collection.html:20 templates/edit_term.html:40
-#: templates/elements/loading.html:12 templates/metrics.html:16
-#: templates/sheets.html:521 templates/sheets.html:753
+#. Translators: edit_collection.loading
+#. Translators: admin.loading
+#. Translators: common.templates.elements.loading.laoding
+#. Translators: common.metrics.loading
+#. Translators: common.sheets.loading
+#: templates/edit_collection.html:21 templates/edit_term.html:42
+#: templates/elements/loading.html:13 templates/metrics.html:20
+#: templates/sheets.html:590 templates/sheets.html:853
 msgid "Loading..."
 msgstr ""
 
-#: templates/edit_profile.html:5
-msgid "Edit Your Profile on Sefaria"
+#. Translators: edit_profile.edit_your_profile
+#: templates/edit_profile.html:6
+msgid "Edit Your Profile on Pecha"
 msgstr ""
 
-#: templates/edit_profile.html:13
+#. Translators: edit_profile.header
+#: templates/edit_profile.html:15
 msgid "Edit Your Profile"
 msgstr ""
 
-#: templates/edit_profile.html:39
+#. Translators: edit_profile.title
+#: templates/edit_profile.html:46
 msgid "Title"
 msgstr ""
 
-#: templates/edit_profile.html:45
+#. Translators: edit_profile.organization
+#: templates/edit_profile.html:53
 msgid "Organization"
 msgstr ""
 
-#: templates/edit_profile.html:51
+#. Translators: edit_profile.website
+#: templates/edit_profile.html:60
 msgid "Website"
 msgstr ""
 
-#: templates/edit_profile.html:57
+#. Translators: edit_profile.location
+#: templates/edit_profile.html:67
 msgid "Location"
 msgstr ""
 
-#: templates/edit_profile.html:63
+#. Translators: edit_profile.education_info
+#: templates/edit_profile.html:74
 msgid "Education"
 msgstr ""
 
-#: templates/edit_profile.html:63
+#: templates/edit_profile.html:74
 msgid "where have you learned"
 msgstr ""
 
-#: templates/edit_profile.html:72
+#. Translators: edit_profile.line_add
+#: templates/edit_profile.html:84
 msgid "Add a line"
 msgstr ""
 
-#: templates/edit_profile.html:77
+#. Translators: edit_profile.about_me
+#: templates/edit_profile.html:90
 msgid "About Me"
 msgstr ""
 
-#: templates/edit_profile.html:87
+#. Translators: edit_profile.public_sheets
+#: templates/edit_profile.html:101
 msgid "Public Sheets"
 msgstr ""
 
-#: templates/edit_profile.html:91
+#. Translators: edit_profile.drag_sheet_message
+#: templates/edit_profile.html:106
 msgid ""
 "You can drag and order source sheets that you want to pin to the top of your "
 "profile."
 msgstr ""
 
-#: templates/edit_profile.html:95
+#. Translators: edit_profile.pinned_sheets
+#: templates/edit_profile.html:111
 msgid "Pinned Sheets"
 msgstr ""
 
-#: templates/edit_profile.html:105
+#. Translators: edit_profile.all_sheets
+#: templates/edit_profile.html:122
 msgid "All Sheets"
 msgstr ""
 
-#: templates/edit_profile.html:119
+#. Translators: edit_profile.contact
+#: templates/edit_profile.html:137
 msgid "Contact"
 msgstr ""
 
-#: templates/edit_profile.html:124
+#. Translators: edit_profile.email_privacy
+#: templates/edit_profile.html:143
 msgid "Email (will be public)"
 msgstr ""
 
-#: templates/edit_profile.html:130
+#. Translators: edit_profile.profile_url
+#: templates/edit_profile.html:150
 msgid "Profile URL"
 msgstr ""
 
-#: templates/edit_profile.html:136
+#. Translators: edit_profile.twitter_handle
+#: templates/edit_profile.html:157
 msgid "Twitter Handle"
 msgstr ""
 
-#: templates/edit_profile.html:142 templates/profile.html:64
+#. Translators: edit_profile.linkedIn
+#. Translators: common.profile.linkedlin
+#: templates/edit_profile.html:164 templates/profile.html:67
 msgid "LinkedIn"
 msgstr ""
 
-#: templates/edit_profile.html:148 templates/profile.html:52
+#. Translators: edit_profile.facebook
+#. Translators: common.profile.facebook
+#: templates/edit_profile.html:171 templates/profile.html:53
 msgid "Facebook"
 msgstr ""
 
-#: templates/edit_profile.html:154
+#. Translators: edit_profile.youtube_channel
+#: templates/edit_profile.html:178
 msgid "YouTube Channel"
 msgstr ""
 
-#: templates/edit_term.html:39
+#. Translators: admin.terms_editor
+#: templates/edit_term.html:40
 msgid "Terms Editor"
 msgstr ""
 
-#: templates/edit_text.html:64
+#. Translators: edit_text.add_new_text
+#: templates/edit_text.html:65
 msgid "Add a New Text"
 msgstr ""
 
-#: templates/edit_text.html:65
+#. Translators: edit_text.text_commentator_name
+#: templates/edit_text.html:67
 msgid "Text or commentator name:"
 msgstr ""
 
-#: templates/edit_text.html:68 templates/sheets.html:974
-#: templates/sheets.html:996
+#. Translators: edit_text.add_button
+#. Translators: common.sheets.add
+#: templates/edit_text.html:71 templates/sheets.html:1104
+#: templates/sheets.html:1129
 msgid "Add"
 msgstr ""
 
-#: templates/edit_text.html:86
+#. Translators: edit_text.your_review
+#: templates/edit_text.html:91
 msgid "Your Review:"
 msgstr ""
 
-#: templates/edit_text.html:88
+#. Translators: edit_text.review_question
+#: templates/edit_text.html:94
 msgid "How should I write a review?"
 msgstr ""
 
-#: templates/edit_text.html:101
+#. Translators: edit_text.add_new_text
+#: templates/edit_text.html:110
 msgid "To add your review, please "
 msgstr ""
 
-#: templates/edit_text.html:101
+#: templates/edit_text.html:110
 msgid "log in"
 msgstr ""
 
-#: templates/edit_text.html:101 templates/sheets.html:727
-#: templates/sheets.html:791
+#. Translators: common.sheets.or
+#: templates/edit_text.html:110 templates/sheets.html:755
+#: templates/sheets.html:823 templates/sheets.html:901
 msgid "or"
 msgstr ""
 
-#: templates/edit_text.html:101 templates/sheets.html:792
+#: templates/edit_text.html:110 templates/sheets.html:902
 msgid "register"
 msgstr ""
 
-#: templates/edit_text.html:104
+#. Translators: edit_text.close_button
+#: templates/edit_text.html:114
 msgid "Close"
 msgstr ""
 
-#: templates/edit_text.html:109
+#. Translators: edit_text.review_message
+#: templates/edit_text.html:120
 msgid "Writing Helpful Reviews"
 msgstr ""
 
-#: templates/edit_text.html:110
+#. Translators: edit_text.historical_text
+#: templates/edit_text.html:122
 msgid "For primary texts and historical translations:"
 msgstr ""
 
-#: templates/edit_text.html:110
+#: templates/edit_text.html:122
 msgid ""
 " Indicate what outside source (book, web page) was used to compare the text, "
 "or make clear that your review is only looking at the text present."
 msgstr ""
 
-#: templates/edit_text.html:112
+#. Translators: edit_text.compare_printed_edition
+#: templates/edit_text.html:125
 msgid "I compared this text to X printed edition and found no problems."
 msgstr ""
 
-#: templates/edit_text.html:113
+#. Translators: edit_text.all_looks_good
+#: templates/edit_text.html:127
 msgid "I checked this text against the edition on X website, all looks good."
 msgstr ""
 
-#: templates/edit_text.html:114
+#. Translators: edit_text.no_issue_message
+#: templates/edit_text.html:129
 msgid "I read this text carefully and don't see anything wrong."
 msgstr ""
 
-#: templates/edit_text.html:117
+#. Translators: edit_text.original_translation
+#: templates/edit_text.html:132
 msgid "For original translations:"
 msgstr ""
 
-#: templates/edit_text.html:117
+#: templates/edit_text.html:132
 msgid ""
 " Review the text carefully next to the original, and comment on its accuracy "
 "and style according to our "
 msgstr ""
 
-#: templates/edit_text.html:117
+#: templates/edit_text.html:132
 msgid "translation guidelines"
 msgstr ""
 
-#: templates/edit_text.html:119
+#. Translators: edit_text.accurate
+#: templates/edit_text.html:135
 msgid "This translation seems accurate to me."
 msgstr ""
 
-#: templates/edit_text.html:120
+#. Translators: edit_text.translation_review
+#: templates/edit_text.html:137
 msgid "The language could be improved, but the translation seems right."
 msgstr ""
 
-#: templates/edit_text.html:121
+#. Translators: edit_text.misunderstand_term_X
+#: templates/edit_text.html:139
 msgid "This translation misunderstands the term X."
 msgstr ""
 
-#: templates/edit_text.html:125
+#. Translators: edit_text.score_review
+#: templates/edit_text.html:144
 msgid "How to Score your Review:"
 msgstr ""
 
-#: templates/edit_text.html:127
+#. Translators: edit_text.compared_to_source_message
+#: templates/edit_text.html:147
 msgid " Compared closesly to a source, confident there are no problems."
 msgstr ""
 
-#: templates/edit_text.html:130
+#. Translators: edit_text.compared_to_source_no_problem_message
+#: templates/edit_text.html:151
 msgid " Compared to a source, didn't notice any problems."
 msgstr ""
 
-#: templates/edit_text.html:133
+#. Translators: edit_text.proble_free_need_review
+#: templates/edit_text.html:155
 msgid " Looks problem free, but could be reviewed more closely."
 msgstr ""
 
-#: templates/edit_text.html:136
+#. Translators: edit_text.found_small_issues_need_to_address
+#: templates/edit_text.html:159
 msgid " Found some issues that need to be addressed."
 msgstr ""
 
-#: templates/edit_text.html:139
+#. Translators: edit_text.found_serious_issues_need_address
+#: templates/edit_text.html:163
 msgid " Found serious problems that need to be addressed."
 msgstr ""
 
-#: templates/edit_text.html:142 templates/sheets.html:1045
-#: templates/sheets.html:1081 templates/sheets.html:1097
+#. Translators: common.form.button.ok
+#. Translators: common.sheets.ok
+#: templates/edit_text.html:167 templates/sheets.html:1185
+#: templates/sheets.html:1229 templates/sheets.html:1249
 msgid "OK"
 msgstr ""
 
-#: templates/edit_text.html:156
+#. Translators: common.label.source
+#: templates/edit_text.html:184
 msgid "Source "
 msgstr ""
 
-#: templates/edit_text.html:163
+#. Translators: edit_text.original_translation
+#: templates/edit_text.html:192
 msgid "Original Translation"
 msgstr ""
 
-#: templates/edit_text.html:167
+#. Translators: edit_text.copied_text
+#: templates/edit_text.html:197
 msgid "Copied Text"
 msgstr ""
 
-#: templates/edit_text.html:172
+#: templates/edit_text.html:202
 msgid "This text will be published with a "
 msgstr ""
 
-#: templates/edit_text.html:172
+#: templates/edit_text.html:202
 msgid ""
 " licence, effectively donating it to the Public Domain. Only submit texts as "
 "\"Original Translation\" that you have authored."
 msgstr ""
 
-#: templates/edit_text.html:176
+#: templates/edit_text.html:206
 msgid "Copied texts must either be in the "
 msgstr ""
 
-#: templates/edit_text.html:176
+#: templates/edit_text.html:206
 msgid "Public Domain"
 msgstr ""
 
-#: templates/edit_text.html:176
+#: templates/edit_text.html:206
 msgid " or carry a "
 msgstr ""
 
-#: templates/edit_text.html:176
+#: templates/edit_text.html:206
 msgid "Creative Commons"
 msgstr ""
 
-#: templates/edit_text.html:176
+#: templates/edit_text.html:206
 msgid " license such as "
 msgstr ""
 
-#: templates/edit_text.html:176
+#: templates/edit_text.html:206
 msgid ""
 ". You can learn more about when a text passes into the Public Domain on this"
 msgstr ""
 
-#: templates/edit_text.html:176
+#: templates/edit_text.html:206
 msgid "summary of Copyright Terms"
 msgstr ""
 
-#: templates/edit_text.html:178
+#. Translators: edit_text.version_title
+#: templates/edit_text.html:209
 msgid "Version Title:"
 msgstr ""
 
-#: templates/edit_text.html:179
+#. Translators: edit_text.copied_from
+#: templates/edit_text.html:211
 msgid "Copied from:"
 msgstr ""
 
-#: templates/edit_text.html:183
+#. Translators: common.label.language
+#: templates/edit_text.html:216
 msgid "Language:"
 msgstr ""
 
-#: templates/elements/activity_feed.html:7
+#. Translators: templates.elements.activity_feed.deleted_the_text
+#: templates/elements/activity_feed.html:8
 msgid "deleted the text"
 msgstr ""
 
-#: templates/elements/activity_feed.html:12
+#. Translators: templates.elements.activity_feed.deleted_a_text_version
+#: templates/elements/activity_feed.html:14
 msgid "deleted a text version of"
 msgstr ""
 
-#: templates/elements/activity_feed.html:14
-#: templates/elements/activity_feed.html:37
-#: templates/elements/activity_feed.html:140
+#. Translators: templates.elements.activity_feed.version
+#: templates/elements/activity_feed.html:17
+#: templates/elements/activity_feed.html:46
+#: templates/elements/activity_feed.html:169
 msgid "Version"
 msgstr ""
 
-#: templates/elements/activity_feed.html:20
+#. Translators: templates.elements.activity_feed.translated
+#: templates/elements/activity_feed.html:24
 msgid "translated"
 msgstr ""
 
-#: templates/elements/activity_feed.html:22
+#. Translators: templates.elements.activity_feed.added
+#: templates/elements/activity_feed.html:27
 msgid "added"
 msgstr ""
 
-#: templates/elements/activity_feed.html:24
+#. Translators: templates.elements.activity_feed.edited
+#: templates/elements/activity_feed.html:30
 msgid "edited"
 msgstr ""
 
-#: templates/elements/activity_feed.html:26
+#. Translators: templates.elements.activity_feed.reverted
+#: templates/elements/activity_feed.html:33
 msgid "reverted"
 msgstr ""
 
-#: templates/elements/activity_feed.html:31
-#: templates/elements/activity_feed.html:59
-msgid "and "
-msgstr ""
-
-#: templates/elements/activity_feed.html:31
-msgid "others"
-msgstr ""
-
-#: templates/elements/activity_feed.html:34
-#: templates/elements/activity_feed.html:138
+#. Translators: templates.elements.activity_feed.history
+#. Translators: templates.elements.activity_feed.delethistoryed_the_text
+#: templates/elements/activity_feed.html:42
+#: templates/elements/activity_feed.html:166
 msgid "history"
 msgstr ""
 
-#: templates/elements/activity_feed.html:46
+#. Translators: templates.elements.activity_feed.added_a_connection
+#: templates/elements/activity_feed.html:56
 msgid "added a connection"
 msgstr ""
 
-#: templates/elements/activity_feed.html:48
+#. Translators: templates.elements.activity_feed.edited_a_connection
+#: templates/elements/activity_feed.html:59
 msgid "edited a connection"
 msgstr ""
 
-#: templates/elements/activity_feed.html:50
+#. Translators: templates.elements.activity_feed.deleted_a_connection
+#: templates/elements/activity_feed.html:62
 msgid "deleted a connection"
 msgstr ""
 
-#: templates/elements/activity_feed.html:53
-msgid "between"
-msgstr ""
-
-#: templates/elements/activity_feed.html:68
+#. Translators: templates.elements.activity_feed.automatic_commentary_link
+#: templates/elements/activity_feed.html:82
 msgid "automatic commentary link"
 msgstr ""
 
-#: templates/elements/activity_feed.html:69
+#. Translators: templates.elements.activity_feed.automatic_citation_link
+#: templates/elements/activity_feed.html:85
 msgid "automatic citation link"
 msgstr ""
 
-#: templates/elements/activity_feed.html:76
+#. Translators: templates.elements.activity_feed.added_a_note_to
+#: templates/elements/activity_feed.html:93
 msgid "added a note to "
 msgstr ""
 
-#: templates/elements/activity_feed.html:78
+#. Translators: templates.elements.activity_feed.edited_a_note_on
+#: templates/elements/activity_feed.html:96
 msgid "edited a note on "
 msgstr ""
 
-#: templates/elements/activity_feed.html:80
+#. Translators: templates.elements.activity_feed.deleted_a_note_on
+#: templates/elements/activity_feed.html:99
 msgid "deleted a note on "
 msgstr ""
 
-#: templates/elements/activity_feed.html:97
+#. Translators: templates.elements.activity_feed.added_text_info_for_the_text
+#: templates/elements/activity_feed.html:117
 msgid "added text info for the text"
 msgstr ""
 
-#: templates/elements/activity_feed.html:99
+#. Translators: templates.elements.activity_feed.edited_the_text_info_of
+#: templates/elements/activity_feed.html:120
 msgid "edited the text info of"
 msgstr ""
 
-#: templates/elements/activity_feed.html:103
-#: templates/elements/activity_feed.html:124
+#. Translators: templates.elements.activity_feed.details
+#: templates/elements/activity_feed.html:125
+#: templates/elements/activity_feed.html:150
 msgid "details"
 msgstr ""
 
-#: templates/elements/activity_feed.html:116
+#. Translators: templates.elements.activity_feed.added_a_term
+#: templates/elements/activity_feed.html:139
 msgid "added a term"
 msgstr ""
 
-#: templates/elements/activity_feed.html:118
+#. Translators: templates.elements.activity_feed.edited_the_term
+#: templates/elements/activity_feed.html:142
 msgid "edited the term"
 msgstr ""
 
-#: templates/elements/activity_feed.html:120
+#. Translators: templates.elements.activity_feed.deleted_the_term
+#: templates/elements/activity_feed.html:145
 msgid "deleted the term"
 msgstr ""
 
-#: templates/elements/activity_feed.html:136
+#. Translators: templates.elements.activity_feed.reviewed
+#: templates/elements/activity_feed.html:163
 msgid "reviewed"
 msgstr ""
 
-#: templates/elements/activity_feed.html:148
-#: templates/email/notification.html:20
+#. Translators: templates.elements.activity_feed.published_a_new_source_sheet
+#: templates/elements/activity_feed.html:178
 msgid "published a new Source Sheet"
 msgstr ""
 
-#: templates/elements/activity_feed.html:158
+#. Translators: templates.elements.activity_feed.related
+#: templates/elements/activity_feed.html:189
 msgid "related"
 msgstr ""
 
-#: templates/elements/activity_feed.html:166
+#. Translators: templates.elements.activity_feed.no_matching_public_activity_yet
+#: templates/elements/activity_feed.html:198
 msgid "No matching public activity yet."
 msgstr ""
 
-#: templates/elements/activity_feed.html:168
+#. Translators: templates.elements.activity_feed.no_public_acitivity_yet
+#: templates/elements/activity_feed.html:201
 msgid "No public activity yet."
 msgstr ""
 
-#: templates/elements/activity_feed.html:172
+#. Translators: templates.elements.activity_feed.no_match_public_history_items
+#: templates/elements/activity_feed.html:206
 msgid "No matching public history items."
 msgstr ""
 
-#: templates/elements/activity_feed.html:174
+#. Translators: templates.elements.activity_feed.no_public_history_items
+#: templates/elements/activity_feed.html:209
 msgid "No public history items."
 msgstr ""
 
-#: templates/elements/activity_feed.html:180
+#. Translators: templates.elements.activity_feed.older_activity
+#: templates/elements/activity_feed.html:216
 msgid "Older Activity"
 msgstr ""
 
-#: templates/elements/login_prompt.html:6
-#: templates/registration/register.html:14
-#: templates/registration/register.html:23
+#. Translators: common.templates.elements.login_prompts.log_in
+#: templates/elements/login_prompt.html:8
+msgid "Log In"
+msgstr ""
+
+#. Translators: common.templates.elements.login_prompts.sign_up
+#. Translators: common.registration.register.sign_up
+#: templates/elements/login_prompt.html:10
+#: templates/registration/register.html:19
+#: templates/registration/register.html:29
 msgid "Sign Up"
 msgstr ""
 
-#: templates/elements/notification.html:15
-msgid "New"
-msgstr ""
-
-#: templates/elements/notification.html:15
-msgid "version of"
-msgstr ""
-
-#: templates/elements/notification.html:25
+#. Translators: templates.elements.notification.new_text
+#: templates/elements/notification.html:26
 msgid "New Text:"
 msgstr ""
 
-#: templates/elements/notification.html:34
+#. Translators: templates.elements.notification.like_your_sheet
+#: templates/elements/notification.html:37
 msgid "likes your sheet,"
 msgstr ""
 
-#: templates/elements/notification.html:39
+#. Translators: templates.elements.notification.published_a_new_sheet
+#: templates/elements/notification.html:44
 msgid "published a new sheet"
 msgstr ""
 
-#: templates/elements/notification.html:44
+#. Translators: templates.elements.notification.a_user_is_now_following_you
+#: templates/elements/notification.html:51
 msgid "is now following you."
 msgstr ""
 
-#: templates/elements/notification.html:50
-#: templates/elements/notification.html:55 templates/email/notification.html:26
+#. Translators: templates.elements.notification.added_you_to_the_collection
+#: templates/elements/notification.html:59
+#: templates/elements/notification.html:66
 msgid "added you to the collection"
 msgstr ""
 
-#: templates/elements/notification.html:60 templates/email/notification.html:29
-msgid "added a note to a"
-msgstr ""
-
-#: templates/elements/notification.html:60 templates/email/notification.html:31
-msgid "discussion you follow"
-msgstr ""
-
-#: templates/email/base.html:17
+#. Translators: templates.email.base.you_are_recieving_this_message_because_you_have_an_account_on_link
+#: templates/email/base.html:18
 msgid ""
 "\n"
 "            You're receiving this message because you have an account on\n"
-"        "
+"            <a href=\"http://www.pecha.org\">www.pecha.org</a>.\n"
+"\t\t\t"
 msgstr ""
 
-#: templates/email/base.html:22
+#. Translators: templates.email.base.to_change_your_email_settings
+#: templates/email/base.html:24
 #, python-format
 msgid ""
 "\n"
@@ -1201,7 +1342,8 @@ msgid ""
 "        "
 msgstr ""
 
-#: templates/email/base.html:26
+#. Translators: templates.email.base.feedback_is_welcome
+#: templates/email/base.html:29
 #, python-format
 msgid ""
 "\n"
@@ -1210,7 +1352,8 @@ msgid ""
 "        "
 msgstr ""
 
-#: templates/email/collection_signup_invitation_email.html:8
+#. Translators: templates.email.collection_signup_invitation_email.invited_to_contribute_to_the_collection
+#: templates/email/collection_signup_invitation_email.html:9
 #, python-format
 msgid ""
 "\n"
@@ -1219,44 +1362,26 @@ msgid ""
 "\t\t"
 msgstr ""
 
-#: templates/email/collection_signup_invitation_email.html:14
+#. Translators: templates.email.collection_signup_invitation_email.to accept_this_invitation_create_a_free_account
+#: templates/email/collection_signup_invitation_email.html:16
 #, python-format
 msgid ""
 "\n"
-"\t\tTo accept this invitation, <a href=\"%(register)s\">create a free "
-"Sefaria account</a>.\n"
+"\t\tTo accept this invitation, <a href=\"%(register)s\">create a free Pecha "
+"account</a>.\n"
 "\t\t"
 msgstr ""
 
-#: templates/email/collection_signup_invitation_email.html:24
+#. Translators: templates.email.collection_signup_invitation_email.collecton_on_pecha_feature_description
+#: templates/email/collection_signup_invitation_email.html:27
 msgid ""
 "\n"
-"\t\tSefaria is a free living library of Jewish texts. Collections on Sefaria "
+"\t\tPecha is a free living library of Buddhist texts. Collections on Pecha "
 "help you easily build and share collections of source sheets you create or "
 "find on Sefaria.<br>.\n"
-"\t\tFeel free to send any questions over <a href=\"mailto:hello@sefaria.org"
+"\t\tFeel free to send any questions over <a href=\"mailto:hello@pecha.org"
 "\">email</a>.\n"
 "\t\t"
-msgstr ""
-
-#: templates/email/notification.html:8
-msgid "sent you a message:"
-msgstr ""
-
-#: templates/email/notification.html:13
-msgid "Reply to"
-msgstr ""
-
-#: templates/email/notification.html:17
-msgid "likes your Source Sheet"
-msgstr ""
-
-#: templates/email/notification.html:23
-msgid "is now following you"
-msgstr ""
-
-#: templates/email/notification.html:35
-msgid "This is a notification without a type, it shouldn't exist."
 msgstr ""
 
 #: templates/email/notifications_email.html:5
@@ -1294,120 +1419,140 @@ msgid ""
 "explore deeper."
 msgstr ""
 
-#: templates/gdocs_sheet.html:2218
+#. Translators: gdocs_sheet.source_sheet_creater_message
+#: templates/gdocs_sheet.html:2219
 msgid "Source Sheet created on Pecha by"
 msgstr ""
 
-#: templates/leaderboard.html:4
-msgid "Top Contributors | Sefaria"
+#. Translators: leaderboard.label_top_contributor_pecha
+#: templates/leaderboard.html:5
+msgid "Top Contributors | Pecha"
 msgstr ""
 
-#: templates/leaderboard.html:6
+#. Translators: leaderboard.contributor_leaderboard
+#: templates/leaderboard.html:8
 msgid ""
-"See who has been contributing most to Sefaria in terms of texts, "
-"translations, and source sheet."
+"See who has been contributing most to Pecha in terms of texts, translations, "
+"and source sheet."
 msgstr ""
 
-#: templates/leaderboard.html:30
+#. Translators: leaderboard.label.top_contributor
+#: templates/leaderboard.html:33
 msgid "Top Contributors"
 msgstr ""
 
-#: templates/metrics.html:4
-msgid "Sefaria Metrics"
+#. Translators: metrics.pecha_metrics.title
+#: templates/metrics.html:5
+msgid "Pecha Metrics"
 msgstr ""
 
-#: templates/metrics.html:6
+#. Translators: metrics.graph_chart_display_message
+#: templates/metrics.html:8
 msgid ""
-"See graphs charting Sefaria's progress since 2013 across metrics including "
+"See graphs charting Pecha's progress since 2024 across metrics including "
 "word counts, number of links and number of source sheets."
 msgstr ""
 
-#: templates/metrics.html:13
+#. Translators: metrics.label.metrics
+#: templates/metrics.html:16
 msgid "Metrics"
 msgstr ""
 
-#: templates/metrics.html:33
+#: templates/metrics.html:37
 msgid "Total Words in Library"
 msgstr ""
 
-#: templates/metrics.html:34
+#: templates/metrics.html:38
 msgid "Words in Hebrew & Aramaic"
 msgstr ""
 
-#: templates/metrics.html:35
+#: templates/metrics.html:39
 msgid "Words in Translation"
 msgstr ""
 
-#: templates/metrics.html:36
+#: templates/metrics.html:40
 msgid "Words of Original Translation created by Sefaria Volunteers"
 msgstr ""
 
-#: templates/metrics.html:37
+#: templates/metrics.html:41
 msgid "Number of Public Contributors"
 msgstr ""
 
-#: templates/metrics.html:38
+#: templates/metrics.html:42
 msgid "Number of Intertextual Links"
 msgstr ""
 
-#: templates/metrics.html:39
+#: templates/metrics.html:43
 msgid "Number of Source Sheets"
 msgstr ""
 
-#: templates/metrics.html:43 templates/metrics.html:44
-#: templates/metrics.html:45 templates/metrics.html:46
+#: templates/metrics.html:47 templates/metrics.html:48
+#: templates/metrics.html:49 templates/metrics.html:50
 msgid "Words"
 msgstr ""
 
-#: templates/metrics.html:47
+#: templates/metrics.html:51
 msgid "Contributors"
 msgstr ""
 
-#: templates/metrics.html:48
+#: templates/metrics.html:52
 msgid "Links"
 msgstr ""
 
-#: templates/people.html:5
-msgid "Authors on Sefaria"
+#. Translators: people.authors_on_pecha
+#: templates/people.html:6
+msgid "Authors on Pecha"
 msgstr ""
 
-#: templates/people.html:7
+#. Translators: people.biography_and_informations_about_authors
+#: templates/people.html:9
 msgid ""
-"Biographies and information about the authors of Jewish texts on Sefaria, "
+"Biographies and information about the authors of Buddhist texts on Pecha, "
 "together with links to their available texts."
 msgstr ""
 
-#: templates/people.html:23 templates/person.html:38
+#. Translators: people.authors
+#: templates/people.html:26 templates/person.html:40
 msgid "Authors"
 msgstr ""
 
-#: templates/people.html:28 templates/person.html:41
-#: templates/talmud_people.html:6
+#. Translators: people.choejuk_author
+#: templates/people.html:32
+msgid "People in the Choejuk"
+msgstr ""
+
+#: templates/person.html:43
 msgid "People in the Talmud"
 msgstr ""
 
-#: templates/person.html:86
+#. Translators: common.person.learn_more
+#: templates/person.html:89
 msgid "Learn More"
 msgstr ""
 
-#: templates/person.html:90 templates/person.html:91 templates/person.html:96
-#: templates/person.html:97
+#. Translators: person.wikipedia.english_tibetan_both
+#. Translators: person.wikipedia.english
+#: templates/person.html:94 templates/person.html:100
 msgid "Wikipedia"
 msgstr ""
 
-#: templates/person.html:101 templates/person.html:102
-msgid "Wikipedia (Hebrew)"
+#. Translators: person.wikipedia.tibetan
+#: templates/person.html:105
+msgid "Wikipedia (Tibetan)"
 msgstr ""
 
-#: templates/person.html:108 templates/person.html:109
-msgid "Jewish Encyclopedia"
+#. Translators: person.buddhist_encyclopedia
+#: templates/person.html:112
+msgid "Buddhist Encyclopedia"
 msgstr ""
 
-#: templates/person.html:129
+#. Translators: person.works
+#: templates/person.html:132
 msgid "Works"
 msgstr ""
 
-#: templates/person.html:141
+#. Translators: person.map
+#: templates/person.html:145
 msgid "Map"
 msgstr ""
 
@@ -1421,188 +1566,216 @@ msgid ""
 "translations."
 msgstr ""
 
-#: templates/profile.html:20
-msgid "at "
-msgstr ""
-
-#: templates/profile.html:58
+#. Translators: common.profile.twitter
+#: templates/profile.html:60
 msgid "Twitter"
 msgstr ""
 
-#: templates/profile.html:73
+#. Translators: profile.message
+#: templates/profile.html:77
 msgid "Message"
 msgstr ""
 
-#: templates/profile.html:77
+#. Translators: common.profile.follow
+#: templates/profile.html:82
 msgid "Follow"
 msgstr ""
 
-#: templates/profile.html:78
+#. Translators: common.profile.following
+#: templates/profile.html:84
 msgid "Following"
 msgstr ""
 
-#: templates/profile.html:79
+#. Translators: common.profile.unfollow
+#: templates/profile.html:86
 msgid "Unfollow"
 msgstr ""
 
-#: templates/profile.html:84
+#. Translators: profile.edit_profile
+#: templates/profile.html:92
 msgid "Edit Profile"
 msgstr ""
 
-#: templates/profile.html:126
+#. Translators: profile.activity
+#: templates/profile.html:137
 msgid "Activity"
 msgstr ""
 
-#: templates/profile.html:128
+#. Translators: profile.more_activity
+#: templates/profile.html:140
 msgid "More Activity"
 msgstr ""
 
-#: templates/profile.html:178
+#: templates/profile.html:190
 msgid "Send a message to "
 msgstr ""
 
-#: templates/profile.html:180
+#: templates/profile.html:192
 msgid "Send"
 msgstr ""
 
-#: templates/random.html:7
-msgid "Random Text | Sefaria.org"
+#. Translators: random.random_text_pecha_dot_org
+#: templates/random.html:8
+msgid "Random Text | Pecha.org"
 msgstr ""
 
-#: templates/random.html:14
-msgid "A Random Text on Sefaria"
+#. Translators: random.a_random_text_on_pecha
+#: templates/random.html:16
+msgid "A Random Text on Pecha"
 msgstr ""
 
-#: templates/random.html:18
+#. Translators: random.get_random
+#: templates/random.html:21
 msgid "Get Random"
 msgstr ""
 
-#: templates/registration/delete_user_account.html:4
+#. Translators: delete_user_account.adming_delete_a_user
+#: templates/registration/delete_user_account.html:5
 msgid "Admin: Delete a User"
 msgstr ""
 
-#: templates/registration/delete_user_account.html:11
-#: templates/registration/delete_user_account.html:17
+#. Translators: registration.delete_user_account.delete_user
+#: templates/registration/delete_user_account.html:15
+#: templates/registration/delete_user_account.html:22
 msgid "Delete User"
 msgstr ""
 
-#: templates/registration/logged_out.html:4
-msgid "Logged Out | Sefaria"
+#. Translators: registration.logged_out.logged_out_pecha
+#: templates/registration/logged_out.html:5
+msgid "Logged Out | Pecha"
 msgstr ""
 
-#: templates/registration/logged_out.html:13
+#. Translators: registration.logged_out.you_are_now_logged_out
+#: templates/registration/logged_out.html:15
 msgid "You are now logged out."
 msgstr ""
 
-#: templates/registration/logged_out.html:13
+#. Translators: registration.logged_out.log_back_in
+#: templates/registration/logged_out.html:17
 msgid "Log back in"
 msgstr ""
 
-#: templates/registration/login.html:4 templates/registration/login.html:31
+#. Translators: registration.login.login_in_to_pecha
+#: templates/registration/login.html:5 templates/registration/login.html:34
 msgid "Log in to Pecha"
 msgstr ""
 
-#: templates/registration/login.html:6
+#. Translators: registration.login.login_in_to_pecha_description
+#: templates/registration/login.html:8
 msgid ""
 "Log in to your Pecha account to make source sheets, write notes, and follow "
 "other Pecha users."
 msgstr ""
 
-#: templates/registration/login.html:14 templates/registration/login.html:15
+#. Translators: registration.login.you_are_already_logged_in_as
+#: templates/registration/login.html:17
 msgid "You are already logged in as"
 msgstr ""
 
-#: templates/registration/login.html:18 templates/registration/login.html:19
+#. Translators: common.registration.login.log_out
+#: templates/registration/login.html:21
 msgid "Logout."
 msgstr ""
 
-#: templates/registration/login.html:35
+#. Translators: registration.login.username_and_password_didn't_match_message
+#: templates/registration/login.html:39
 msgid "Your username and password didn't match. Please try again."
 msgstr ""
 
-#: templates/registration/login.html:52 templates/sheets.html:500
+#. Translators: common.registration.login.log_in
+#: templates/registration/login.html:57 templates/sheets.html:568
 msgid "Login"
 msgstr ""
 
-#: templates/registration/login.html:55
+#. Translators: common.registration.login.forgot_your_password
+#: templates/registration/login.html:61
 msgid "Forgot your password?"
 msgstr ""
 
-#: templates/registration/login.html:60
+#. Translators: common.registration.login.create_a_new_account
+#: templates/registration/login.html:67
 msgid "Create a new account"
 msgstr ""
 
-#: templates/registration/password_reset_complete.html:3
+#. Translators: registration.password_reset_complete.password_reset
+#: templates/registration/password_reset_complete.html:4
 msgid "Password Reset"
 msgstr ""
 
-#: templates/registration/password_reset_complete.html:10
-#: templates/registration/password_reset_complete.html:11
+#. Translators: registration.password_reset_complete.your_new_password_has_been_saved
+#: templates/registration/password_reset_complete.html:14
 msgid "Your new password has been saved."
 msgstr ""
 
-#: templates/registration/password_reset_complete.html:14
-#: templates/registration/password_reset_complete.html:15
-#: templates/registration/password_reset_form.html:25
-#: templates/registration/password_reset_form.html:26
+#. Translators: registration.password_reset_complete.back_to_login
+#. Translators: registration.password_reset_form.back_to_link
+#: templates/registration/password_reset_complete.html:18
+#: templates/registration/password_reset_form.html:31
 msgid "Back to login"
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:4
+#. Translators: registration.password_reset_confirm.choose_a_new_password
+#: templates/registration/password_reset_confirm.html:5
 msgid "Choose a new Password"
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:11
-#: templates/registration/password_reset_confirm.html:12
+#. Translators: registration.password_reset_confirm.choose_a_new_password
+#: templates/registration/password_reset_confirm.html:15
 msgid "Choose a new password"
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:18
-#: templates/registration/password_reset_confirm.html:19
+#. Translators: registration.password_reset_confirm.save_password
+#: templates/registration/password_reset_confirm.html:22
 msgid "Save Password"
 msgstr ""
 
-#: templates/registration/password_reset_done.html:3
+#. Translators: registration.password_reset_done.password_reset_link_sent
+#: templates/registration/password_reset_done.html:4
 msgid "Password Reset Link Sent"
 msgstr ""
 
-#: templates/registration/password_reset_done.html:10
-#: templates/registration/password_reset_done.html:11
+#. Translators: registration.password_reset_done.an_email_has_been_send_to_reset_your_password
+#: templates/registration/password_reset_done.html:14
 msgid "An email has been sent with a link to reset your password."
 msgstr ""
 
-#: templates/registration/password_reset_email.html:4
+#. Translators: registration.password_reset_email.password_reset_email_message
+#: templates/registration/password_reset_email.html:5
 #: templates/registration/password_reset_email.txt:3
 msgid ""
 "A request has been made to reset the password for this email address on "
 "Pecha.org."
 msgstr ""
 
-#: templates/registration/password_reset_email.html:6
+#. Translators: registration.password_reset_email.password_reset_email_to_click_on_link
+#: templates/registration/password_reset_email.html:8
 #: templates/registration/password_reset_email.txt:5
 msgid "Click this link, or copy it to your browser, to choose a new password:"
 msgstr ""
 
-#: templates/registration/password_reset_email.html:12
+#. Translators: registration.password_reset_email.ignore_this_email_if_haven't_send_it
+#: templates/registration/password_reset_email.html:16
 #: templates/registration/password_reset_email.txt:9
 msgid "If you did not request this reset, you can safely ignore this email."
 msgstr ""
 
-#: templates/registration/password_reset_form.html:4
+#. Translators: registration.password_reset_form.forgot_your_password
+#: templates/registration/password_reset_form.html:5
 msgid "Forgot your Password"
 msgstr ""
 
-#: templates/registration/password_reset_form.html:6
+#. Translators: registration.password_reset_form.request_a_link_to_change_your_password
+#: templates/registration/password_reset_form.html:11
 msgid "Request a link to change your Pecha password if you've forgotten it."
 msgstr ""
 
-#: templates/registration/password_reset_form.html:13
-#: templates/registration/password_reset_form.html:14
+#. Translators: registration.password_reset_form.forgot_your_password
+#: templates/registration/password_reset_form.html:19
 msgid "Forgot Your Password"
 msgstr ""
 
-#: templates/registration/password_reset_form.html:20
-#: templates/registration/password_reset_form.html:21
+#. Translators: registration.password_reset_form.send_reset_link
+#: templates/registration/password_reset_form.html:26
 msgid "Send Reset Link"
 msgstr ""
 
@@ -1610,238 +1783,287 @@ msgstr ""
 msgid "Pecha.org Password Reset"
 msgstr ""
 
-#. Translators: pecha
+#. Translators: registration.register.create_an_account
 #: templates/registration/register.html:5
 msgid "Create an Account"
 msgstr ""
 
-#: templates/registration/register.html:7
+#. Translators: registration.register.create_an_account_description
+#: templates/registration/register.html:11
 msgid ""
 "Create an account on Pecha to make source sheets, take notes and follow "
 "other people."
 msgstr ""
 
-#: templates/registration/register.html:27
+#. Translators: registration.register.login_if_already_have_an_account
+#: templates/registration/register.html:34
 msgid "Already have an account? Log in"
 msgstr ""
 
-#: templates/sefer_hachinukh_mitzvot.html:7
-msgid "Sefer HaChinukh Visualization"
-msgstr ""
-
-#: templates/sefer_hachinukh_mitzvot.html:9
-msgid ""
-"Explore how different categories of Mitzvot connect to one another through "
-"this parallel sets chart."
-msgstr ""
-
-#: templates/sheets.html:7
+#. Translators: sheets.starts_a_new_sheet
+#. Translators: sheets_visual.start_a_new_sheet
+#: templates/sheets.html:11 templates/sheets_visual.html:10
 msgid "Start a New Sheet - Pecha Source Sheet Builder"
 msgstr ""
 
-#: templates/sheets.html:9 templates/sheets.html:10
+#. Translators: sheets.a_source_sheet_created_with_sheet_builder
+#. Translators: sheets.a_source_sheet_created_with_source_sheet_builder
+#: templates/sheets.html:15 templates/sheets.html:20
 msgid "A source sheet created with Pecha's Source Sheet Builder."
 msgstr ""
 
-#: templates/sheets.html:9 templates/sheets.html:10
+#. Translators: sheets.create_your_own_sheet
+#. Translators: sheets.create_your_own_source_sheet_with_source_sheet_builder
+#. Translators: sheets_visual.create_your_own_source_sheet_with_source_sheet_builder
+#: templates/sheets.html:17 templates/sheets.html:22
+#: templates/sheets_visual.html:14
 msgid "Create your own source sheet with Pecha's Source Sheet Builder."
 msgstr ""
 
-#: templates/sheets.html:31
+#. Translators: common.sheets.lable.file
+#: templates/sheets.html:44
 msgid "File"
 msgstr ""
 
-#: templates/sheets.html:38
+#. Translators: sheets.copy_sheet
+#: templates/sheets.html:52
 msgid "Copy Sheet"
 msgstr ""
 
-#: templates/sheets.html:46
+#. Translators: sheets.export_to_google_drive
+#: templates/sheets.html:61
 msgid "Export to Google Drive"
 msgstr ""
 
-#: templates/sheets.html:53 templates/sheets.html:1007
+#. Translators: sheets.embed_sheet
+#: templates/sheets.html:69 templates/sheets.html:1142
 msgid "Embed Sheet"
 msgstr ""
 
-#: templates/sheets.html:72
+#. Translators: common.sheets.tags
+#: templates/sheets.html:90
 msgid "Tags"
 msgstr ""
 
-#: templates/sheets.html:84 templates/sheets.html:856
+#. Translators: sheets.assignments
+#: templates/sheets.html:103 templates/sheets.html:972
 msgid "Assignments"
 msgstr ""
 
-#: templates/sheets.html:98 templates/sheets.html:782
+#. Translators: sheets.print
+#: templates/sheets.html:118 templates/sheets.html:892
 msgid "Print"
 msgstr ""
 
-#: templates/sheets.html:106
+#. Translators: sheets.visualize
+#: templates/sheets.html:127
 msgid "Visualize"
 msgstr ""
 
-#: templates/sheets.html:114
+#. Translators: sheets.highlight_mode
+#: templates/sheets.html:136
 msgid "Highlight Mode"
 msgstr ""
 
-#: templates/sheets.html:117
+#. Translators: sheets.exit_highlight_mode
+#: templates/sheets.html:140
 msgid "Exit Highlight Mode"
 msgstr ""
 
-#: templates/sheets.html:125
+#. Translators: common.sheets.format
+#: templates/sheets.html:149
 msgid "Format"
 msgstr ""
 
-#: templates/sheets.html:130
+#. Translators: sheets.number_sources
+#: templates/sheets.html:155
 msgid "Number Sources"
 msgstr ""
 
-#: templates/sheets.html:136
+#. Translators: sheets.box_sources
+#: templates/sheets.html:162
 msgid "Box Sources"
 msgstr ""
 
-#: templates/sheets.html:149
+#. Translators: sheets.reset_source_text
+#: templates/sheets.html:176
 msgid "Reset Source Text"
 msgstr ""
 
-#: templates/sheets.html:156
+#. Translators: sheets.auto_segment_text
+#: templates/sheets.html:184
 msgid "Auto-Segment Text"
 msgstr ""
 
-#: templates/sheets.html:164
+#. Translators: sheets.remove_vowel_points
+#: templates/sheets.html:193
 msgid "Remove Vowel Points"
 msgstr ""
 
-#: templates/sheets.html:171
+#. Translators: sheets.add_source_title
+#: templates/sheets.html:201
 msgid "Add Source Title"
 msgstr ""
 
-#: templates/sheets.html:182
+#. Translators: sheets.sheet_language
+#: templates/sheets.html:213
 msgid "Sheet Language"
 msgstr ""
 
-#: templates/sheets.html:215
+#. Translators: sheets.sheet_layout
+#: templates/sheets.html:248
 msgid "Sheet Layout"
 msgstr ""
 
-#: templates/sheets.html:223 templates/sheets.html:305
+#. Translators: sheets.stacked
+#: templates/sheets.html:257 templates/sheets.html:349
 msgid "Stacked"
 msgstr ""
 
-#: templates/sheets.html:229 templates/sheets.html:311
+#. Translators: sheets.side_by_side
+#: templates/sheets.html:264 templates/sheets.html:356
 msgid "Side-by-Side"
 msgstr ""
 
-#: templates/sheets.html:240 templates/sheets.html:322
+#. Translators: sheets.side_by_side_layout
+#: templates/sheets.html:276 templates/sheets.html:368
 msgid "Side-by-Side Layout"
 msgstr ""
 
-#: templates/sheets.html:248 templates/sheets.html:330
+#. Translators: sheets.tibetan_left
+#: templates/sheets.html:285 templates/sheets.html:377
 msgid "Tibetan Left"
 msgstr ""
 
-#: templates/sheets.html:254 templates/sheets.html:336
+#. Translators: sheets.tibetan_right
+#: templates/sheets.html:292 templates/sheets.html:384
 msgid "Tibetan Right"
 msgstr ""
 
-#: templates/sheets.html:266
+#. Translators: sheets.source_language
+#: templates/sheets.html:305
 msgid "Source Language"
 msgstr ""
 
-#: templates/sheets.html:297
+#. Translators: sheets.source_layout
+#: templates/sheets.html:340
 msgid "Source Layout"
 msgstr ""
 
-#: templates/sheets.html:346
+#. Translators: sheets.reset_to_sheet_default
+#: templates/sheets.html:395
 msgid "Reset to Sheet Default"
 msgstr ""
 
-#. Translators: View verb
-#: templates/sheets.html:360
+#. Translators: sheets.insert
+#: templates/sheets.html:409
 msgid "Insert"
 msgstr ""
 
-#: templates/sheets.html:365 templates/sheets.html:628
+#. Translators: sheets.source
+#. Translators: common.sheets.source
+#: templates/sheets.html:415 templates/sheets.html:707
 msgid "Source"
 msgstr ""
 
-#: templates/sheets.html:371 templates/sheets.html:638
+#. Translators: sheets.text
+#. Translators: common.sheets.text
+#: templates/sheets.html:422 templates/sheets.html:719
 msgid "Text"
 msgstr ""
 
-#: templates/sheets.html:377 templates/sheets.html:648
+#. Translators: sheets.comment
+#. Translators: common.sheets.comment
+#: templates/sheets.html:429 templates/sheets.html:731
 msgid "Comment"
 msgstr ""
 
-#: templates/sheets.html:383 templates/sheets.html:643
+#. Translators: sheets.media
+#. Translators: common.sheets.media
+#: templates/sheets.html:436 templates/sheets.html:725
 msgid "Media"
 msgstr ""
 
-#: templates/sheets.html:390
+#. Translators: sheets.highlight_tools
+#: templates/sheets.html:444
 msgid "Highlight Tools"
 msgstr ""
 
-#: templates/sheets.html:395
+#. Translators: sheets.paragraph_tools
+#: templates/sheets.html:450
 msgid "Paragraph View"
 msgstr ""
 
-#: templates/sheets.html:398
+#. Translators: sheets.line_by_line_view
+#: templates/sheets.html:454
 msgid "Line-by-line View"
 msgstr ""
 
-#: templates/sheets.html:405
+#. Translators: sheets.reset
+#: templates/sheets.html:462
 msgid "Reset"
 msgstr ""
 
-#: templates/sheets.html:411
+#. Translators: sheets.filter
+#: templates/sheets.html:469
 msgid "Filter"
 msgstr ""
 
-#: templates/sheets.html:427
+#. Translators: sheets.last_saved
+#: templates/sheets.html:486
 msgid "Last Saved"
 msgstr ""
 
-#: templates/sheets.html:430
+#. Translators: sheets.all_changes_saved_in_pecha
+#: templates/sheets.html:490
 msgid "All changes saved in Pecha"
 msgstr ""
 
-#: templates/sheets.html:433 templates/sheets.html:458
+#. Translators: sheets.saving
+#. Translators: common.sheets.saving
+#: templates/sheets.html:494 templates/sheets.html:523
 msgid "Saving..."
 msgstr ""
 
-#: templates/sheets.html:436
+#. Translators: sheets.changes_pending
+#: templates/sheets.html:498
 msgid "Changes Pending..."
 msgstr ""
 
-#: templates/sheets.html:445
+#. Translators: sheets.highlight_mode_is_on
+#: templates/sheets.html:508
 msgid "Highlight Mode is On"
 msgstr ""
 
-#: templates/sheets.html:464 templates/sheets.html:782
-#: templates/sheets.html:1092
+#. Translators: common.sheets.share
+#: templates/sheets.html:530 templates/sheets.html:892
+#: templates/sheets.html:1243
 msgid "Share"
 msgstr ""
 
-#: templates/sheets.html:467 templates/sheets.html:471
+#. Translators: sheets.view_in_library
+#: templates/sheets.html:534 templates/sheets.html:539
 msgid "View in Library"
 msgstr ""
 
-#: templates/sheets.html:500
+#: templates/sheets.html:568
 msgid "Like this?"
 msgstr ""
 
-#: templates/sheets.html:501
+#: templates/sheets.html:569
 msgid "create an account"
 msgstr ""
 
-#: templates/sheets.html:501
+#: templates/sheets.html:569
 msgid "to build your own source sheet."
 msgstr ""
 
-#: templates/sheets.html:508
+#. Translators: sheets.header_title
+#: templates/sheets.html:577
 msgid "Header Title"
 msgstr ""
 
-#: templates/sheets.html:535 templates/sheets.html:543
+#: templates/sheets.html:604 templates/sheets.html:612
 #, python-format
 msgid ""
 "\n"
@@ -1849,7 +2071,7 @@ msgid ""
 "            "
 msgstr ""
 
-#: templates/sheets.html:550
+#: templates/sheets.html:619
 #, python-format
 msgid ""
 "\n"
@@ -1857,395 +2079,349 @@ msgid ""
 "            "
 msgstr ""
 
-#: templates/sheets.html:560
+#. Translators: sheets.more_info
+#: templates/sheets.html:630
 msgid "More info"
 msgstr ""
 
-#: templates/sheets.html:565 templates/sheets.html:977
+#. Translators: common.sheets.edit
+#: templates/sheets.html:636 templates/sheets.html:1108
 msgid "Edit"
 msgstr ""
 
-#: templates/sheets.html:566
+#. Translators: sheets.created
+#: templates/sheets.html:638
 msgid "Created"
 msgstr ""
 
-#: templates/sheets.html:567 templates/sheets.html:971
+#. Translators: common.sheets.view
+#: templates/sheets.html:641 templates/sheets.html:1100
 msgid "View"
 msgstr ""
 
-#: templates/sheets.html:568
+#. Translators: common.sheets.views
+#: templates/sheets.html:643
 msgid "Views"
 msgstr ""
 
-#: templates/sheets.html:572
+#. Translators: sheets.based_on
+#: templates/sheets.html:648
 msgid "Based on"
 msgstr ""
 
-#: templates/sheets.html:573 templates/sheets.html:844
+#: templates/sheets.html:649 templates/sheets.html:959
 msgid "a sheet"
 msgstr ""
 
-#: templates/sheets.html:573 templates/sheets.html:844
+#: templates/sheets.html:649 templates/sheets.html:959
 msgid "by"
 msgstr ""
 
-#: templates/sheets.html:579 templates/sheets.html:585
+#. Translators: sheets.assigned_by
+#: templates/sheets.html:656 templates/sheets.html:663
 msgid "Assigned by"
 msgstr ""
 
-#: templates/sheets.html:633
+#. Translators: sheets.connection
+#: templates/sheets.html:713
 msgid "Connection"
 msgstr ""
 
-#: templates/sheets.html:654
+#. Translators: sheets.select_a_text
+#: templates/sheets.html:738
 msgid "Select a text"
 msgstr ""
 
-#: templates/sheets.html:673
+#: templates/sheets.html:749
+msgid "Add Source"
+msgstr ""
+
+#. Translators: sheets.browse_sources
+#: templates/sheets.html:760
 msgid "Browse Sources"
 msgstr ""
 
-#: templates/sheets.html:682
+#. Translators: sheets.select_connected_texts
+#: templates/sheets.html:770
 msgid "Select connected texts"
 msgstr ""
 
-#: templates/sheets.html:686 templates/sheets.html:709
-#: templates/sheets.html:723 templates/sheets.html:745
+#. Translators: sheets.add_to_sheet
+#: templates/sheets.html:775 templates/sheets.html:802
+#: templates/sheets.html:818 templates/sheets.html:844
 msgid "Add to Sheet"
 msgstr ""
 
-#: templates/sheets.html:691
+#. Translators: sheets.write_or_paste_text
+#: templates/sheets.html:781
 msgid "Write or paste text"
 msgstr ""
 
-#: templates/sheets.html:714
+#. Translators: sheets.add_image_youtbe_soundcloud_link_or_mp3
+#: templates/sheets.html:808
 msgid "Add Image, Youtube Video, SoundCloud link, or MP3"
 msgstr ""
 
-#: templates/sheets.html:719
+#: templates/sheets.html:813
 msgid "Paste URL"
 msgstr ""
 
-#: templates/sheets.html:732
+#. Translators: sheets.upload_an_image
+#: templates/sheets.html:829
 msgid "Upload an Image"
 msgstr ""
 
-#: templates/sheets.html:741
+#. Translators: sheets.comment_on_this_section
+#: templates/sheets.html:839
 msgid "Comment on this section"
 msgstr ""
 
-#: templates/sheets.html:764
+#. Translators: sheets.watch_a_2_minute_video_or
+#: templates/sheets.html:865
 msgid "Watch a 2 minute intro video or "
 msgstr ""
 
-#: templates/sheets.html:764
+#. Translators: common.sheets.read_more
+#: templates/sheets.html:867
 msgid "read more"
 msgstr ""
 
-#: templates/sheets.html:768
+#. Translators: sheets.source_sheet_builder_how_it_works
+#: templates/sheets.html:872
 msgid "Source Sheet Builder: How it Works"
 msgstr ""
 
-#: templates/sheets.html:774
+#. Translators: sheets.add_sources
+#: templates/sheets.html:879
 msgid "Add Sources"
 msgstr ""
 
-#: templates/sheets.html:774
+#. Translators: sheets.by_typing_a_citation_like
+#: templates/sheets.html:881
 msgid "by typing a citation like:"
 msgstr ""
 
-#: templates/sheets.html:779
+#. Translators: sheets.reorder_sources
+#: templates/sheets.html:887
 msgid "Reorder Sources"
 msgstr ""
 
-#: templates/sheets.html:779
+#. Translators: sheets.by_dragging_and_dropping
+#: templates/sheets.html:889
 msgid "by dragging and dropping."
 msgstr ""
 
-#: templates/sheets.html:782
+#: templates/sheets.html:892
 msgid "your sheets to paper or PDF, or just"
 msgstr ""
 
-#: templates/sheets.html:782
+#: templates/sheets.html:892
 msgid " the link."
 msgstr ""
 
-#: templates/sheets.html:785
+#: templates/sheets.html:895
 msgid "More Options"
 msgstr ""
 
-#: templates/sheets.html:785
+#: templates/sheets.html:895
 msgid "are available in the icons that appear when you hover over a source."
 msgstr ""
 
-#: templates/sheets.html:791
+#: templates/sheets.html:901
 msgid "Take a spin! But you'll need to "
 msgstr ""
 
-#: templates/sheets.html:791
+#: templates/sheets.html:901
 msgid "login"
 msgstr ""
 
-#: templates/sheets.html:792
+#: templates/sheets.html:902
 msgid "to save your work."
 msgstr ""
 
-#: templates/sheets.html:803
+#. Translators: sheets.made_with_pecha_source_sheet_builder
+#: templates/sheets.html:914
 msgid "Made with the Pecha Source Sheet Builder"
 msgstr ""
 
-#: templates/sheets.html:814
+#. Translators: sheets.add_higlight
+#: templates/sheets.html:926
 msgid "Add Highlight"
 msgstr ""
 
-#: templates/sheets.html:825
+#. Translators: sheets.create_new
+#: templates/sheets.html:938
 msgid "Create New"
 msgstr ""
 
-#: templates/sheets.html:840
+#. Translators: sheets.source_sheet_created_on_pecha_by
+#: templates/sheets.html:955
 msgid "Source Sheet created on Pecha by "
 msgstr ""
 
-#: templates/sheets.html:844
+#: templates/sheets.html:959
 msgid "Based on "
 msgstr ""
 
-#: templates/sheets.html:859
+#. Translators: sheets.assignment_feature_description
+#: templates/sheets.html:976
 msgid ""
 "Assignments allow you to create a template that your students can fill out "
 "on their own."
 msgstr ""
 
-#: templates/sheets.html:863
+#. Translators: sheets.assign_this_sheet
+#: templates/sheets.html:981
 msgid "Assign this Sheet"
 msgstr ""
 
-#: templates/sheets.html:866
+#. Translators: sheets.stop_collection_assignments
+#: templates/sheets.html:985
 msgid "Stop Collecting Assignments"
 msgstr ""
 
-#: templates/sheets.html:873
+#. Translators: sheets.saved_assignments
+#: templates/sheets.html:993
 msgid "Saved Assignments"
 msgstr ""
 
-#: templates/sheets.html:882
+#. Translators: sheets.student's_assignment_is_viewable_here
+#: templates/sheets.html:1003
 msgid "Your student's saved assignments will be viewable here."
 msgstr ""
 
-#: templates/sheets.html:892
+#. Translators: sheets.write_a_summary_to_help_others_understand_your_sheet
+#: templates/sheets.html:1013
 msgid "Write a summary to help others understand your sheet..."
 msgstr ""
 
-#: templates/sheets.html:898
+#. Translators: sheets.add_tags
+#: templates/sheets.html:1020
 msgid "Add Tags..."
 msgstr ""
 
-#: templates/sheets.html:908
+#. Translators: sheets.list_on_pecha
+#: templates/sheets.html:1031
 msgid "List on Pecha"
 msgstr ""
 
-#: templates/sheets.html:924
+#. Translators: sheets.display_collection
+#: templates/sheets.html:1048
 msgid "Display Collection"
 msgstr ""
 
-#: templates/sheets.html:931
+#. Translators: common.sheets.none
+#: templates/sheets.html:1056
 msgid "None"
 msgstr ""
 
-#: templates/sheets.html:946
+#. Translators: sheets.visit_yout_profile_to_manage_your_collection
+#: templates/sheets.html:1072
 msgid "To manage the collections this sheet appears in, visit your profile."
 msgstr ""
 
-#: templates/sheets.html:955
+#. Translators: sheets.share_a_link
+#: templates/sheets.html:1082
 msgid "Share a link"
 msgstr ""
 
-#: templates/sheets.html:966
+#. Translators: sheets.anyone_with_access_can
+#: templates/sheets.html:1094
 msgid "Anyone with access can"
 msgstr ""
 
-#: templates/sheets.html:988
+#: templates/sheets.html:1120
 msgid ""
 "\n"
 "            Add <span class=\"sourceName\"></span> to a Source Sheet\n"
 "            "
 msgstr ""
 
-#: templates/sheets.html:1010
+#. Translators: sheets.copy_and_paste_embed_sheet_below
+#: templates/sheets.html:1146
 msgid ""
 "Copy and paste the embed code below. Adjust the values of width and height "
 "to best fit your design."
 msgstr ""
 
-#: templates/sheets.html:1017
+#. Translators: sheets.add_a_parasha_to_a_source_sheet
+#: templates/sheets.html:1154
 msgid "Add a Parasha to a Source Sheet"
 msgstr ""
 
-#: templates/sheets.html:1029
+#. Translators: sheets.change_this_source's_layout
+#: templates/sheets.html:1168
 msgid "Change this source's layout"
 msgstr ""
 
-#: templates/sheets.html:1046
+#. Translators: sheets.reset_to_sheet_default
+#: templates/sheets.html:1187
 msgid "Reset to sheet defaults"
 msgstr ""
 
-#: templates/sheets.html:1055
+#. Translators: sheets.would_you_like_to_make_source_sheet_public
+#: templates/sheets.html:1197
 msgid "Would you like to make your Source Sheet public?"
 msgstr ""
 
-#: templates/sheets.html:1060
+#. Translators: sheets.encouragement_to_share_your_sheet_in_community
+#: templates/sheets.html:1203
 msgid ""
 "Your Source Sheet is looking great! You can share it with other members of "
 "the Pecha Community by making it public."
 msgstr ""
 
-#: templates/sheets.html:1065
+#. Translators: sheets.make_public
+#: templates/sheets.html:1209
 msgid "Make Public"
 msgstr ""
 
-#: templates/sheets.html:1068
+#. Translators: sheets.maybe_later
+#: templates/sheets.html:1213
 msgid "Maybe Later"
 msgstr ""
 
-#: templates/sheets.html:1073
+#. Translators: sheets.your_sheet_is_now_public
+#: templates/sheets.html:1219
 msgid "Your Sheet is now Public!"
 msgstr ""
 
-#: templates/sheets.html:1077
+#. Translators: sheets.thankyou_for_contributing_to_free_buddhist_digital_library
+#: templates/sheets.html:1224
 msgid ""
-"Thank you for contributing to a free, growing resource for Jewish learning."
+"Thank you for contributing to a free, growing resource for Buddhist learning."
 msgstr ""
 
-#: templates/sheets.html:1086
+#. Translators: sheets.this_sheet_is_still_not_public
+#: templates/sheets.html:1235
 msgid "No problem, this sheet is still not listed on Pecha."
 msgstr ""
 
-#: templates/sheets.html:1091
+#. Translators: sheets.you_can_make_your_sheet_public_in_future
+#: templates/sheets.html:1241
 msgid "You can make your sheet public in the future from the"
 msgstr ""
 
-#: templates/sheets_visual.html:4
+#. Translators: sheets_visual.visualized
+#: templates/sheets_visual.html:6
 msgid "Visualized"
 msgstr ""
 
-#: templates/sheets_visual.html:4
-msgid "Sefaria Source Sheet Builder"
+#. Translators: sheets_visual.pecha_source_sheet_builder
+#: templates/sheets_visual.html:8
+msgid "Pecha Source Sheet Builder"
 msgstr ""
 
-#: templates/sheets_visual.html:4
-msgid "Start a New Sheet - Sefaria Source Sheet Builder"
-msgstr ""
-
-#: templates/sheets_visual.html:6
+#: templates/sheets_visual.html:12
 #, python-format
 msgid ""
 "Visual layout of a source sheet by %(sheet.owner|user_name)s created with "
-"Sefaria's Source Sheet Builder."
+"Pecha's Source Sheet Builder."
 msgstr ""
 
-#: templates/sheets_visual.html:6
-msgid "Create your own source sheet with Sefaria's Source Sheet Builder."
-msgstr ""
-
-#: templates/sheets_visual.html:30
+#. Translators: sheets_visual.back_to_sheet
+#: templates/sheets_visual.html:39
 msgid "Back to Sheet"
-msgstr ""
-
-#: templates/static/all_home.html:4 templates/static/all_home.html:6
-msgid "TBD"
-msgstr ""
-
-#: templates/static/app.html:4
-msgid "Sefaria App"
-msgstr ""
-
-#: templates/static/app.html:6
-msgid "Download the free Sefaria App for iOS and Android."
-msgstr ""
-
-#: templates/static/app.html:314 templates/static/mobile.html:319
-msgid "Sign up for our Newsletter"
-msgstr ""
-
-#: templates/static/app.html:374
-#: templates/static/aramaic-translation-contest.html:180
-#: templates/static/home.html:383 templates/static/mobile.html:379
-#: templates/static/newsletter.html:47
-msgid "<i>Subscribing...</i>"
-msgstr ""
-
-#: templates/static/app.html:380
-#: templates/static/aramaic-translation-contest.html:186
-#: templates/static/home.html:389 templates/static/mobile.html:385
-#: templates/static/newsletter.html:53
-msgid "Subscribed! Welcome to our list."
-msgstr ""
-
-#: templates/static/app.html:386
-#: templates/static/aramaic-translation-contest.html:192
-#: templates/static/home.html:395 templates/static/mobile.html:391
-#: templates/static/newsletter.html:59
-msgid "Please enter a valid email address."
-msgstr ""
-
-#: templates/static/aramaic-translation-contest.html:4
-msgid "Sefaria: a Living Library of Jewish Texts Online"
-msgstr ""
-
-#: templates/static/aramaic-translation-contest.html:6
-msgid ""
-"The largest free library of Jewish texts available to read online in Hebrew "
-"and English including Torah, Tanakh, Talmud, Mishnah, Midrash, commentaries "
-"and more."
-msgstr ""
-
-#: templates/static/connect.html:4
-msgid "Sefaria Newsletter, Social Media and More"
-msgstr ""
-
-#: templates/static/connect.html:6
-msgid ""
-"Get updates on new texts and features on Sefaria by signing up for our "
-"newsletter or following us on social media."
-msgstr ""
-
-#: templates/static/contest.html:4 templates/static/contest.html:6
-msgid "Powered by Sefaria Contest"
-msgstr ""
-
-#: templates/static/contributed-to-sefaria.html:4
-msgid "Texts Contributed to Sefaria"
-msgstr ""
-
-#: templates/static/contributed-to-sefaria.html:6
-msgid ""
-"Texts on Sefaria that list this page as their source were contributed "
-"directly to Sefaria and have not yet been published elsewhere in print or on "
-"the web."
-msgstr ""
-
-#: templates/static/daf-yomi.html:4
-msgid "Daf Yomi | Sefaria"
-msgstr ""
-
-#: templates/static/daf-yomi.html:6
-msgid "Learn the Talmud each day with Daf Yomi on Sefaria."
-msgstr ""
-
-#: templates/static/dicta-thanks.html:4
-msgid "Dicta Thanks"
-msgstr ""
-
-#: templates/static/dicta-thanks.html:6
-msgid "Sefaria thanks Dicta for all of their help."
-msgstr ""
-
-#: templates/static/digitized-by-sefaria.html:4
-msgid "Texts Digitized by Sefaria"
-msgstr ""
-
-#: templates/static/educators.html:4 templates/static/educators.html:6
-msgid "Teach with Sefaria"
 msgstr ""
 
 #: templates/static/en/about.html:4 templates/static/he/about.html:4
@@ -2270,252 +2446,30 @@ msgid ""
 "wire transfer."
 msgstr ""
 
-#: templates/static/home.html:5
+#. Translators: templates.static.home.pecha_title
+#: templates/static/home.html:6
 msgid "Pecha: a Living Library of Buddhist Texts Online"
 msgstr ""
 
-#: templates/static/home.html:7
+#. Translators: templates.static.home.pecha_description
+#: templates/static/home.html:10
 msgid ""
 "The largest free library of Buddhist texts available to read online in "
 "Tibetan and English including commentaries and more."
 msgstr ""
 
-#: templates/static/ios.html:4
-msgid "Sefaria iOS"
-msgstr ""
-
-#: templates/static/jobs.html:4
-msgid "Jobs at Pecha"
-msgstr ""
-
-#: templates/static/jobs.html:6
-msgid ""
-"Job openings at Pecha, a nonprofit technology organization dedicated to "
-"building the Buddhist future."
-msgstr ""
-
-#: templates/static/linker.html:4
-msgid "Linker Plugin"
-msgstr ""
-
-#: templates/static/linker.html:6
-msgid ""
-"Automatically turn citations on your website into links or dynamic popups "
-"with the full text from Pecha."
-msgstr ""
-
-#: templates/static/mobile.html:4
-msgid "Pecha Mobile Apps"
-msgstr ""
-
-#: templates/static/mobile.html:6
-msgid "Download the free Sefaria Apps for iOS and Android."
-msgstr ""
-
-#: templates/static/newsletter.html:4 templates/static/newsletter.html:6
+#. Translators: templates.static.newsletter.sign_up_for_pecha_newsletter_title
+#. Translators: templates.static.newsletter.sign_up_for_pecha_newsletter_description
+#: templates/static/newsletter.html:5 templates/static/newsletter.html:10
 msgid "Sign up for Pecha's Newsletter"
 msgstr ""
 
-#: templates/static/powered-by-sefaria-contest-2020.html:4
-#: templates/static/powered-by-sefaria-contest-2020.html:6
-msgid "Powered by Sefaria Contest 2020"
-msgstr ""
-
-#: templates/static/powered-by-sefaria-contest-2021.html:4
-#: templates/static/powered-by-sefaria-contest-2021.html:6
-msgid "Powered by Sefaria Contest 2021"
-msgstr ""
-
-#: templates/static/powered-by.html:4
-msgid "Powered by Sefaria"
-msgstr ""
-
-#: templates/static/powered-by.html:6
-msgid ""
-"Sefaria’s open data and API can be used by anyone.  You can find it all for "
-"free in our GitHub repository!"
-msgstr ""
-
-#: templates/static/privacy-policy.html:4
+#. Translators: templates.static.privacy_policy.privacy_policy_title
+#: templates/static/privacy-policy.html:5
 msgid "Privacy Policy"
 msgstr ""
 
-#: templates/static/ramban-sponsorships.html:4
-#: templates/static/ramban-sponsorships.html:6
-msgid "Ramban on Torah - Thank you to our Sponsors"
-msgstr ""
-
-#: templates/static/remote-learning.html:4
-msgid "Remote Learning | Sefaria"
-msgstr ""
-
-#: templates/static/remote-learning.html:6
-msgid "Resources for teaching and learning virtually."
-msgstr ""
-
-#: templates/static/sefaria-community-translation.html:4
-msgid "About Sefaria Community Translations"
-msgstr ""
-
-#: templates/static/sefaria-community-translation.html:6
-msgid ""
-"Sefaria Community Translations are open, crowd-sourced translations of texts "
-"available in the Sefaria Library."
-msgstr ""
-
-#: templates/static/sefaria-edition.html:4
-msgid "About Sefaria Editions"
-msgstr ""
-
-#: templates/static/sefaria-edition.html:6
-msgid ""
-"The Sefaria Edition is a Sefaria commissioned translation created by "
-"professional translators."
-msgstr ""
-
-#: templates/static/sheets.html:4
-msgid "Sheets on Pecha"
-msgstr ""
-
-#: templates/static/sheets.html:6
-msgid ""
-"Mix and match sources from Sefaria’s library of Jewish texts, and add your "
-"comments, images and videos."
-msgstr ""
-
-#: templates/static/shraga-silverstein.html:4
-msgid "In Memory of Rabbi Shraga Silverstein"
-msgstr ""
-
-#: templates/static/strategy.html:4
-msgid "Sefaria Strategy"
-msgstr ""
-
-#: templates/static/supporters.html:4
-msgid "Sefaria's Supporters"
-msgstr ""
-
-#: templates/static/supporters.html:6
-msgid ""
-"Sefaria gratefully acknowledges the following donors whose generosity and "
-"leadership are making Sefaria possible."
-msgstr ""
-
-#: templates/static/team.html:5
-msgid "The Sefaria Team"
-msgstr ""
-
-#: templates/static/team.html:7
-msgid "Sefaria's team is working to create the Jewish future."
-msgstr ""
-
-#: templates/static/terms.html:4
+#. Translators: templates.static.terms.terms_of_use
+#: templates/static/terms.html:5
 msgid "Terms of Use"
-msgstr ""
-
-#: templates/static/testimonials.html:4
-msgid "Sefaria Testimonials"
-msgstr ""
-
-#: templates/static/testimonials.html:6
-msgid "Sefaria’s Impact – Reflections and Insights from Users"
-msgstr ""
-
-#: templates/static/the-sefaria-story.html:4
-msgid "The Sefaria Story"
-msgstr ""
-
-#: templates/static/the-sefaria-story.html:6
-msgid "Watch a video about the story of Sefaria."
-msgstr ""
-
-#: templates/static/torah-tab.html:5
-msgid "Sefaria Torah Tab"
-msgstr ""
-
-#: templates/static/torah-tab.html:7
-msgid "Install the free Sefaria Torah Tab for your web browser."
-msgstr ""
-
-#. Translators: pecha
-#: templates/static/visualizations.html:5
-msgid "Visualizations"
-msgstr ""
-
-#: templates/static/visualizations.html:9
-msgid ""
-"Projects which have been created to make interactive visualizations of the "
-"texts and connections in the Pecha Library of Torah texts."
-msgstr ""
-
-#: templates/static/william-davidson-talmud.html:4
-#: templates/static/william-davidson-talmud.html:84
-msgid "The William Davidson Talmud"
-msgstr ""
-
-#: templates/static/william-davidson-talmud.html:6
-msgid ""
-"The William Davidson Talmud is a free digital edition of the Babylonian "
-"Talmud with parallel translations, interlinked to major commentaries, "
-"biblical citations, Midrash, Halakhah, and an ever-growing library of Jewish "
-"texts."
-msgstr ""
-
-#: templates/static/word-by-word.html:4
-msgid "Word by Word: A Jewish Women's Writing Circle"
-msgstr ""
-
-#: templates/static/word-by-word.html:6
-msgid ""
-"Word by Word: A Jewish Women's Writing Circle will provide up to 20 Jewish "
-"women writers engaged in serious torah scholarship the support and guidance "
-"to produce publishable books."
-msgstr ""
-
-#: templates/talmud_people.html:8
-msgid ""
-"An index of the sages of the Talmud (Chazal) ordered by generation, "
-"including relationships to one another, time periods and links to learn more."
-msgstr ""
-
-#: templates/talmudic_relationships.html:24
-#: templates/talmudic_relationships.html:26
-msgid "Student-Teacher Relationships in the Talmud"
-msgstr ""
-
-#: templates/timeline.html:4 templates/timeline.html:6
-msgid "Timeline"
-msgstr ""
-
-#: templates/unique_words_viz.html:7
-msgid "Unique Words used by Biblical Commentators"
-msgstr ""
-
-#: templates/unique_words_viz.html:9
-msgid "Explore how unique and verbose biblical commentators were."
-msgstr ""
-
-#: templates/visual_library.html:4
-msgid "Visualizing the Sefaria Library"
-msgstr ""
-
-#: templates/visual_library.html:6
-msgid ""
-"How big is Torah compared to Talmud? This sunburst diagram lets you see the "
-"number of words in the texts and categories of Sefaria's library (which is "
-"growing every day!)."
-msgstr ""
-
-#: templates/visual_parasha_colors.html:6
-msgid "Visualizing the Parshiot"
-msgstr ""
-
-#: templates/visualize_links_through_rashi.html:6
-msgid "Visualizing Torah Connections through Rashi's Commentary"
-msgstr ""
-
-#: templates/visualize_links_through_rashi.html:8
-msgid ""
-"Explore how Rashi connects verses of Torah to one another when he quotes one "
-"verse in his commentary on another."
 msgstr ""
