@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-13 12:01+0530\n"
+"POT-Creation-Date: 2024-09-13 12:09+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. Translators: common.edit_text.label.english.
 #. Translators: common.sheets.english
 #: reader/templatetags/sefaria_tags.py:226 sefaria/settings.py:25
-#: templates/edit_text.html:219 templates/sheets.html:222
+#: templates/edit_text.html:221 templates/sheets.html:222
 #: templates/sheets.html:314
 msgid "English"
 msgstr ""
@@ -484,7 +484,7 @@ msgstr ""
 #. Translators: common.sheets.cancel
 #: templates/account_settings.html:17 templates/account_settings.html:150
 #: templates/edit_profile.html:20 templates/edit_text.html:73
-#: templates/edit_text.html:105 templates/edit_text.html:177
+#: templates/edit_text.html:105 templates/edit_text.html:179
 #: templates/elements/login_prompt.html:13 templates/profile.html:193
 #: templates/sheets.html:1133 templates/sheets.html:1159
 msgid "Cancel"
@@ -498,7 +498,7 @@ msgstr ""
 #. Translators: common.sheets.save
 #: templates/account_settings.html:21 templates/account_settings.html:146
 #: templates/edit_profile.html:24 templates/edit_text.html:103
-#: templates/edit_text.html:175 templates/sheets.html:519
+#: templates/edit_text.html:177 templates/sheets.html:519
 #: templates/sheets.html:942 templates/sheets.html:1113
 msgid "Save"
 msgstr ""
@@ -537,7 +537,7 @@ msgstr ""
 #. Translators: account_setting.language_tibetan_option
 #. Translators: common.edit_text.label.tibetan
 #. Translators: common.sheets.tibetan
-#: templates/account_settings.html:58 templates/edit_text.html:221
+#: templates/account_settings.html:58 templates/edit_text.html:223
 #: templates/sheets.html:229 templates/sheets.html:321
 #: templates/sheets.html:798
 msgid "Tibetan"
@@ -940,192 +940,184 @@ msgstr ""
 
 #. Translators: edit_text.add_new_text
 #: templates/edit_text.html:110
-msgid "To add your review, please "
-msgstr ""
-
-#: templates/edit_text.html:110
-msgid "log in"
-msgstr ""
-
-#. Translators: common.sheets.or
-#: templates/edit_text.html:110 templates/sheets.html:755
-#: templates/sheets.html:823 templates/sheets.html:901
-msgid "or"
-msgstr ""
-
-#: templates/edit_text.html:110 templates/sheets.html:902
-msgid "register"
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\tTo add your review, please<a href=\"/login?next="
+"%(request.get_full_path)s\">log in</a>or<a href=\"/register?next="
+"%(request.get_full_path)s\">register</a>.\n"
+"\t\t\t\t"
 msgstr ""
 
 #. Translators: edit_text.close_button
-#: templates/edit_text.html:114
+#: templates/edit_text.html:116
 msgid "Close"
 msgstr ""
 
 #. Translators: edit_text.review_message
-#: templates/edit_text.html:120
+#: templates/edit_text.html:122
 msgid "Writing Helpful Reviews"
 msgstr ""
 
 #. Translators: edit_text.historical_text
-#: templates/edit_text.html:122
+#: templates/edit_text.html:124
 msgid "For primary texts and historical translations:"
 msgstr ""
 
-#: templates/edit_text.html:122
+#: templates/edit_text.html:124
 msgid ""
 " Indicate what outside source (book, web page) was used to compare the text, "
 "or make clear that your review is only looking at the text present."
 msgstr ""
 
 #. Translators: edit_text.compare_printed_edition
-#: templates/edit_text.html:125
+#: templates/edit_text.html:127
 msgid "I compared this text to X printed edition and found no problems."
 msgstr ""
 
 #. Translators: edit_text.all_looks_good
-#: templates/edit_text.html:127
+#: templates/edit_text.html:129
 msgid "I checked this text against the edition on X website, all looks good."
 msgstr ""
 
 #. Translators: edit_text.no_issue_message
-#: templates/edit_text.html:129
+#: templates/edit_text.html:131
 msgid "I read this text carefully and don't see anything wrong."
 msgstr ""
 
 #. Translators: edit_text.original_translation
-#: templates/edit_text.html:132
+#: templates/edit_text.html:134
 msgid "For original translations:"
 msgstr ""
 
-#: templates/edit_text.html:132
+#: templates/edit_text.html:134
 msgid ""
 " Review the text carefully next to the original, and comment on its accuracy "
 "and style according to our "
 msgstr ""
 
-#: templates/edit_text.html:132
+#: templates/edit_text.html:134
 msgid "translation guidelines"
 msgstr ""
 
 #. Translators: edit_text.accurate
-#: templates/edit_text.html:135
+#: templates/edit_text.html:137
 msgid "This translation seems accurate to me."
 msgstr ""
 
 #. Translators: edit_text.translation_review
-#: templates/edit_text.html:137
+#: templates/edit_text.html:139
 msgid "The language could be improved, but the translation seems right."
 msgstr ""
 
 #. Translators: edit_text.misunderstand_term_X
-#: templates/edit_text.html:139
+#: templates/edit_text.html:141
 msgid "This translation misunderstands the term X."
 msgstr ""
 
 #. Translators: edit_text.score_review
-#: templates/edit_text.html:144
+#: templates/edit_text.html:146
 msgid "How to Score your Review:"
 msgstr ""
 
 #. Translators: edit_text.compared_to_source_message
-#: templates/edit_text.html:147
+#: templates/edit_text.html:149
 msgid " Compared closesly to a source, confident there are no problems."
 msgstr ""
 
 #. Translators: edit_text.compared_to_source_no_problem_message
-#: templates/edit_text.html:151
+#: templates/edit_text.html:153
 msgid " Compared to a source, didn't notice any problems."
 msgstr ""
 
 #. Translators: edit_text.proble_free_need_review
-#: templates/edit_text.html:155
+#: templates/edit_text.html:157
 msgid " Looks problem free, but could be reviewed more closely."
 msgstr ""
 
 #. Translators: edit_text.found_small_issues_need_to_address
-#: templates/edit_text.html:159
+#: templates/edit_text.html:161
 msgid " Found some issues that need to be addressed."
 msgstr ""
 
 #. Translators: edit_text.found_serious_issues_need_address
-#: templates/edit_text.html:163
+#: templates/edit_text.html:165
 msgid " Found serious problems that need to be addressed."
 msgstr ""
 
 #. Translators: common.form.button.ok
 #. Translators: common.sheets.ok
-#: templates/edit_text.html:167 templates/sheets.html:1185
+#: templates/edit_text.html:169 templates/sheets.html:1185
 #: templates/sheets.html:1229 templates/sheets.html:1249
 msgid "OK"
 msgstr ""
 
 #. Translators: common.label.source
-#: templates/edit_text.html:184
+#: templates/edit_text.html:186
 msgid "Source "
 msgstr ""
 
 #. Translators: edit_text.original_translation
-#: templates/edit_text.html:192
+#: templates/edit_text.html:194
 msgid "Original Translation"
 msgstr ""
 
 #. Translators: edit_text.copied_text
-#: templates/edit_text.html:197
+#: templates/edit_text.html:199
 msgid "Copied Text"
 msgstr ""
 
-#: templates/edit_text.html:202
+#: templates/edit_text.html:204
 msgid "This text will be published with a "
 msgstr ""
 
-#: templates/edit_text.html:202
+#: templates/edit_text.html:204
 msgid ""
 " licence, effectively donating it to the Public Domain. Only submit texts as "
 "\"Original Translation\" that you have authored."
 msgstr ""
 
-#: templates/edit_text.html:206
+#: templates/edit_text.html:208
 msgid "Copied texts must either be in the "
 msgstr ""
 
-#: templates/edit_text.html:206
+#: templates/edit_text.html:208
 msgid "Public Domain"
 msgstr ""
 
-#: templates/edit_text.html:206
+#: templates/edit_text.html:208
 msgid " or carry a "
 msgstr ""
 
-#: templates/edit_text.html:206
+#: templates/edit_text.html:208
 msgid "Creative Commons"
 msgstr ""
 
-#: templates/edit_text.html:206
+#: templates/edit_text.html:208
 msgid " license such as "
 msgstr ""
 
-#: templates/edit_text.html:206
+#: templates/edit_text.html:208
 msgid ""
 ". You can learn more about when a text passes into the Public Domain on this"
 msgstr ""
 
-#: templates/edit_text.html:206
+#: templates/edit_text.html:208
 msgid "summary of Copyright Terms"
 msgstr ""
 
 #. Translators: edit_text.version_title
-#: templates/edit_text.html:209
+#: templates/edit_text.html:211
 msgid "Version Title:"
 msgstr ""
 
 #. Translators: edit_text.copied_from
-#: templates/edit_text.html:211
+#: templates/edit_text.html:213
 msgid "Copied from:"
 msgstr ""
 
 #. Translators: common.label.language
-#: templates/edit_text.html:216
+#: templates/edit_text.html:218
 msgid "Language:"
 msgstr ""
 
@@ -2136,6 +2128,12 @@ msgstr ""
 msgid "Add Source"
 msgstr ""
 
+#. Translators: common.sheets.or
+#: templates/sheets.html:755 templates/sheets.html:823
+#: templates/sheets.html:901
+msgid "or"
+msgstr ""
+
 #. Translators: sheets.browse_sources
 #: templates/sheets.html:760
 msgid "Browse Sources"
@@ -2233,6 +2231,10 @@ msgstr ""
 
 #: templates/sheets.html:901
 msgid "login"
+msgstr ""
+
+#: templates/sheets.html:902
+msgid "register"
 msgstr ""
 
 #: templates/sheets.html:902

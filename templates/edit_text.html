@@ -107,7 +107,9 @@
 			{% else %}
 			<div id="loginToReview">
 				{% comment %}Translators: edit_text.add_new_text{% endcomment %}
-				{% trans "To add your review, please " %}<a href="/login?next={{ request.get_full_path }}">{% trans "log in" %}</a>{% trans "or" %} <a href="/register?next={{ request.get_full_path }}">{% trans "register" %}</a>.
+				{% blocktrans %}
+				To add your review, please<a href="/login?next={{ request.get_full_path }}">log in</a>or<a href="/register?next={{ request.get_full_path }}">register</a>.
+				{% endblocktrans %}
 			</div>
 			<div id="reviewButtonsBox">
 				{% comment %}Translators: edit_text.close_button{% endcomment %}
