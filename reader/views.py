@@ -728,6 +728,7 @@ def text_panels(request, ref, version=None, lang=None, sheet=None):
     else:
         sheet = panels[0].get("sheet", {})
         sheet["title"] = unescape(sheet["title"]) 
+        # Translators: common.pecha_sheet_title
         title = strip_tags(sheet["title"]) + " | " + _("Pecha")
         breadcrumb = sheet_crumbs(request, sheet)
         # Translators: description_of_how_sheet_is_build
@@ -3186,7 +3187,9 @@ def topics_page(request):
     track_page_to_mp(request=request, page_title='Topics', text_ref='')
     return render_template(request, 'base.html', props, {
         # Translators: topic_page_title
-        "title": _("Topics") + " | " + _("Pecha"),
+        "title": _("Topics") + " | " + 
+        # Translators: common.name_pecha
+        _("Pecha"),
         # Translators: topic_page_desc
         "desc": _("Explore Buddhist Texts by Topic on Pecha"),
     })

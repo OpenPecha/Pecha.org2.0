@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-13 12:09+0530\n"
+"POT-Creation-Date: 2024-09-17 10:39+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -317,7 +317,8 @@ msgid "Email Address"
 msgstr ""
 
 #. Translators: placeholder_password
-#: sefaria/forms.py:46 sefaria/forms.py:57 templates/account_settings.html:111
+#. Translators: common.account_setting.password
+#: sefaria/forms.py:46 sefaria/forms.py:57 templates/account_settings.html:114
 msgid "Password"
 msgstr ""
 
@@ -475,14 +476,14 @@ msgstr ""
 msgid "Account Settings"
 msgstr ""
 
-#. Translators: account_setting.cancel_request
-#. Translators: account_setting.cancel_setting_button
-#. Translators: edit_profile.cancel_button
-#. Translators: edit_text.cancel_button
+#. Translators: common.account_setting.cancel_request
+#. Translators: common.account_setting.cancel_setting_button
+#. Translators: common.edit_profile.cancel_button
+#. Translators: common.edit_text.cancel_button
 #. Translators: common.form.button.cancel
 #. Translators: common.templates.elements.login_prompts.cancel
 #. Translators: common.sheets.cancel
-#: templates/account_settings.html:17 templates/account_settings.html:150
+#: templates/account_settings.html:17 templates/account_settings.html:153
 #: templates/edit_profile.html:20 templates/edit_text.html:73
 #: templates/edit_text.html:105 templates/edit_text.html:179
 #: templates/elements/login_prompt.html:13 templates/profile.html:193
@@ -490,13 +491,13 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#. Translators: account_setting.save_request
-#. Translators: account_setting.save_setting_button
-#. Translators: edit_profile.save_button
-#. Translators: edit_text.save_button
+#. Translators: common.account_setting.save_request
+#. Translators: common.account_setting.save_setting_button
+#. Translators: common.edit_profile.save_button
+#. Translators: common.edit_text.save_button
 #. Translators: common.form.button.save
 #. Translators: common.sheets.save
-#: templates/account_settings.html:21 templates/account_settings.html:146
+#: templates/account_settings.html:21 templates/account_settings.html:149
 #: templates/edit_profile.html:24 templates/edit_text.html:103
 #: templates/edit_text.html:177 templates/sheets.html:519
 #: templates/sheets.html:942 templates/sheets.html:1113
@@ -534,9 +535,11 @@ msgstr ""
 msgid "english"
 msgstr ""
 
-#. Translators: account_setting.language_tibetan_option
+#. Translators: common.account_setting.language_tibetan_option
 #. Translators: common.edit_text.label.tibetan
 #. Translators: common.sheets.tibetan
+#. Translators: common.sheets.label.tibetan
+#. Translators: common.sheets.tibetan_name
 #: templates/account_settings.html:58 templates/edit_text.html:223
 #: templates/sheets.html:229 templates/sheets.html:321
 #: templates/sheets.html:798
@@ -573,127 +576,129 @@ msgstr ""
 msgid "Change Email"
 msgstr ""
 
-#: templates/account_settings.html:109
+#. Translators: account_setting.new_email
+#: templates/account_settings.html:110
 msgid "New Email"
 msgstr ""
 
-#: templates/account_settings.html:110
+#. Translators: account_setting.confirm_new_email
+#: templates/account_settings.html:112
 msgid "Confirm New Email"
 msgstr ""
 
-#. Translators: account_setting.update_email_message
-#: templates/account_settings.html:114
+#. Translators: account_setting.update_email
+#: templates/account_settings.html:117
 msgid "Update Email"
 msgstr ""
 
 #. Translators: account_setting.google_account_message
-#: templates/account_settings.html:122
+#: templates/account_settings.html:125
 msgid "Google Account (Allows for exporting sheets to Google Drive)"
 msgstr ""
 
 #. Translators: account_setting.google_account_disconnect_with_pecha_acc
-#: templates/account_settings.html:128
+#: templates/account_settings.html:131
 msgid "Disconnect"
 msgstr ""
 
 #. Translators: account_setting.google_account_disconnected_message
-#: templates/account_settings.html:136
+#: templates/account_settings.html:139
 msgid "Your Google Account has been disconnected"
 msgstr ""
 
 #. Translators: account_setting.export_sheet_message
-#: templates/account_settings.html:140
+#: templates/account_settings.html:143
 msgid "You can link to a new Google Account the next time you export a sheet"
 msgstr ""
 
-#. Translators: pecha.org/activity.revision_history
+#. Translators: activity.revision_history
 #: templates/activity.html:8 templates/activity.html:43
 msgid "Revision History of"
 msgstr ""
 
-#. Translators: pecha.org/activity.activity
+#. Translators: activity.pecha_activity_profile
+#. Translators: activity.pecha_activity
 #: templates/activity.html:11 templates/activity.html:14
 msgid "Pecha Activity"
 msgstr ""
 
-#. Translators: pecha.org/activity.revision_history_message
+#. Translators: activity.revision_history_message
 #: templates/activity.html:21
 msgid "View the complete revision history of this text on Pecha."
 msgstr ""
 
-#. Translators: pecha.org/activity.activity_message
+#. Translators: activity.activity_message
 #: templates/activity.html:24
 msgid ""
 "View a user's activitiy history on Pecha, including published source sheets, "
 "and text translations, edits or additions."
 msgstr ""
 
-#. Translators: pecha.org/activity.view_log_message
+#. Translators: activity.view_log_message
 #: templates/activity.html:27
 msgid ""
 "View the complete log of public activity on Pecha, including published "
 "source sheets, and text translations, edits or additions. "
 msgstr ""
 
-#. Translators: pecha.org/activity.public_activity
+#. Translators: activity.public_activity
 #: templates/activity.html:51
 msgid "Public Activity"
 msgstr ""
 
-#. Translators: pecha.org/activity.recent_activity
+#. Translators: activity.recent_activity
 #: templates/activity.html:56
 msgid "Recent Activity on Pecha"
 msgstr ""
 
-#. Translators: pecha.org/activity.all_activity_drop_down
+#. Translators: activity.all_activity_drop_down
 #: templates/activity.html:62
 msgid "All Activity"
 msgstr ""
 
-#. Translators: pecha.org/activity.translation_option
+#. Translators: activity.translation_option
 #: templates/activity.html:64
 msgid "Translations"
 msgstr ""
 
-#. Translators: pecha.org/activity.source_sheets_option
+#. Translators: activity.source_sheets_option
 #. Translators: profile.source_sheet
-#: templates/activity.html:66 templates/metrics.html:53
-#: templates/profile.html:108
+#: templates/activity.html:66 templates/profile.html:108
 msgid "Source Sheets"
 msgstr ""
 
-#. Translators: pecha.org/activity.new_texts_option
+#. Translators: activity.new_texts_option
 #: templates/activity.html:68
 msgid "New Texts"
 msgstr ""
 
-#. Translators: pecha.org/activity.edit_list_option
+#. Translators: activity.edit_list_option
 #: templates/activity.html:70
 msgid "Edits"
 msgstr ""
 
-#. Translators: pecha.org/activity.notes_option
+#. Translators: activity.notes_option
 #. Translators: profile.label.notes
 #: templates/activity.html:72 templates/profile.html:129
 msgid "Notes"
 msgstr ""
 
-#. Translators: pecha.org/activity.reviews_option
+#. Translators: activity.reviews_option
 #: templates/activity.html:74
 msgid "Reviews"
 msgstr ""
 
-#. Translators: pecha.org/activity.text_info_option_option
+#. Translators: activity.text_info_option_option
 #: templates/activity.html:76
 msgid "Text Info"
 msgstr ""
 
-#. Translators: pecha.org/activity.reversions_option
+#. Translators: activity.reversions_option
 #: templates/activity.html:78
 msgid "Reversions"
 msgstr ""
 
-#. Translators: pecha.org/activity.flagged_option
+#. Translators: activity.flagged_option
 #: templates/activity.html:80
 msgid "Flagged"
 msgstr ""
@@ -938,64 +943,47 @@ msgstr ""
 msgid "How should I write a review?"
 msgstr ""
 
-#. Translators: edit_text.add_new_text
-#: templates/edit_text.html:110
-#, python-format
-msgid ""
-"\n"
-"\t\t\t\tTo add your review, please<a href=\"/login?next="
-"%(request.get_full_path)s\">log in</a>or<a href=\"/register?next="
-"%(request.get_full_path)s\">register</a>.\n"
-"\t\t\t\t"
-msgstr ""
-
 #. Translators: edit_text.close_button
-#: templates/edit_text.html:116
+#: templates/edit_text.html:114
 msgid "Close"
 msgstr ""
 
 #. Translators: edit_text.review_message
-#: templates/edit_text.html:122
+#: templates/edit_text.html:120
 msgid "Writing Helpful Reviews"
 msgstr ""
 
 #. Translators: edit_text.historical_text
-#: templates/edit_text.html:124
-msgid "For primary texts and historical translations:"
-msgstr ""
-
-#: templates/edit_text.html:124
+#: templates/edit_text.html:122
 msgid ""
-" Indicate what outside source (book, web page) was used to compare the text, "
-"or make clear that your review is only looking at the text present."
+"For primary texts and historical translations:</b>Indicate what outside "
+"source (book, web page) was used to compare the text, or make clear that "
+"your review is only looking at the text present."
 msgstr ""
 
 #. Translators: edit_text.compare_printed_edition
-#: templates/edit_text.html:127
+#: templates/edit_text.html:125
 msgid "I compared this text to X printed edition and found no problems."
 msgstr ""
 
 #. Translators: edit_text.all_looks_good
-#: templates/edit_text.html:129
+#: templates/edit_text.html:127
 msgid "I checked this text against the edition on X website, all looks good."
 msgstr ""
 
 #. Translators: edit_text.no_issue_message
-#: templates/edit_text.html:131
+#: templates/edit_text.html:129
 msgid "I read this text carefully and don't see anything wrong."
 msgstr ""
 
 #. Translators: edit_text.original_translation
-#: templates/edit_text.html:134
-msgid "For original translations:"
-msgstr ""
-
-#: templates/edit_text.html:134
+#: templates/edit_text.html:132
 msgid ""
-" Review the text carefully next to the original, and comment on its accuracy "
-"and style according to our "
+"For original translations:</b>Review the text carefully next to the "
+"original, and comment on its accuracy and style according to our "
 msgstr ""
 
+#. Translators: edit_text.translation_guidelines
 #: templates/edit_text.html:134
 msgid "translation guidelines"
 msgstr ""
@@ -1067,43 +1055,12 @@ msgstr ""
 msgid "Copied Text"
 msgstr ""
 
-#: templates/edit_text.html:204
-msgid "This text will be published with a "
-msgstr ""
-
-#: templates/edit_text.html:204
-msgid ""
-" licence, effectively donating it to the Public Domain. Only submit texts as "
-"\"Original Translation\" that you have authored."
-msgstr ""
-
-#: templates/edit_text.html:208
-msgid "Copied texts must either be in the "
-msgstr ""
-
 #: templates/edit_text.html:208
 msgid "Public Domain"
 msgstr ""
 
 #: templates/edit_text.html:208
-msgid " or carry a "
-msgstr ""
-
-#: templates/edit_text.html:208
 msgid "Creative Commons"
-msgstr ""
-
-#: templates/edit_text.html:208
-msgid " license such as "
-msgstr ""
-
-#: templates/edit_text.html:208
-msgid ""
-". You can learn more about when a text passes into the Public Domain on this"
-msgstr ""
-
-#: templates/edit_text.html:208
-msgid "summary of Copyright Terms"
 msgstr ""
 
 #. Translators: edit_text.version_title
@@ -1310,6 +1267,7 @@ msgid "is now following you."
 msgstr ""
 
 #. Translators: templates.elements.notification.added_you_to_the_collection
+#. Translators: templates.elements.notification.added_you_to_the_collection_second_string
 #: templates/elements/notification.html:59
 #: templates/elements/notification.html:66
 msgid "added you to the collection"
@@ -1317,63 +1275,37 @@ msgstr ""
 
 #. Translators: templates.email.base.you_are_recieving_this_message_because_you_have_an_account_on_link
 #: templates/email/base.html:18
-msgid ""
-"\n"
-"            You're receiving this message because you have an account on\n"
-"            <a href=\"http://www.pecha.org\">www.pecha.org</a>.\n"
-"\t\t\t"
+msgid "You're receiving this message because you have an account on"
 msgstr ""
 
 #. Translators: templates.email.base.to_change_your_email_settings
-#: templates/email/base.html:24
+#: templates/email/base.html:22
 #, python-format
-msgid ""
-"\n"
-"            To change your email settings, click <a href=\"%(settings_url)s"
-"\">here</a>\n"
-"        "
+msgid "To change your email settings, click <a href='{{ settings_url }}'>here"
 msgstr ""
 
 #. Translators: templates.email.base.feedback_is_welcome
-#: templates/email/base.html:29
+#: templates/email/base.html:27
 #, python-format
-msgid ""
-"\n"
-"            Your feedback is welcome. Feel free to send us an <a href="
-"\"%(hello_email)s\">email</a>.\n"
-"        "
+msgid "Your feedback is welcome. Feel free to send us an <a href="{{ hello_email }}">email"
 msgstr ""
 
 #. Translators: templates.email.collection_signup_invitation_email.invited_to_contribute_to_the_collection
 #: templates/email/collection_signup_invitation_email.html:9
 #, python-format
-msgid ""
-"\n"
-"\t\t%(inviter)s invited you to contribute to the collection %(collection)s "
-"on Sefaria.\n"
-"\t\t"
+msgid "{{ inviter }} invited you to contribute to the collection {{ collection }} on Pecha"
 msgstr ""
 
 #. Translators: templates.email.collection_signup_invitation_email.to accept_this_invitation_create_a_free_account
 #: templates/email/collection_signup_invitation_email.html:16
 #, python-format
-msgid ""
-"\n"
-"\t\tTo accept this invitation, <a href=\"%(register)s\">create a free Pecha "
-"account</a>.\n"
-"\t\t"
+msgid "To accept this invitation, <a href="{{ register }}">create a free Pecha account"
 msgstr ""
 
 #. Translators: templates.email.collection_signup_invitation_email.collecton_on_pecha_feature_description
 #: templates/email/collection_signup_invitation_email.html:27
-msgid ""
-"\n"
-"\t\tPecha is a free living library of Buddhist texts. Collections on Pecha "
-"help you easily build and share collections of source sheets you create or "
-"find on Sefaria.<br>.\n"
-"\t\tFeel free to send any questions over <a href=\"mailto:hello@pecha.org"
-"\">email</a>.\n"
-"\t\t"
+msgid "Pecha is a free living library of Buddhist texts. Collections on Pecha help you easily build and share collections of source sheets you create or find on Sefaria.<br>.
+		Feel free to send any questions over <a href="mailto:hello@pecha.org">email"
 msgstr ""
 
 #: templates/email/notifications_email.html:5
@@ -1392,23 +1324,16 @@ msgstr ""
 
 #: templates/explore.html:4
 #, python-format
-msgid ""
-"Link Explorer - Visualized Connections Between %(bottomCatTitle)s and "
-"%(topCatTitle)s | Sefaria"
+msgid "Link Explorer - Visualized Connections Between %(bottomCatTitle)s and %(topCatTitle)s | Pecha"
 msgstr ""
 
 #: templates/explore.html:6
-msgid ""
-"Explore over 30,000 examples of the Talmud quoting a verse from Tanakh. Zoom "
-"in to particular books either above or below to explore deeper."
+msgid "Explore over 30,000 examples of the Talmud quoting a verse from Tanakh. Zoom in to particular books either above or below to explore deeper."
 msgstr ""
 
 #: templates/explore.html:6
 #, python-format
-msgid ""
-"Visually explore quotations and connections between %(bottomCatTitle)s and "
-"%(topCatTitle)s. Zoom in to particular books either above or below to "
-"explore deeper."
+msgid "Visually explore quotations and connections between %(bottomCatTitle)s and %(topCatTitle)s. Zoom in to particular books either above or below to explore deeper."
 msgstr ""
 
 #. Translators: gdocs_sheet.source_sheet_creater_message
@@ -1423,9 +1348,7 @@ msgstr ""
 
 #. Translators: leaderboard.contributor_leaderboard
 #: templates/leaderboard.html:8
-msgid ""
-"See who has been contributing most to Pecha in terms of texts, translations, "
-"and source sheet."
+msgid "See who has been contributing most to Pecha in terms of texts, translations, and source sheet."
 msgstr ""
 
 #. Translators: leaderboard.label.top_contributor
@@ -1440,55 +1363,12 @@ msgstr ""
 
 #. Translators: metrics.graph_chart_display_message
 #: templates/metrics.html:8
-msgid ""
-"See graphs charting Pecha's progress since 2024 across metrics including "
-"word counts, number of links and number of source sheets."
+msgid "See graphs charting Pecha's progress since 2024 across metrics including word counts, number of links and number of source sheets."
 msgstr ""
 
 #. Translators: metrics.label.metrics
 #: templates/metrics.html:16
 msgid "Metrics"
-msgstr ""
-
-#: templates/metrics.html:37
-msgid "Total Words in Library"
-msgstr ""
-
-#: templates/metrics.html:38
-msgid "Words in Hebrew & Aramaic"
-msgstr ""
-
-#: templates/metrics.html:39
-msgid "Words in Translation"
-msgstr ""
-
-#: templates/metrics.html:40
-msgid "Words of Original Translation created by Sefaria Volunteers"
-msgstr ""
-
-#: templates/metrics.html:41
-msgid "Number of Public Contributors"
-msgstr ""
-
-#: templates/metrics.html:42
-msgid "Number of Intertextual Links"
-msgstr ""
-
-#: templates/metrics.html:43
-msgid "Number of Source Sheets"
-msgstr ""
-
-#: templates/metrics.html:47 templates/metrics.html:48
-#: templates/metrics.html:49 templates/metrics.html:50
-msgid "Words"
-msgstr ""
-
-#: templates/metrics.html:51
-msgid "Contributors"
-msgstr ""
-
-#: templates/metrics.html:52
-msgid "Links"
 msgstr ""
 
 #. Translators: people.authors_on_pecha
@@ -1498,9 +1378,7 @@ msgstr ""
 
 #. Translators: people.biography_and_informations_about_authors
 #: templates/people.html:9
-msgid ""
-"Biographies and information about the authors of Buddhist texts on Pecha, "
-"together with links to their available texts."
+msgid "Biographies and information about the authors of Buddhist texts on Pecha, together with links to their available texts."
 msgstr ""
 
 #. Translators: people.authors
@@ -1549,13 +1427,11 @@ msgid "Map"
 msgstr ""
 
 #: templates/profile.html:4
-msgid "on Sefaria"
+msgid "on Pecha"
 msgstr ""
 
 #: templates/profile.html:6
-msgid ""
-"is on Sefaria. Follow to view their public source sheets, notes and "
-"translations."
+msgid "{{ profile.full_name }} is on Pecha. Follow to view their public source sheets, notes and translations."
 msgstr ""
 
 #. Translators: common.profile.twitter
@@ -1654,9 +1530,7 @@ msgstr ""
 
 #. Translators: registration.login.login_in_to_pecha_description
 #: templates/registration/login.html:8
-msgid ""
-"Log in to your Pecha account to make source sheets, write notes, and follow "
-"other Pecha users."
+msgid "Log in to your Pecha account to make source sheets, write notes, and follow other Pecha users."
 msgstr ""
 
 #. Translators: registration.login.you_are_already_logged_in_as
@@ -2057,18 +1931,12 @@ msgstr ""
 
 #: templates/sheets.html:604 templates/sheets.html:612
 #, python-format
-msgid ""
-"\n"
-"            Assignment Completed by %(owner)s\n"
-"            "
+msgid "Assignment Completed by %(owner)"
 msgstr ""
 
 #: templates/sheets.html:619
 #, python-format
-msgid ""
-"\n"
-"            Source Sheet by %(owner)s\n"
-"            "
+msgid "Source Sheet by %(owner)"
 msgstr ""
 
 #. Translators: sheets.more_info
@@ -2124,6 +1992,7 @@ msgstr ""
 msgid "Select a text"
 msgstr ""
 
+#. Translators: sheets.add_source
 #: templates/sheets.html:749
 msgid "Add Source"
 msgstr ""
@@ -2267,9 +2136,7 @@ msgstr ""
 
 #. Translators: sheets.assignment_feature_description
 #: templates/sheets.html:976
-msgid ""
-"Assignments allow you to create a template that your students can fill out "
-"on their own."
+msgid "Assignments allow you to create a template that your students can fill out on their own."
 msgstr ""
 
 #. Translators: sheets.assign_this_sheet
@@ -2333,17 +2200,12 @@ msgid "Anyone with access can"
 msgstr ""
 
 #: templates/sheets.html:1120
-msgid ""
-"\n"
-"            Add <span class=\"sourceName\"></span> to a Source Sheet\n"
-"            "
+msgid "Add <span class=\"sourceName\"></span> to a Source Sheet"
 msgstr ""
 
 #. Translators: sheets.copy_and_paste_embed_sheet_below
 #: templates/sheets.html:1146
-msgid ""
-"Copy and paste the embed code below. Adjust the values of width and height "
-"to best fit your design."
+msgid "Copy and paste the embed code below. Adjust the values of width and height to best fit your design."
 msgstr ""
 
 #. Translators: sheets.add_a_parasha_to_a_source_sheet
@@ -2368,9 +2230,7 @@ msgstr ""
 
 #. Translators: sheets.encouragement_to_share_your_sheet_in_community
 #: templates/sheets.html:1203
-msgid ""
-"Your Source Sheet is looking great! You can share it with other members of "
-"the Pecha Community by making it public."
+msgid "Your Source Sheet is looking great! You can share it with other members of the Pecha Community by making it public."
 msgstr ""
 
 #. Translators: sheets.make_public
@@ -2390,8 +2250,7 @@ msgstr ""
 
 #. Translators: sheets.thankyou_for_contributing_to_free_buddhist_digital_library
 #: templates/sheets.html:1224
-msgid ""
-"Thank you for contributing to a free, growing resource for Buddhist learning."
+msgid "Thank you for contributing to a free, growing resource for Buddhist learning."
 msgstr ""
 
 #. Translators: sheets.this_sheet_is_still_not_public
@@ -2416,9 +2275,7 @@ msgstr ""
 
 #: templates/sheets_visual.html:12
 #, python-format
-msgid ""
-"Visual layout of a source sheet by %(sheet.owner|user_name)s created with "
-"Pecha's Source Sheet Builder."
+msgid "Visual layout of a source sheet by %(sheet.owner|user_name)s created with Pecha's Source Sheet Builder"
 msgstr ""
 
 #. Translators: sheets_visual.back_to_sheet
@@ -2431,21 +2288,17 @@ msgid "About Pecha"
 msgstr ""
 
 #: templates/static/en/about.html:6 templates/static/he/about.html:6
-msgid ""
-"Pecha is a nonprofit organization dedicated to building the future of "
-"Buddhist learning in an open and participatory way."
+msgid "Pecha is a nonprofit organization dedicated to building the future of Buddhist learning in an open and participatory way."
 msgstr ""
 
 #: templates/static/en/ways-to-give.html:4
 #: templates/static/he/ways-to-give.html:5
-msgid "Donate to Sefaria"
+msgid "Donate to Pecha"
 msgstr ""
 
 #: templates/static/en/ways-to-give.html:6
 #: templates/static/he/ways-to-give.html:7
-msgid ""
-"Support Sefaria by making a tax-deductible donation online or by check or "
-"wire transfer."
+msgid "Support Pecha by making a tax-deductible donation online or by check or wire transfer."
 msgstr ""
 
 #. Translators: templates.static.home.pecha_title
@@ -2455,9 +2308,7 @@ msgstr ""
 
 #. Translators: templates.static.home.pecha_description
 #: templates/static/home.html:10
-msgid ""
-"The largest free library of Buddhist texts available to read online in "
-"Tibetan and English including commentaries and more."
+msgid "The largest free library of Buddhist texts available to read online in Tibetan and English including commentaries and more."
 msgstr ""
 
 #. Translators: templates.static.newsletter.sign_up_for_pecha_newsletter_title

@@ -13,11 +13,11 @@
         </h1>
         <div class="end">
             <a class="button small transparent control-elem" href="/my/profile">
-                {% comment %}Translators: account_setting.cancel_request{% endcomment %}
+                {% comment %}Translators: common.account_setting.cancel_request{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Cancel" %}</span>
             </a>
             <div id="saveAccountSettings" class="button small blue control-elem" tabindex="0" role="button" >
-                {% comment %}Translators: account_setting.save_request{% endcomment %}
+                {% comment %}Translators: common.account_setting.save_request{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Save" %}</span>
             </div>
         </div>
@@ -54,7 +54,7 @@
                 <span class="int-bi">{% trans "english" %}</span>
             </div>
             <div role="radio" data-value="hebrew" class="toggleOption {% if profile.settings.interface_language == "hebrew" %} on{% endif %}" tabindex="{% if profile.settings.interface_language == "hebrew" %}0" aria-checked="true{% else %}-1" aria-checked="false{% endif %}">
-                {% comment %}Translators: account_setting.language_tibetan_option{% endcomment %}
+                {% comment %}Translators: common.account_setting.language_tibetan_option{% endcomment %}
                 <span class="int-bi">{% trans "Tibetan" %}</span>
             </div>
 		</div>
@@ -106,11 +106,14 @@
             <span id="email-edit-ok" style="display:none"></span>
         </div>
         <div id="username-change-edit" class="form-section" style="display: none">
+            {% comment %}Translators: account_setting.new_email{% endcomment %}
             <input id="email" type="text" placeholder="{% trans "New Email" %}" autocomplete="off" />
+            {% comment %}Translators: account_setting.confirm_new_email{% endcomment %}
             <input id="confirmEmail" type="text" placeholder="{% trans "Confirm New Email" %}" autocomplete="off" />
+            {% comment %}Translators: common.account_setting.password{% endcomment %}
             <input id="confirmPassword" type="password" placeholder="{% trans "Password" %}" autocomplete="new-password" />
             <button id="update-email" type="button" class="button blue fillWidth">
-                {% comment %}Translators: account_setting.update_email_message{% endcomment %}
+                {% comment %}Translators: account_setting.update_email{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Update Email" %}</span>
             </button>
             <span id="email-edit-errors"></span>
@@ -142,11 +145,11 @@
         </div>
         <div class="saveCancel">
             <div id="saveAccountSettings" class="button small blue control-elem" tabindex="0" role="button" >
-                {% comment %}Translators: account_setting.save_setting_button{% endcomment %}
+                {% comment %}Translators: common.account_setting.save_setting_button{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Save" %}</span>
             </div>
             <a class="button transparent small control-elem" href="/my/profile">
-                {% comment %}Translators: account_setting.cancel_setting_button{% endcomment %}
+                {% comment %}Translators: common.account_setting.cancel_setting_button{% endcomment %}
                 <span class="{{ language_font_class }}">{% trans "Cancel" %}</span>
             </a>
         </div>

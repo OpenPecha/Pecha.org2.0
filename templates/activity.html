@@ -4,26 +4,26 @@
 
 {% block title %}
 	{% if single %}
-{% comment %}Translators: pecha.org/activity.revision_history{% endcomment %}
+{% comment %}Translators: activity.revision_history{% endcomment %}
 {% trans "Revision History of" %} {{ ref }} ({{ version }})
 	{% elif for_user %}
-{% comment %}Translators: pecha.org/activity.activity{% endcomment %}	
+{% comment %}Translators: activity.pecha_activity_profile{% endcomment %}	
 {{ profile.full_name }} | {% trans "Pecha Activity" %}
 	{% else %}
-{% comment %}Translators: pecha.org/activity.activity{% endcomment %}	
+{% comment %}Translators: activity.pecha_activity{% endcomment %}	
 {% trans "Pecha Activity" %}
 	{% endif %}
 {% endblock %}
 
 {% block description %}
 	{% if single %}
-{% comment %}Translators: pecha.org/activity.revision_history_message{% endcomment %}		
+{% comment %}Translators: activity.revision_history_message{% endcomment %}		
 {% trans "View the complete revision history of this text on Pecha." %}
 	{% elif for_user %}
-{% comment %}Translators: pecha.org/activity.activity_message{% endcomment %}		
+{% comment %}Translators: activity.activity_message{% endcomment %}		
 {% trans "View a user's activitiy history on Pecha, including published source sheets, and text translations, edits or additions." %}
 	{% else %}
-{% comment %}Translators: pecha.org/activity.view_log_message{% endcomment %}		
+{% comment %}Translators: activity.view_log_message{% endcomment %}		
 {% trans "View the complete log of public activity on Pecha, including published source sheets, and text translations, edits or additions. " %}
 	{% endif %}
 {% endblock %}
@@ -39,7 +39,7 @@
     <div class="inner">
         {% if single %}
 		    <h1>
-				{% comment %}Translators: pecha.org/activity.revision_history{% endcomment %}	
+				{% comment %}Translators: activity.revision_history{% endcomment %}	
 				<span class="{{ language_font_class }}">{% trans "Revision History of" %} {{ ref|ref_link }}</a></span>
 		    </h1>
 		    <h2>
@@ -47,36 +47,36 @@
 		    </h2>
         {% elif for_user %}
             <h1>
-				{% comment %}Translators: pecha.org/activity.public_activity{% endcomment %}	
+				{% comment %}Translators: activity.public_activity{% endcomment %}	
             	<span class="{{ language_font_class }}">{{ profile.id|user_link }}| {% trans "Public Activity" %}</span>            	
         	</h1>
         {% else %}
             <h1>
-				{% comment %}Translators: pecha.org/activity.recent_activity{% endcomment %}	
+				{% comment %}Translators: activity.recent_activity{% endcomment %}	
 				<span class="{{ language_font_class }}">{% trans "Recent Activity on Pecha" %}</span>
         	</h1>
         {% endif %}
         <div class="activityFilterSection sans-serif">
             <select id="activityFilter">
-				{% comment %}Translators: pecha.org/activity.all_activity_drop_down{% endcomment %}	
+				{% comment %}Translators: activity.all_activity_drop_down{% endcomment %}	
                 <option value=""{% if not filter_type %} selected {% endif %}>{% trans "All Activity" %}</option>
-				{% comment %}Translators: pecha.org/activity.translation_option{% endcomment %}	
+				{% comment %}Translators: activity.translation_option{% endcomment %}	
                 <option value="translate" {% if filter_type == "translate" %} selected {% endif %}>{% trans "Translations" %}</option>
-				{% comment %}Translators: pecha.org/activity.source_sheets_option{% endcomment %}	
+				{% comment %}Translators: activity.source_sheets_option{% endcomment %}	
                 <option value="publish_sheet"{% if filter_type == "publish_sheet" %} selected {% endif %}>{% trans "Source Sheets" %}</option>
-				{% comment %}Translators: pecha.org/activity.new_texts_option{% endcomment %}	
+				{% comment %}Translators: activity.new_texts_option{% endcomment %}	
                 <option value="add_text"{% if filter_type == "add_text" %} selected {% endif %}>{% trans "New Texts" %}</option>
-				{% comment %}Translators: pecha.org/activity.edit_list_option{% endcomment %}	
+				{% comment %}Translators: activity.edit_list_option{% endcomment %}	
                 <option value="edit_text"{% if filter_type == "edit_text" %} selected {% endif %}>{% trans "Edits" %}</option>
-				{% comment %}Translators: pecha.org/activity.notes_option{% endcomment %}	
+				{% comment %}Translators: activity.notes_option{% endcomment %}	
                 <option value="add_note"{% if filter_type == "add_note" %} selected {% endif %}>{% trans "Notes" %}</option>
-				{% comment %}Translators: pecha.org/activity.reviews_option{% endcomment %}	
+				{% comment %}Translators: activity.reviews_option{% endcomment %}	
                 <option value="review"{% if filter_type == "review" %} selected {% endif %}>{% trans "Reviews" %}</option>
-				{% comment %}Translators: pecha.org/activity.text_info_option_option{% endcomment %}	
+				{% comment %}Translators: activity.text_info_option_option{% endcomment %}	
                 <option value="index_change"{% if filter_type == "index_change" %} selected {% endif %}>{% trans "Text Info" %}</option>
-				{% comment %}Translators: pecha.org/activity.reversions_option{% endcomment %}	
+				{% comment %}Translators: activity.reversions_option{% endcomment %}	
                 <option value="revert_text"{% if filter_type == "revert_text" %} selected {% endif %}>{% trans "Reversions" %}</option>
-				{% comment %}Translators: pecha.org/activity.flagged_option{% endcomment %}	
+				{% comment %}Translators: activity.flagged_option{% endcomment %}	
                 <option value="flagged"{% if filter_type == "flagged" %} selected {% endif %}>{% trans "Flagged" %}</option>
             </select>
         </div>

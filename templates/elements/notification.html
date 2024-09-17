@@ -62,7 +62,7 @@
     {% elif notification.type == "collection add" %}
         <div>
             <span class="{{ language_font_class }}">{{ notification.content.adder|user_link }}
-                {% comment %}Translators: templates.elements.notification.added_you_to_the_collection{% endcomment %}
+                {% comment %}Translators: templates.elements.notification.added_you_to_the_collection_second_string{% endcomment %}
                 {% trans "added you to the collection" %} {{ notification.content.collection_slug|collection_link }}.</span>
         </div>
 

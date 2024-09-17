@@ -15,10 +15,8 @@
 	<tr style="font-size:13px">
 		<div style="padding:20px 0;border-top:1px solid #bbb">
 		{% comment %}Translators: templates.email.base.you_are_recieving_this_message_because_you_have_an_account_on_link{% endcomment %}	
-		{% blocktrans %}
-            You're receiving this message because you have an account on
-            <a href="http://www.pecha.org">www.pecha.org</a>.
-			{% endblocktrans %}
+		{% trans "You're receiving this message because you have an account on" %}
+			<a href="http://www.pecha.org">www.pecha.org</a>.
             <br>
 		{% comment %}Translators: templates.email.base.to_change_your_email_settings{% endcomment %}	
         {% blocktrans with settings_url="/settings/account"|absolute_url %}
