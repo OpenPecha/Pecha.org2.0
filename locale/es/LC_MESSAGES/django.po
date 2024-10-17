@@ -1541,7 +1541,6 @@ msgid ""
 msgstr ""
 
 #: templates/registration/register.html:13
-#, fuzzy
 #| msgid "Sign Up"
 msgid "Sign_Up_Title"
 msgstr "注册"
