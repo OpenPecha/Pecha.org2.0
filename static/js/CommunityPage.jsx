@@ -75,7 +75,7 @@ CommunityPage.propTypes = {
 
 
 const RecentlyPublished = ({multiPanel, toggleSignUpModal}) => {
-  const options = Sefaria.interfaceLang === "hebrew" ? {"lang": "hebrew"} : {};
+  const options = {};
   // options["filtered"] = true;
   const pageSize = 18;
   const [nSheetsLoaded, setNSheetsLoded] = useState(0); // counting sheets loaded from the API, may be different than sheets displayed
@@ -110,13 +110,13 @@ const RecentlyPublished = ({multiPanel, toggleSignUpModal}) => {
     recentSheetsContent.splice(6, 0, joinTheConversation);
     recentSheetsContent.push(
       <a className="button small white loadMore" onClick={loadMore}>
-        <InterfaceText>{ Sefaria._("common.load_more")}</InterfaceText>
+        <InterfaceText>common.load_more</InterfaceText>
       </a>
     );
   }
   return (
     <div className="recentlyPublished">            
-      <h2><InterfaceText>{ Sefaria._("community.sheets.recently_published")}</InterfaceText></h2>
+      <h2><InterfaceText>community.sheets.recently_published</InterfaceText></h2>
       <NBox content={recentSheetsContent} n={1} />
     </div>
   );
