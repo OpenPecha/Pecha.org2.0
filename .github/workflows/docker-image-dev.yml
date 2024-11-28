@@ -3,7 +3,7 @@ name: Docker Publish Trigger
 on:
   push:
     branches:
-      - dev  # Change this to your main branch name, e.g., master
+      - chore/whitenoise_update  # Change this to feature branch to test deployment
 
 jobs:
   build-and-publish:
