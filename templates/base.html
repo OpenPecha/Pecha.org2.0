@@ -24,7 +24,6 @@
         <meta name="robots" content="index, follow">
     {% endif %}
 
-    <!-- <link rel="search" type="application/opensearchdescription+xml" title="Sefaria Search" href="{% static 'files/opensearch.xml' %}" /> -->
 
     <!-- {% if SITE_SETTINGS.TORAH_SPECIFIC %}
     <link rel="alternate" href="https://www.pecha.org{{ request.path }}" hreflang="en" />
@@ -61,7 +60,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-itunes-app" content="app-id=1163273965">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="manifest" href="{% static 'manifest.json' %}">
     <meta name="theme-color" content="#000000">
     <title>My PWA</title>
 
@@ -69,7 +67,6 @@
     <link rel="favicon-pecha" sizes="180x180" href="{% static 'icons/favicon-pecha.png' %}?v=xQzLlLp7oR">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'icons/favicon-pecha.png' %}?v=xQzLlLp7oR">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'icons/favicon-pecha.png' %}?v=xQzLlLp7oR">
-    <!-- <link rel="manifest" href="{% static 'icons/manifest.json' %}?v=xQzLlLp7oR"> -->
     <!-- <link rel="mask-icon" href="{% static 'icons/safari-pinned-tab.svg' %}?v=xQzLlLp7oR" color="#273557"> -->
     <link rel="shortcut icon" href="{% static 'icons/favicon-pecha.png'%}?v=xQzLlLp7oR">
     <link rel="stylesheet" href="{% static 'css/feedbucketStyle.css' %}">
@@ -177,7 +174,6 @@
 
     <meta name="google-site-verification" content="IQIF71Vtc74ylIZ1EWMuaQTsk6CyjXLosHkyDNIASic" />
 
-<link rel="manifest" href="{% static '/manifest.json' %}" />
 <!-- ios support -->
 <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
 <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
@@ -224,19 +220,7 @@
 
     {% autoescape off %}
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register("{% static 'serviceWorker.js' %}")
-            .then(function(registration) {
-              console.log('Service Worker registered with scope:', registration.scope);
-            })
-            .catch(function(error) {
-              console.log('Service Worker registration failed:', error);
-            });
-        });
-      }
-    </script>
+
 
     <script src="{% static 'pwa.js' %}"></script>
 
@@ -404,16 +388,6 @@
 
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="b5a8d317-af7b-4b83-8801-84e6658f1f6e";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 
-    <!-- <script>if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function() {
-        navigator.serviceWorker
-          .register("{% static 'js/serviceWorker.js' %}")
-          .then(res => console.log("service worker registered"))
-          .catch(err => console.log("service worker not registered", err))
-      })
-    }</script> -->
-
-    <!-- <script src="{% static 'js/pwa_app_installer.js' %}"></script> -->
 
 
 
