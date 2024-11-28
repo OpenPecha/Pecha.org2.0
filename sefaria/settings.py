@@ -65,14 +65,15 @@ MEDIA_URL = ''
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# WhiteNoise settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # List of finder classes that know how to find static files in
@@ -80,12 +81,12 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-STATICFILES_DIRS = [
-    relative_to_abs_path('../static/'),
-]
+# STATICFILES_DIRS = [
+#     relative_to_abs_path('../static/'),
+# ]
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = ''
@@ -127,6 +128,8 @@ TEMPLATES = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
