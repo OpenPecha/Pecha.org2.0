@@ -65,8 +65,6 @@ urlpatterns += [
     url(r'^people/?$', reader_views.person_index_redirect),
 ]
 
-if settings.DEBUG is False:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # Visualizations / Link Explorer
 urlpatterns += [

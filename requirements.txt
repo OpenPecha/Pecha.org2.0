@@ -64,6 +64,7 @@ sentry-sdk==1.26.0
 babel
 python-bidi==0.4.2
 requests
+
 Cerberus
 dnspython
 python-dotenv
@@ -73,3 +74,4 @@ python-dotenv
 #opentelemetry-propagator-jaeger
 
 mixpanel~=4.10.1
+whitenoise

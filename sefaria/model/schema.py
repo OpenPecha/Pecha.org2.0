@@ -16,8 +16,9 @@ try:
 
     re.set_fallback_notification(re.FALLBACK_WARNING)
 except ImportError:
-    logger.warning(
-        "Failed to load 're2'.  Falling back to 're' for regular expression parsing. See https://github.com/Sefaria/Sefaria-Project/wiki/Regular-Expression-Engines")
+    # logger.warning("Failed to load 're2'.  Falling back to 're' for regular expression parsing. See https://github.com/Sefaria/Sefaria-Project/wiki/Regular-Expression-Engines")
+    logger.warning("Highly recommend installing 're2' for faster regular expression parsing.")
+
     import re
 
 import regex
