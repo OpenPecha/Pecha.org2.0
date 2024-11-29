@@ -62,6 +62,8 @@ RUN npm run build-prod
 # Copy application source code
 COPY . ./
 
+COPY staticfiles/ /app/staticfiles/
+
 # Run Django migrations and start the server
 CMD ["bash", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
 

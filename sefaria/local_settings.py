@@ -129,7 +129,7 @@ SITE_PACKAGE = "sites.sefaria"
 
 
 ################ These are things you DO NOT NEED to touch unless you know what you are doing. ##############################
-DEBUG = os.getenv("DEBUG", "True") == "True"
+DEBUG = os.getenv("DEBUG", "False") == "True"
 # In Render environment variables:
 # DEBUG = False
 
