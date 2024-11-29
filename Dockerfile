@@ -28,8 +28,6 @@ RUN npm run build-prod
 # Copy application source code
 COPY . ./
 
-ARG IS_BUILD_ENV=1
-ENV IS_BUILD_ENV=$IS_BUILD_ENV
 
 RUN python manage.py collectstatic --noinput
 
