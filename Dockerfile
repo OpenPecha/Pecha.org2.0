@@ -28,7 +28,11 @@ RUN npm run build-prod
 # Copy application source code
 COPY . ./
 
+ARG IS_BUILD_ENV=1
+ENV IS_BUILD_ENV=$IS_BUILD_ENV
+
 RUN python manage.py collectstatic --noinput
+
 
 # Run Django migrations and start the server
 CMD ["bash", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]

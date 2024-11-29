@@ -1,27 +1,30 @@
-import base64
 import os
-import binascii
 
-def add_base64_padding(base64_string):
-    """Add padding to the Base64 string if necessary."""
-    missing_padding = len(base64_string) % 4
-    if missing_padding:
-        base64_string += '=' * (4 - missing_padding)
-    return base64_string
+# Check if the script is running in a build environment
+IS_BUILD_ENV = os.getenv('IS_BUILD_ENV') == '1'
 
-# Retrieve the base64 encoded private key from the environment variable
-encoded_key = os.getenv('private_key')
+if not IS_BUILD_ENV:
+    import base64
+    import binascii
 
-if encoded_key is None:
-    raise ValueError("Environment variable 'PRIVATE_KEY_BASE64' is not set.")
+    def add_base64_padding(base64_string):
+        missing_padding = len(base64_string) % 4
+        if missing_padding:
+            base64_string += '=' * (4 - missing_padding)
+        return base64_string
 
-# Add padding to the encoded key
-encoded_key = add_base64_padding(encoded_key)
+    encoded_key = os.getenv('PRIVATE_KEY_BASE64')
+    if not encoded_key:
+        raise ValueError("Environment variable 'PRIVATE_KEY_BASE64' is not set.")
 
-# Decode the private key
-try:
-    private_key = base64.b64decode(encoded_key)
-except binascii.Error as e:
-    raise ValueError(f"Failed to decode Base64 string: {e}")
+    encoded_key = add_base64_padding(encoded_key)
 
-private_key_1 = private_key.replace(b'\\n', b'\n')
+    try:
+        private_key = base64.b64decode(encoded_key)
+    except binascii.Error as e:
+        raise ValueError(f"Failed to decode Base64 string: {e}")
+
+    private_key_1 = private_key.replace(b'\\n', b'\n')
+else:
+    print("Skipping private key decoding during build.")
+    private_key_1 = b""
