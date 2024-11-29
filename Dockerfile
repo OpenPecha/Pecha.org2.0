@@ -21,8 +21,6 @@ RUN python -m pip show Pillow
 COPY ./node ./node
 COPY ./static/js ./static/js
 
-# Copy prebuilt Webpack bundles into the Docker image
-COPY static/bundles/ /app/static/bundles/
 
 
 # Copy application source code
