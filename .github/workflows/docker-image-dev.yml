@@ -3,7 +3,7 @@ name: Docker Publish Trigger
 on:
   push:
     branches:
-      - dev  # Change this to your main branch name, e.g., master
+      - chore/nginx_setup  # Change this to your main branch name, e.g., master
 
 jobs:
   build-and-publish:
