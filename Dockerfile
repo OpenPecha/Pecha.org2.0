@@ -41,6 +41,9 @@ COPY ./nginx.conf /etc/nginx/nginx.conf
 # Copy Supervisor configuration
 COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+# Set a mock value for PRIVATE_KEY_BASE64 during the build
+ENV PRIVATE_KEY_BASE64 "mock_private_key_value"
+
 # Collect static files for Django
 RUN python manage.py collectstatic --noinput
 
