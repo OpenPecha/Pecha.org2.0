@@ -26,8 +26,8 @@ COPY ./static/js ./static/js
 # Copy application source code
 COPY . ./
 
-
-COPY staticfiles/ /app/staticfiles/
+# Collect static files for Django
+RUN python manage.py collectstatic --noinput
 
 # Run Django migrations and start the server
 CMD ["bash", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
