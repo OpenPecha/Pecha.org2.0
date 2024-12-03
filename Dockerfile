@@ -21,7 +21,8 @@ RUN python -m pip show Pillow
 COPY ./node ./node
 COPY ./static/js ./static/js
 
-
+RUN npm run setup
+RUN npm run build-prod
 
 # Copy application source code
 COPY . ./
