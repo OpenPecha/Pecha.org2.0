@@ -784,6 +784,15 @@ input.noselect {
     vertical-align: middle;
 }
 
+.headerInner .headerNavSection a .int-he{
+    font-size: 16px;
+    color: #666;
+    margin-inline-end: 30px;
+    font-weight: 500;
+    line-height: 26px;
+    vertical-align: middle;
+}
+
 .headerInner .headerLinksSection {
     display: flex;
     justify-content: flex-end;
@@ -2616,6 +2625,18 @@ span .asterisk {
 
 .readerNavMenu h1,
 .readerNavMenu h2.styledH1 {
+    text-align: start;
+    color: #666;
+    position: relative;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0px 30px 0;
+    height: auto;
+    text-transform: none;
+}
+
+.readerNavMenu h1 .int-he,
+.readerNavMenu h2.styledH1 .int-he{
     text-align: start;
     color: #666;
     position: relative;
