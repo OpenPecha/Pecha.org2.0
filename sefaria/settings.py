@@ -24,14 +24,15 @@ SEARCH_URL = "http://localhost:9200"
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'es'
 
 LANGUAGES = (
     ('en', _("English")),
     ('he', _("Hebrew")),
-    ('zh', _("Chinese")),
-    ('es', _("Spanish")),
+    ('zh-hans', _("Chinese")),
 )
+
+LANGUAGE_CODE = 'zh-hans'
+
 
 DATE_FORMATS = {
     'en': 'N j, Y g:i A',  # English: January 5, 2024 2:30 PM

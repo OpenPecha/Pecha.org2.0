@@ -284,7 +284,6 @@ GOOGLE_APPLICATION_CREDENTIALS = {
   "universe_domain": "googleapis.com"
 }
 
-print("H"*20, GOOGLE_APPLICATION_CREDENTIALS)
 
 
 GEOIP_DATABASE = 'data/geoip/GeoLiteCity.dat'
